@@ -1,3 +1,13 @@
 # config/models.yaml
 # Selección de modelo (Gemini / OpenAI)
 
+providers:
+  openai:
+    name: "OpenAI"
+    model: "gpt-5-nano"
+  gemini:
+    name: "Gemini"
+    model: "gemini-2.5-flash"
+  huggingface:
+    name: "HuggingFace"
+    model: "Qwen/Qwen2.5-7B-Instruct"
