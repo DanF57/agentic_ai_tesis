@@ -1,6 +1,6 @@
 from haystack.utils import Secret
 
-def create_llm(provider: str, model: str, **kwargs):
+def create_llm(provider: str, model: str, tools: list = None):
     """
     Fábrica de modelos LLM para Agentes Haystack.
     Soporta: OpenAI, Gemini y HuggingFace (ej: DeepSeek).
@@ -19,9 +19,8 @@ def create_llm(provider: str, model: str, **kwargs):
 
         return OpenAIChatGenerator(
             model=model,
-            # 👇 CORRECCIÓN AQUÍ
             api_key=Secret.from_env_var("OPENAI_API_KEY"),
-            **kwargs
+            tools=tools,
         )
 
     # =======================
@@ -35,9 +34,8 @@ def create_llm(provider: str, model: str, **kwargs):
 
         return GoogleGenAIChatGenerator(
             model=model,
-            # 👇 CORRECCIÓN AQUÍ
             api_key=Secret.from_env_var("GOOGLE_API_KEY"),
-            **kwargs
+            tools=tools,
         )
 
     # =======================
@@ -56,7 +54,8 @@ def create_llm(provider: str, model: str, **kwargs):
         return HuggingFaceAPIChatGenerator(api_type=api_type,
                                                     api_params={"model": model,
                                                                 "provider": "together"},
-                                                    token=Secret.from_env_var("HF_API_KEY")
+                                                    token=Secret.from_env_var("HF_API_KEY"),
+                                                    tools=tools,
                                                     )
 
     raise ValueError(
