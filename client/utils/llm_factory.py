@@ -1,64 +1,48 @@
 from haystack.utils import Secret
 
-def create_llm(provider: str, model: str, tools: list = None):
-    """
-    Fábrica de modelos LLM para Agentes Haystack.
-    Soporta: OpenAI, Gemini y HuggingFace (ej: DeepSeek).
-    """
 
+def create_llm(provider: str, model: str, tools: list = None, streaming_callback=None):
+    """
+    Factory para crear generadores LLM para Agentes Haystack.
+    Soporta: OpenAI y Gemini.
+    
+    Args:
+        provider: "openai" o "gemini"
+        model: Nombre del modelo específico
+        tools: Lista de herramientas disponibles
+        streaming_callback: Callback para streaming
+        
+    Returns:
+        Chat generator instance
+    """
     provider = provider.lower()
 
-    # =======================
-    # 1. OPENAI
-    # =======================
+    # OpenAI
     if provider == "openai":
         try:
             from haystack.components.generators.chat import OpenAIChatGenerator
         except ImportError:
-            raise ImportError("Falta OpenAIChatGenerator. Actualiza haystack-ai.")
+            raise ImportError("Missing OpenAIChatGenerator. Update haystack-ai.")
 
         return OpenAIChatGenerator(
             model=model,
             api_key=Secret.from_env_var("OPENAI_API_KEY"),
+            streaming_callback=streaming_callback,
             tools=tools,
         )
 
-    # =======================
-    # 2. GEMINI (Google)
-    # =======================
-    if provider in ("gemini"):
+    # Gemini (Google)
+    if provider == "gemini":
         try:
             from haystack_integrations.components.generators.google_genai import GoogleGenAIChatGenerator
         except ImportError:
-            raise ImportError("Falta GoogleGenAIChatGenerator. Instala google-generativeai.")
+            raise ImportError("Missing GoogleGenAIChatGenerator. Install google-generativeai.")
 
         return GoogleGenAIChatGenerator(
             model=model,
             api_key=Secret.from_env_var("GOOGLE_API_KEY"),
             tools=tools,
+            streaming_callback=streaming_callback,
         )
 
-    # =======================
-    # 3. HUGGING FACE (DeepSeek u otros)
-    # =======================
-    if provider in ("huggingface"):
-        try:
-            from haystack.components.generators.chat import HuggingFaceAPIChatGenerator
-            from haystack.utils.hf import HFGenerationAPIType
-            
-            api_type = HFGenerationAPIType.SERVERLESS_INFERENCE_API
-           
-        except ImportError:
-            raise ImportError("Falta HuggingFaceAPIChatGenerator. Actualiza haystack-ai.")
-
-        return HuggingFaceAPIChatGenerator(api_type=api_type,
-                                                    api_params={"model": model,
-                                                                "provider": "together"},
-                                                    token=Secret.from_env_var("HF_API_KEY"),
-                                                    tools=tools,
-                                                    )
-
-    raise ValueError(
-        f"Proveedor '{provider}' no soportado. Usa: openai, gemini, huggingface."
-    )
-
+    raise ValueError(f"Provider '{provider}' not supported. Use: openai or gemini.")
