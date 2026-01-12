@@ -10,6 +10,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from haystack.dataclasses import ChatMessage
 from client.agent_client import create_agent
+from logger import ExecutionLogger
 
 # Page config
 st.set_page_config(
@@ -104,6 +105,15 @@ if prompt := st.chat_input("Escribe tu pregunta sobre Ciencias de Datos..."):
         {"role": msg["role"], "content": msg["content"]}
         for msg in st.session_state.messages
     ]
+
+    # --- INICIALIZAR LOGGER ---
+    logger = ExecutionLogger()
+    # Capturamos el estado actual antes de la respuesta del agente
+    logger.start(
+        user_question=prompt,
+        provider=st.session_state.provider,
+        history=conversation_history
+    )
     
     
     # Get agent response
@@ -119,11 +129,11 @@ if prompt := st.chat_input("Escribe tu pregunta sobre Ciencias de Datos..."):
             
             # Run agent
             response = st.session_state.agent.run(messages=haystack_messages)
-            print(f"--- AGENT RESPONSE: {response}\n---\n")
 
             # Get complete response (includes reasoning + FINAL ANSWER)
             final_response = response["messages"][-1].text
-            print(f"--- AGENT FINAL_RESPONSE: {final_response}\n---\n")
+
+            logger.end(final_response)
             # Split reasoning from final answer
             if "FINAL ANSWER" in final_response:
                 parts = final_response.split("FINAL ANSWER", 1)

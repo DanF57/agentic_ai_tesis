@@ -2,11 +2,16 @@
 from fastmcp import FastMCP
 from haystack.components.websearch.serper_dev import SerperDevWebSearch
 from haystack.utils import Secret
-import os
 from dotenv import load_dotenv
 from pathlib import Path
 import json
-import uuid
+import sys
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from logger import ExecutionLogger
 
 # Haystack Imports
 from haystack import Pipeline
@@ -71,6 +76,12 @@ def search_knowledge_base(query: str) -> str:
 
     print(f"--- [RAG] Query: {query} ")
 
+    response_dict = {
+        "tool": "RAG",
+        "query": query,
+        "results": []
+    }
+
     try:
         result = query_pipeline.run({
             "text_embedder": {"text": query},
@@ -102,22 +113,13 @@ def search_knowledge_base(query: str) -> str:
                 "content": doc.content
             })
         
-        response_tool = json.dumps({
-            "tool": "RAG",
-            "query": query,
-            "results": structured_results
-        }, ensure_ascii=False)
-
-        return response_tool
-
+        response_dict["results"] = structured_results
+        
     except Exception as e:
-        return json.dumps({
-            "tool": "RAG",
-            "query": query,
-            "error": str(e),
-            "results": []
-        }, ensure_ascii=False)
+        response_dict["error"] = str(e)
 
+    ExecutionLogger.record_tool_execution("RAG", query, response_dict)
+    return json.dumps(response_dict, ensure_ascii=False)
 
 @mcp.tool
 def search_web(query: str, top_k: int = 5) -> str:
@@ -147,55 +149,48 @@ def search_web(query: str, top_k: int = 5) -> str:
     """
         
     print(f"--- [WEB] Query: {query}")
+
+    # Estructura base
+    response_data = {
+        "tool": "WEB",
+        "query": query,
+        "results": []
+    }
     
+    # Verificación de configuración
     if not web_search_component:
-        return json.dumps({
-            "tool": "WEB",
-            "query": query,
-            "error": "Web search tool not configured.",
-            "results": []
-        }, ensure_ascii=False)
+        response_data["error"] = "Web search tool not configured."
+        ExecutionLogger.record_tool_execution("WEB", query, response_data)
+        return json.dumps(response_data, ensure_ascii=False)
 
     try:
         results = web_search_component.run(query=query)
         documents = results["documents"][:top_k]
         
-        if not documents:
-            return json.dumps({
-                "tool": "WEB",
-                "query": query,
-                "results": []
-            }, ensure_ascii=False)
-        
-        # Estructura los resultados
-        structured_results = []
-        for idx, doc in enumerate(documents):
-            title = doc.meta.get('title', 'Sin título')
-            link = doc.meta.get('link', '')
-            snippet = doc.content
-            
-            structured_results.append({
-                "result": str(idx + 1),
-                "source_type": "Web",
-                "score": "N/A",  # Web search no tiene score de similaridad
-                "urls": [link] if link else [],
-                "content": f"Title: {title}\n{snippet}"
-            })
-        
-        return json.dumps({
-            "tool": "WEB",
-            "query": query,
-            "results": structured_results
-        }, ensure_ascii=False)
+        if documents:
+            structured_results = []
+            for idx, doc in enumerate(documents):
+                title = doc.meta.get('title', 'Sin título')
+                link = doc.meta.get('link', '')
+                snippet = doc.content
+                
+                structured_results.append({
+                    "result": str(idx + 1),
+                    "source_type": "Web",
+                    "score": "N/A",
+                    "urls": [link] if link else [],
+                    "content": f"Title: {title}\n{snippet}"
+                })
+            response_data["results"] = structured_results
 
     except Exception as e:
-        return json.dumps({
-            "tool": "WEB",
-            "query": query,
-            "error": str(e),
-            "results": []
-        }, ensure_ascii=False)
+        response_data["error"] = str(e)
 
+    # --- CORRECCIÓN: LOGGING SIEMPRE ANTES DEL RETURN ---
+    ExecutionLogger.record_tool_execution("WEB", query, response_data)
+    # ----------------------------------------------------
+    
+    return json.dumps(response_data, ensure_ascii=False)
 
 if __name__ == "__main__":
     mcp.run(transport="http", port=8000)

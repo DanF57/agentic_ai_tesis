@@ -1,4 +1,4 @@
-# /client/agent_client.py
+# agent_client.py
 from haystack.components.agents import Agent
 from haystack_integrations.tools.mcp import MCPToolset, StreamableHttpServerInfo
 from client.utils.llm_factory import create_llm
@@ -73,12 +73,10 @@ def create_agent(provider: str, streaming_callback=None):
         PROTOCOLO DE RAZONAMIENTO (ReAct)
         ────────────────────────────────────────
         Para cualquier pregunta válida dentro del dominio, debes usar el formato ReAct.
-
         El razonamiento se ejecuta como un CICLO, no como una secuencia fija.
-        Puedes repetir los pasos THOUGHT, PLAN y ACTION tantas veces como sea necesario
-        antes de generar la respuesta final.
+        Puedes repetir los pasos THOUGHT, PLAN y ACTION antes de generar la respuesta final.
 
-        Pasos del ciclo ReAct:
+        Formato y pasos ReAct:
 
         1. THOUGHT
            - Analiza la pregunta del usuario.
@@ -92,7 +90,7 @@ def create_agent(provider: str, streaming_callback=None):
            - Explicita cuál es la query y la herramienta que invocas. Ejemplo: search_knowledge_base("*query*").
         Después de cada ACTION:
         - Evalúa si la información obtenida es suficiente.
-        - Si no lo es, vuelve a THOUGHT y continúa el ciclo.
+        - Si no lo es, repite de nuevo el ciclo.
         4. FINAL ANSWER
            - Integra los resultados de todas las subtareas.
            - Responde en español.
@@ -101,18 +99,17 @@ def create_agent(provider: str, streaming_callback=None):
         ────────────────────────────────────────
         CRITERIOS PARA FUENTES
         ────────────────────────────────────────
-        - Un documento se considera válido si su distancia es < 0.8.
-        - Solo si ningún documento de la base de conocimiento cumple este criterio,
+        - Un documento se considera válido si su score de distancia es < 0.8.
+        - Solo se usa la web si ningún documento de la base de conocimiento cumple con el score,
           considera que la información es insuficiente y puedes usar search_web como respaldo.
-        - Si una misma fuente aparece en múltiples fragmentos,
-          menciónala una sola vez.
+        - Si una misma fuente aparece en múltiples fragmentos, menciónala una sola vez.
 
         ────────────────────────────────────────
         REGLAS OBLIGATORIAS
         ────────────────────────────────────────
         - Usa siempre las etiquetas THOUGHT, PLAN, ACTION y FINAL ANSWER.
         - La base de conocimiento es siempre la primera opción.
-        - La búsqueda web es solo un respaldo.
+        - La búsqueda web es solo un respaldo en caso de fallar la KB.
         - No respondas fuera del dominio de Ciencias de Datos.
         """,
         tools=toolset,
