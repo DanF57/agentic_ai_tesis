@@ -112,11 +112,16 @@ def search_knowledge_base(query: str, call_id: str = None) -> str:
             
         formatted_response = "Context from Knowledge Base:\n\n"
         for idx, doc in enumerate(documents):
+            meta = doc.meta
+            source_type = meta.get("type", "forums").capitalize()
             score = doc.score if doc.score else 0.0
             formatted_response += (
-                f"--- Result {idx + 1} ---\n"
+                f"--- Result {idx + 1} ({source_type}) ---\n"
+                f"Score: {score:.4f}\n"
+                f"Source: {meta.get('subreddit', 'reddit')}\n"
                 f"Content: {doc.content}\n"
-                f"Score: {score:.4f}\n\n"
+                f"URLs: {meta.get('extracted_urls')}\n"
+                f"---"
             )
         
         # Devolver JSON con call_id para correlación
