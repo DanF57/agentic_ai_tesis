@@ -119,10 +119,11 @@ if prompt := st.chat_input("Escribe tu pregunta sobre Ciencias de Datos..."):
             
             # Run agent
             response = st.session_state.agent.run(messages=haystack_messages)
-            
+            print(f"--- AGENT RESPONSE: {response}\n---\n")
+
             # Get complete response (includes reasoning + FINAL ANSWER)
             final_response = response["messages"][-1].text
-            
+            print(f"--- AGENT FINAL_RESPONSE: {final_response}\n---\n")
             # Split reasoning from final answer
             if "FINAL ANSWER" in final_response:
                 parts = final_response.split("FINAL ANSWER", 1)

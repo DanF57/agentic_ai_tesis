@@ -1,4 +1,4 @@
-# agent_client.py
+# /client/agent_client.py
 from haystack.components.agents import Agent
 from haystack_integrations.tools.mcp import MCPToolset, StreamableHttpServerInfo
 from client.utils.llm_factory import create_llm
@@ -82,21 +82,17 @@ def create_agent(provider: str, streaming_callback=None):
 
         1. THOUGHT
            - Analiza la pregunta del usuario.
-           - Si la pregunta contiene múltiples subpreguntas,
-             identifícalas y trátalas como subtareas.
-
+           - Si la pregunta contiene múltiples subpreguntas, identifícalas y trátalas como subtareas.
         2. PLAN
            - Decide el siguiente paso a realizar.
            - Indica qué subpregunta estás abordando (si aplica).
            - Decide qué herramienta usar y por qué.
-
         3. ACTION
            - Invoca UNA herramienta.
-
+           - Explicita cuál es la query y la herramienta que invocas. Ejemplo: search_knowledge_base("*query*").
         Después de cada ACTION:
         - Evalúa si la información obtenida es suficiente.
         - Si no lo es, vuelve a THOUGHT y continúa el ciclo.
-
         4. FINAL ANSWER
            - Integra los resultados de todas las subtareas.
            - Responde en español.

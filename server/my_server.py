@@ -90,7 +90,6 @@ def search_knowledge_base(query: str) -> str:
         structured_results = []
         for idx, doc in enumerate(documents):
             meta = doc.meta
-            print("Meta: ", meta)
             source_type = meta.get("type", "forums").capitalize()
             score = float(doc.score) if doc.score else 0.0
             
@@ -109,8 +108,6 @@ def search_knowledge_base(query: str) -> str:
             "results": structured_results
         }, ensure_ascii=False)
 
-        print(response_tool)
-        
         return response_tool
 
     except Exception as e:
