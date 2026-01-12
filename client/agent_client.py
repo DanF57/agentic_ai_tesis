@@ -1,3 +1,4 @@
+# agent_client.py
 from haystack.components.agents import Agent
 from haystack_integrations.tools.mcp import MCPToolset, StreamableHttpServerInfo
 from client.utils.llm_factory import create_llm
@@ -11,7 +12,6 @@ def create_agent(provider: str, streaming_callback=None):
     
     Args:
         provider: One of "openai", "gemini"
-        streaming_callback: Optional callback function for streaming
     
     Returns:
         Agent instance
@@ -100,14 +100,14 @@ def create_agent(provider: str, streaming_callback=None):
         4. FINAL ANSWER
            - Integra los resultados de todas las subtareas.
            - Responde en español.
-           - Incluye las fuentes utilizadas.
+           - Incluye las fuentes utilizadas (Solo los campos: URL y título del post).
 
         ────────────────────────────────────────
         CRITERIOS PARA FUENTES
         ────────────────────────────────────────
         - Un documento se considera válido si su distancia es < 0.8.
-        - Si ningún documento de la base de conocimiento cumple este criterio,
-          considera que la información es insuficiente y puedes usar search_web.
+        - Solo si ningún documento de la base de conocimiento cumple este criterio,
+          considera que la información es insuficiente y puedes usar search_web como respaldo.
         - Si una misma fuente aparece en múltiples fragmentos,
           menciónala una sola vez.
 
