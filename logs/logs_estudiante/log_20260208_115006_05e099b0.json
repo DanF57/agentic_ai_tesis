@@ -1,0 +1,130 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:47:46.309705",
+  "provider": "openai",
+  "user_question": "¿Qué cursos, materiales académicos o recursos en línea recomiendan para aprender meta-análisis aplicado, incluyendo software y buenas prácticas?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué cursos, materiales académicos o recursos en línea recomiendan para aprender meta-análisis aplicado, incluyendo software y buenas prácticas?"
+    }
+  ],
+  "start_time": 1770569266.3097055,
+  "end_time": 1770569406.1303818,
+  "execution_time_seconds": 139.8206763267517,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "recommended courses materials online resources for meta-analysis applied including software and best practices",
+      "execution_time_seconds": 0.5289413999998942,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_jjv6hd0",
+          "source_type": "Comment",
+          "title": "Should I use Bayesian or Frequentist approach to network meta-analysis? Good walkthrough resources for network meta-analysis in R for non-statisticians?",
+          "score": "0.4607",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/13fip9a/should_i_use_bayesian_or_frequentist_approach_to/",
+          "content": "Context (Post Title): Should I use Bayesian or Frequentist approach to network meta-analysis? Good walkthrough resources for network meta-analysis in R for non-statisticians?\nComment: Last year I taught myself NMA methodology using this resource and actually just had my paper published! I used frequentist framework but this resource walks you through both"
+        },
+        {
+          "result": "0",
+          "id": "post_13fip9a",
+          "source_type": "Post",
+          "title": "Should I use Bayesian or Frequentist approach to network meta-analysis? Good walkthrough resources for network meta-analysis in R for non-statisticians?",
+          "score": "0.4688",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/13fip9a/should_i_use_bayesian_or_frequentist_approach_to/",
+          "content": "Title: Should I use Bayesian or Frequentist approach to network meta-analysis? Good walkthrough resources for network meta-analysis in R for non-statisticians?\nContent: Hi everyone, thank you for taking the time to read my post!\n\nI'm trying to conduct a network meta-analysis (NMA) in order to eventually perform a cost-effectiveness analysis (CEA). I'm trying to decide between Bayesian and Frequentist approaches for the NMA. My research question is basically to assess different treatment options (five total) for a specific type of pain. For all but two of these treatment options (three of the \"established\" treatments), there's about 4-5 randomized controlled trials (RCT) with common comparators (namely placebo) that total about a thousand patients. However, for two novel treatment options that we're interested in, there's only one RCT for each that is suitable for the NMA (i.e., there's only one RCT with a common comparator); this totals about 50 patients per study per novel treatment.\n\nTherefore, there are few data points for the two novel treatments, but there are many for the other, more-established treatments. Would the Bayesian or Frequentist approach be more suitable for NMA?\n\nCould you refer me to a good walkthrough resource for conducting this NMA in R? I'm looking for a resource that would be able to explain (as succinctly as possible) the different variables that can/should be optimized or changed and the rationale behind them, if possible.\n\nThank you so much for any help with this--very much appreciated!"
+        },
+        {
+          "result": "0",
+          "id": "comment_gb9f0m5",
+          "source_type": "Comment",
+          "title": "advice for learning stats",
+          "score": "0.4843",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/jomout/advice_for_learning_stats/",
+          "content": "Context (Post Title): advice for learning stats\nComment: I really appreciate you asking. I found this list:\n\nAnalysis of variance; Multiple regression; Multivariate analysis; Factor analysis; Structural equation modeling; Multilevel models; Longitudinal data analysis; Meta-analysis; Categorical data analysis; Modern missing data treatment; Nonparametrics"
+        },
+        {
+          "result": "0",
+          "id": "comment_m0awnlw",
+          "source_type": "Comment",
+          "title": "Flawed Statistics Analyses in Articles",
+          "score": "0.4910",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1h5nlox/flawed_statistics_analyses_in_articles/",
+          "content": "Context (Post Title): Flawed Statistics Analyses in Articles\nComment: I've used it. In my case I was looking at the mean differences during a meta analysis so I was able to pull the means and standard deviations for the groups of interest. If it was a box plot I could estimate those in R from the 5-figure summary"
+        },
+        {
+          "result": "0",
+          "id": "comment_g14f4rc",
+          "source_type": "Comment",
+          "title": "[Q] Decision regarding online MS program",
+          "score": "0.4941",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/i7v6oo/q_decision_regarding_online_ms_program/",
+          "content": "Context (Post Title): [Q] Decision regarding online MS program\nComment: Don't go off by the name of the courses. Read the course descriptions and syllabus (if possible). For some universities, Biostatistics is their regression methods courses (that covers linear, logistic, and experimental design)."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "meta-analysis online course resources software R packages metafor meta netmeta Cochrane Handbook PRISMA 'meta-analysis course' 'Introduction to Meta-Analysis' book",
+      "execution_time_seconds": 1.3474292000000787,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://meta-analysis.com/pages/book_introduction_to_meta-analysis?srsltid=AfmBOoob26jTVV7F_G0Gh6sj4zIW1xeRWRlFwDOQNyrB1IXuU7ratV9u"
+          ],
+          "content": "Title: Introduction to Meta-Analysis Book\nContent:This book provides a clear and thorough introduction to meta-analysis, the process of synthesizing data from a series of separate studies."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.amazon.com/Introduction-Meta-Analysis-Michael-Borenstein/dp/0470057246"
+          ],
+          "content": "Title: Introduction to Meta-Analysis: 9780470057247\nContent:This book provides a clear and thorough introduction to meta-analysis, the process of synthesizing data from a series of separate studies."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.cochrane.org/events/introduction-meta-analysis"
+          ],
+          "content": "Title: Introduction to meta-analysis\nContent:A short, non-technical, introduction to meta-analysis, which is the statistical method used for combining results across studies in a systematic review."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://meta-analysis.com/pages/books?srsltid=AfmBOorni_XJYgzcm_TTvYP8rujT4fQENDYlly1I4lBpUyXv1bNB7M-m"
+          ],
+          "content": "Title: Books on Meta-Analysis\nContent:This book provides a very clear overview of meta-analysis – what it is, why we use it, how to perform and interpret a meta-analysis, and how to avoid common ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.researchgate.net/publication/283579105_Meta-Analysis_with_R"
+          ],
+          "content": "Title: (PDF) Meta-Analysis with R\nContent:This book provides a comprehensive introduction to performing meta-analysis using the statistical software R"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "Cochrane Handbook for Systematic Reviews of Interventions pdf PRISMA statement PROSPERO register metafor tutorial Viechtbauer 'metafor' R package tutorial 'Meta-Analysis with R' Schwarzer 'Cochrane Interactive Learning' 'Borenstein Introduction to Meta-Analysis' site:meta-analysis.com",
+      "execution_time_seconds": 1.662987200000316,
+      "results": []
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nSeleccioné recursos que cubren fundamentos teóricos, implementación práctica con software y buenas prácticas de reporte (registro, PRISMA, Cochrane). Incluyo libros y tutoriales que explican cálculo de tamaños de efecto, modelos (efecto fijo/aleatorio), heterogeneidad, metarregresión y métodos bayesianos/NMA; y señalo paquetes de software habituales para aplicar esos métodos. Las fuentes citadas contienen ejemplos prácticos y guías paso a paso útiles para aprendizaje aplicado.",
+  "final_answer": "Resumen pedagógico y plan de estudio recomendado\n- Objetivos de aprendizaje: entender tamaños del efecto y sus varianzas, elegir entre modelos de efecto fijo vs. aleatorio, evaluar heterogeneidad (I2, tau2), hacer metarregresión, explorar sesgo de publicación, y aplicar meta-análisis de red y enfoques bayesianos cuando correspondan.\n- Orden sugerido: (1) fundamentos teóricos y lectura de un libro introductorio; (2) curso/práctica guiada (Cochrane o tutoriales); (3) práctica en R/Stata/RevMan con conjuntos de datos reales; (4) avanzar a metarregresión, sensibilidad y NMA; (5) revisar reporting standards (PRISMA) y registrar protocolo (PROSPERO).\n\nLibros y manuales (clave)\n- Borenstein et al., \"Introduction to Meta-Analysis\" — libro clásico para fundamentos, ejemplos y toma de decisiones metodológicas.\n- \"Meta-Analysis with R\" (Schwarzer, Viechtbauer & others) — enfoque práctico con código en R, recomendado para aplicar análisis reproducibles.\n\nCursos y materiales prácticos\n- Cochrane: introducciones y módulos interactivos sobre meta-análisis y revisión sistemática (útiles para buenas prácticas y reporting).\n- Foros y walkthroughs comunitarios (ej.: hilos sobre network meta-analysis) pueden ser útiles para ver soluciones a problemas prácticos y comparar enfoques bayesiano vs. frecuentista.\n\nSoftware y paquetes recomendados\n- R (recomendado por reproducibilidad y comunidad):\n  - metafor (Viechtbauer) — amplio para cálculo de efectos, rma(), metarregresión, forest/funnel plots.\n  - meta (Schwarzer) — funciones amigables para metanálisis estándar y subgrupos.\n  - netmeta / gemtc / BUGS/JAGS — para network meta-analysis y frameworks bayesianos.\n- Stata: comandos metan, metareg, mvmeta, y suites para NMA (si usas Stata).\n- RevMan (Cochrane): para revisiones sistemáticas y reportes formales.\n- Herramientas bayesianas: JAGS/BUGS/Stan para modelado bayesiano cuando se requiera flexibilidad.\n\nBuenas prácticas (checklist rápido)\n- Registrar protocolo antes de empezar (PROSPERO).\n- Definir PICO, criterios de inclusión/exclusión y estrategia de búsqueda reproducible.\n- Extraer tamaños de efecto y varianzas de forma consistente; documentar transformaciones.\n- Evaluar heterogeneidad (I2, tau2) y explorar con metarregresión/subgrupos.\n- Comprobar sesgo de publicación (funnel plot, pruebas de asimetría) y hacer análisis de sensibilidad.\n- Reportar conforme a PRISMA y proporcionar código/ datos para reproducibilidad.\n\nEjemplo conceptual (pseudocódigo R)\n- Calcular efectos y varianzas, ajustar modelo aleatorio, visualizar:\n  - escalc(measure=\"SMD\" or \"OR\", ai, bi, ci, di, data=...)  \n  - rma(yi, vi, method=\"REML\", data=...)  \n  - forest(model)  \n  - funnel(model)\n\nRecursos y lecturas recomendadas (ejemplos)\n- Borenstein M., et al. Introduction to Meta-Analysis — guía teórica y práctica. Source URL: https://meta-analysis.com/pages/book_introduction_to_meta-analysis?srsltid=AfmBOoob26jTVV7F_G0Gh6sj4zIW1xeRWRlFwDOQNyrB1IXuU7ratV9u\n- Cochrane — introducción y cursos sobre meta-análisis (materiales y aprendizaje interactivo). Source URL: https://www.cochrane.org/events/introduction-meta-analysis\n- Schwarzer, R. & Viechtbauer, W. — \"Meta-Analysis with R\" (documento/tutoría práctica en R). Source URL: https://www.researchgate.net/publication/283579105_Meta-Analysis_with_R\n- Ejemplo de discusión/tutorial comunitario sobre enfoques de network meta-analysis (foro): https://www.reddit.com/r/AskStatistics/comments/13fip9a/should_i_use_bayesian_or_frequentist_approach_to/\n\nURLs de las fuentes utilizadas\nhttps://meta-analysis.com/pages/book_introduction_to_meta-analysis?srsltid=AfmBOoob26jTVV7F_G0Gh6sj4zIW1xeRWRlFwDOQNyrB1IXuU7ratV9u\nhttps://www.cochrane.org/events/introduction-meta-analysis\nhttps://www.researchgate.net/publication/283579105_Meta-Analysis_with_R\nhttps://www.reddit.com/r/AskStatistics/comments/13fip9a/should_i_use_bayesian_or_frequentist_approach_to/",
+  "error_flag": false
+}

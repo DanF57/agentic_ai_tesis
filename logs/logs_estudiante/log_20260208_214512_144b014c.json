@@ -1,0 +1,72 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T21:45:04.340015",
+  "provider": "gemini",
+  "user_question": "¿Por qué usar únicamente correlaciones suele ser insuficiente para inferir relaciones causales?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Por qué usar únicamente correlaciones suele ser insuficiente para inferir relaciones causales?"
+    }
+  ],
+  "start_time": 1770605104.3400152,
+  "end_time": 1770605112.6394703,
+  "execution_time_seconds": 8.299455165863037,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "correlation causation limitations",
+      "execution_time_seconds": 0.8690883000017493,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_g0po8ob",
+          "source_type": "Comment",
+          "title": "If correlation does not equal causation, then why do we rely on linear regression models?",
+          "score": "0.3894",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/i5bvcu/if_correlation_does_not_equal_causation_then_why/",
+          "content": "Context (Post Title): If correlation does not equal causation, then why do we rely on linear regression models?\nComment: The maxim \"correlation does not equal causation\" does not point out a limitation of linear regression models specifically. The maxim would apply equally well if nonparametric models were used, for instance. Indeed it has little relevance for model selection.\n\nRather, the maxim is relevant for what conclusion can be drawn from an experiment, and it highlights the possibility of confounders. It is something to think about when doing experimental design, etc.\n\nFor instance, in an intervention-type experiment, treatments (values of explanatory variables) can be randomized among the individuals in the experiment in an attempt to control for confounders. This can make the experiment lead to a causal conclusion. (This is what good clinical trials try to do.) If there wasn't such random assignment, one could only conclude a correlation, not causation, hence the maxim.\n\nFor observational studies, it is a much thornier problem . One of my applied stats professors had the attitude that you never _really_ can conclude causation with observational data because there is always the possibility of a confounder you didn't control for. If you take this view, we still don't know that smoking causes cancer, so others might have different, looser interpretations."
+        },
+        {
+          "result": "0",
+          "id": "comment_g0oafdw",
+          "source_type": "Comment",
+          "title": "If correlation does not equal causation, then why do we rely on linear regression models?",
+          "score": "0.4229",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/i5bvcu/if_correlation_does_not_equal_causation_then_why/",
+          "content": "Context (Post Title): If correlation does not equal causation, then why do we rely on linear regression models?\nComment: Regression is a tool that can help draw causal inferences. In order to establish causation, three requirements must be met:\n\n1. **Correlation** \\- Are the two variables correlated with one another? As X moves, does Y move as well?\n2. **Temporal ordering** \\- The cause *X* must occur before effect *Y.*\n3. **Elimination of confounding factors** \\- This is the most difficult one to establish, and where regression is often used as a tool. Regression allows us to control for other variables or factors that could provide an alternative explanation for our observed relationship. If, after including all possible ~~controls~~ confounders in a regression, we still see a strong relationship between X and Y (and temporal ordering is met), then we can reasonably conclude causation."
+        },
+        {
+          "result": "0",
+          "id": "comment_g0r37n5",
+          "source_type": "Comment",
+          "title": "If correlation does not equal causation, then why do we rely on linear regression models?",
+          "score": "0.4235",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/i5bvcu/if_correlation_does_not_equal_causation_then_why/",
+          "content": "Context (Post Title): If correlation does not equal causation, then why do we rely on linear regression models?\nComment: 1. Not every model is *intended* to be causal.\n\n2. There are things that can be done to establish or support causality if that's necessary."
+        },
+        {
+          "result": "0",
+          "id": "comment_g0o2vdj",
+          "source_type": "Comment",
+          "title": "If correlation does not equal causation, then why do we rely on linear regression models?",
+          "score": "0.4312",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/i5bvcu/if_correlation_does_not_equal_causation_then_why/",
+          "content": "Context (Post Title): If correlation does not equal causation, then why do we rely on linear regression models?\nComment: Sometimes the nature of the variables might suggest that the relationship could only go one-way (e.g. the air temperature rising can’t make the sun rise)."
+        },
+        {
+          "result": "0",
+          "id": "comment_g0qysiu",
+          "source_type": "Comment",
+          "title": "If correlation does not equal causation, then why do we rely on linear regression models?",
+          "score": "0.4402",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/i5bvcu/if_correlation_does_not_equal_causation_then_why/",
+          "content": "Context (Post Title): If correlation does not equal causation, then why do we rely on linear regression models?\nComment: This correctly notes that finding 0 correlation entails no causation, and that this is a very important finding when we get it.\n\nBut it's no defense of the idea that correlation signals a high probability of causation--and in general correlation is not a good signal of causation. It's not even a medium signal of causation. It's a very weak signal. \n\nThat's not to say it's unimportant. Correlation when there's control is a much more significant signal of causation. Moreover, even if you can't control for variables and nature won't do it for you, still you can perform repeated trials with several different factorizations of the units of study. If you factor one way and the correlation still holds, and then you factor another way and it still holds, and then another, and then another ... After a while this becomes a strong signal of a causal relationship."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nLa insuficiencia de la correlación para inferir causalidad es un concepto fundamental en el análisis de datos. Una correlación simplemente indica una relación estadística o asociación entre dos variables, pero no establece si una variable es la causa directa de la otra. Los principales desafíos radican en la presencia de factores de confusión y la ambigüedad en la dirección de la causalidad, conceptos que son cruciales para el diseño experimental y la interpretación de estudios observacionales.",
+  "final_answer": "Utilizar únicamente correlaciones es insuficiente para inferir relaciones causales debido a varias razones clave que se resumen en el adagio \"correlación no implica causalidad\":\n\n1.  **Factores de Confusión (Variables Ocultas):** A menudo, una correlación observada entre dos variables (X e Y) puede ser el resultado de una tercera variable (Z) no medida, que influye tanto en X como en Y. Esta variable Z es un \"factor de confusión\" y puede crear la ilusión de una relación causal directa entre X e Y, cuando en realidad ambas son efectos de Z. Por ejemplo, se podría observar una correlación positiva entre las ventas de helados y los incidentes de ahogamiento. Sin embargo, no es que el consumo de helados cause ahogamientos, sino que una tercera variable, la temperatura ambiente (clima cálido), aumenta tanto las ventas de helados como la probabilidad de nadar, y por ende, de incidentes de ahogamiento.\n\n2.  **Dirección de la Causalidad:** La correlación no indica la dirección de la relación. Si dos variables están correlacionadas, no sabemos si X causa Y, si Y causa X, o si la relación es bidireccional. Por ejemplo, la correlación entre la actividad física y el bienestar puede significar que la actividad física mejora el bienestar, o que las personas con mayor bienestar tienden a ser más activas físicamente.\n\n3.  **Causalidad Inversa o Bidireccional:** Es posible que la causalidad opere en la dirección opuesta a la esperada, o que exista una relación de retroalimentación donde ambas variables se influyan mutuamente.\n\n4.  **Coincidencia o Relaciones Espurias:** En algunos casos, una correlación puede ser simplemente una coincidencia estadística sin ninguna relación lógica o causal subyacente. Los datos pueden mostrar patrones aleatorios que parecen ser significativos sin serlo.\n\nPara establecer la causalidad, además de la correlación, se requieren otras condiciones cruciales, como el **orden temporal** (la causa debe preceder al efecto) y la **eliminación de factores de confusión**. Esto último es particularmente desafiante en estudios observacionales y a menudo requiere diseños experimentales rigurosos, como ensayos controlados aleatorizados, donde la asignación aleatoria de tratamientos ayuda a controlar variables no observadas.\n\nURL de la fuente: https://www.reddit.com/r/AskStatistics/comments/i5bvcu/if_correlation_does_not_equal_causation_then_why/",
+  "error_flag": false
+}

@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T10:54:43.991656",
+  "provider": "openai",
+  "user_question": "¿Qué es el concept drift y qué señales simples indicarían que un modelo deja de generalizar con el tiempo?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué es el concept drift y qué señales simples indicarían que un modelo deja de generalizar con el tiempo?"
+    }
+  ],
+  "start_time": 1770566083.991657,
+  "end_time": 1770566153.2087493,
+  "execution_time_seconds": 69.2170922756195,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "concept drift signals model stops generalizing over time simple indicators",
+      "execution_time_seconds": 0.6383630999999923,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_g9hb05l",
+          "source_type": "Comment",
+          "title": "how to analyze data with covariate appearing at certain eras?",
+          "score": "0.5635",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/jeiygy/how_to_analyze_data_with_covariate_appearing_at/",
+          "content": "Context (Post Title): how to analyze data with covariate appearing at certain eras?\nComment: This is quite common.you can use time series models with indicators."
+        },
+        {
+          "result": "0",
+          "id": "comment_lvhsufg",
+          "source_type": "Comment",
+          "title": "Long-term Forecasting Bias in Prophet Model",
+          "score": "0.5739",
+          "source_url": "https://reddit.com/r/datascience/comments/1gjs4af/longterm_forecasting_bias_in_prophet_model/",
+          "content": "Context (Post Title): Long-term Forecasting Bias in Prophet Model\nComment: The initial trend the model found was negative. Time series models cant assume trends so it just continues it."
+        },
+        {
+          "result": "0",
+          "id": "comment_lvir93i",
+          "source_type": "Comment",
+          "title": "Long-term Forecasting Bias in Prophet Model",
+          "score": "0.5872",
+          "source_url": "https://reddit.com/r/datascience/comments/1gjs4af/longterm_forecasting_bias_in_prophet_model/",
+          "content": "Context (Post Title): Long-term Forecasting Bias in Prophet Model\nComment: oh I was taught that you only try to forecast stationary time series?"
+        },
+        {
+          "result": "0",
+          "id": "comment_l8aev40",
+          "source_type": "Comment",
+          "title": "Regression assumptions are overlooked in my grad program. Why?",
+          "score": "0.5928",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1de7t28/regression_assumptions_are_overlooked_in_my_grad/",
+          "content": "Context (Post Title): Regression assumptions are overlooked in my grad program. Why?\nComment: Black box grossness. Bring back complex coefficient interpretation and DAGs, inference all the way."
+        },
+        {
+          "result": "0",
+          "id": "comment_ew41j6e",
+          "source_type": "Comment",
+          "title": "Looking at 2 or more graphs and trying to find similarities? How to know when to stop doing Exploratory Analysis?",
+          "score": "0.5948",
+          "source_url": "https://reddit.com/r/datascience/comments/cmiumk/looking_at_2_or_more_graphs_and_trying_to_find/",
+          "content": "Context (Post Title): Looking at 2 or more graphs and trying to find similarities? How to know when to stop doing Exploratory Analysis?\nComment: It sounds to me that if there's any juice in the model it's too subtle to be visible with the kind of EDA you're doing. \n\nYour description's kind of vague, but it sounds like you have some kind of hypotheses about the data already, so just go ahead and start testing them."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "what is concept drift definition signals indicators model stops generalizing",
+      "execution_time_seconds": 2.0862117000000353,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.evidentlyai.com/ml-in-production/concept-drift"
+          ],
+          "content": "Title: What is concept drift in ML, and how to detect and address it\nContent:Concept drift is a change in the relationship between the input data and the model target. It reflects the evolution of the underlying problem statement or ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://aerospike.com/blog/model-drift-machine-learning/"
+          ],
+          "content": "Title: Mitigating model drift in machine learning\nContent:In all these cases of concept drift, the definition of what the model is predicting (or the way features map to that definition) has changed."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://en.wikipedia.org/wiki/Concept_drift"
+          ],
+          "content": "Title: Concept drift\nContent:In predictive analytics, data science, machine learning and related fields, concept drift or drift is an evolution of data that invalidates the data model."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.evidentlyai.com/ml-in-production/data-drift"
+          ],
+          "content": "Title: What is data drift in ML, and how to detect and handle it\nContent:Basically, concept drift means that whatever your model is predicting – it is changing. Data drift vs. Concept drift. Data drift might be a ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9162121/"
+          ],
+          "content": "Title: Adversarial concept drift detection under poisoning attacks ...\nContent:by Ł Korycki · 2022 · Cited by 59 — Feature drift. This is a type of change that happens when a subset of features becomes, or stops to be, relevant to the learning task (Barddal et al."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nHe definido concept drift como la evolución en la relación entre entradas y objetivo que invalida el modelo entrenado, señalando diferencias entre data drift (cambios en distribuciones de features) y concept/label drift (cambios en la función objetivo). Es importante porque rompe la capacidad de generalización y los supuestos de estabilidad temporal; las fuentes consultadas describen tipos comunes y prácticas sencillas de detección (p. ej. monitoreo de métricas por ventanas, tests de distribución y PSI). También tomo en cuenta ejemplos prácticos donde covariables aparecen/desaparecen en épocas distintas y modelos de series que amplifican sesgos de tendencia.",
+  "final_answer": "Definición breve\n- Concept drift: cambio en la relación f(x) → y con el tiempo; el modelo ya no refleja la función generadora actual. Diferenciar: data drift = cambios en p(X); concept/label drift = cambios en p(y|X) o en la definición del objetivo.\n\nSeñales simples que indican que un modelo deja de generalizar\n1. Degradación sostenida de métricas en datos recientes\n   - Ej.: caída continua de AUC/accuracy/F1 sobre ventanas móviles (p. ej. 7/14/30 días).\n   - Regla práctica: descenso relativo consistente (ej. >5–10% durante n ventanas) o caída absoluta significativa.\n2. Brecha creciente entre rendimiento en entrenamiento/validación histórica y en producción\n   - Train/val estables pero test/prod empeora → posible drift o cambio de distribución.\n3. Cambios en la distribución de predicciones\n   - Shift en histogramas de score (p. ej. concentración de probabilidades hacia 0.5 o hacia extremos).\n4. Cambios en tasas base o proporciones de clases\n   - Variación en prevalence (p.ej. porcentaje de eventos positivos) que no se explica por estacionalidad.\n5. Aumento de residuos o error medio y de su varianza\n   - Residuales más grandes o autocorrelacionados en series temporales.\n6. Pérdida de calibración\n   - Calibration curve / reliability diagram empeoran; predicted prob ≠ observed freq.\n7. Tests estadísticos y métricas de distribución\n   - PSI (Population Stability Index) alto (>0.2 indica cambio fuerte; 0.1–0.2 moderado).\n   - KS test o KL divergence entre distribuciones de features o scores.\n8. Señales operativas / de negocio\n   - KPIs asociados al modelo empeoran (p. ej. tasa de conversión, churn); alertas de stakeholders.\n\nChecks y algoritmos simples para monitoreo (pseudocódigo conceptual)\n- Ventana rolling metrics:\n  for each day/week:\n    compute metric_prod on last W days\n    compute metric_ref on baseline period\n    if metric_prod < metric_ref - threshold for k consecutive windows:\n      raise alert\n- PSI entre distribuciones de feature/score:\n  compute PSI(feature_bins_ref, feature_bins_prod)\n  if PSI > 0.2: alert\n- KS test:\n  for each numeric feature: p = ks_test(ref_values, prod_values)\n  if p < alpha (ej. 0.01) and effect size grande: investigate\n\nInvestigación y acciones iniciales\n- Verificar integridad y cambios en el pipeline de datos (nuevos nulls, re-codificaciones).\n- Segmentar por cohorts temporales para localizar cuándo comenzó el cambio.\n- Revisar variables más importantes (feature importance) para ver si su correlación/efecto cambió.\n- Retrain parcial o full: probar retrain con datos recientes, usar validación temporal (time-based CV).\n- Considerar modelos adaptativos: re-entrenamientos periódicos, windowed training, weighting por recencia, o métodos online.\n\nUmbrales prácticos (orientativos)\n- PSI: <0.1 (estable), 0.1–0.2 (moderado), >0.2 (significativo).\n- Caída de AUC/accuracy: descenso relativo sostenido >5–10% merece investigación.\n- KS p-value <0.01 con diferencia de medias significativas → posible drift.\n\nEjemplo conceptual de cálculo de PSI (pasos)\n1. Dividir rango en bins, contar % en cada bin para ref y prod.\n2. PSI = sum((pct_ref - pct_prod) * ln(pct_ref / pct_prod)) sobre bins.\n3. Interpretar según umbrales indicados.\n\nFuentes y lecturas recomendadas (ejemplos)\nhttps://www.evidentlyai.com/ml-in-production/concept-drift\nhttps://en.wikipedia.org/wiki/Concept_drift\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC9162121/",
+  "error_flag": false
+}

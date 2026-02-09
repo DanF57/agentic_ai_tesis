@@ -7,4 +7,4 @@ providers:
     model: "gpt-5-mini"
   gemini:
     name: "Gemini"
-    model: "gemini-2.5-pro"
+    model: "gemini-2.5-flash"

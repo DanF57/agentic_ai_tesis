@@ -1,0 +1,106 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T20:15:45.022547",
+  "provider": "gemini",
+  "user_question": "\"¿Cómo verificar que las suposiciones básicas de la regresión lineal se cumplen?\"",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "\"¿Cómo verificar que las suposiciones básicas de la regresión lineal se cumplen?\""
+    }
+  ],
+  "start_time": 1770599745.0225472,
+  "end_time": 1770599760.2999141,
+  "execution_time_seconds": 15.277366876602173,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "verificar supuestos regresión lineal",
+      "execution_time_seconds": 0.8416836000033072,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_lt3z4d0",
+          "source_type": "Comment",
+          "title": "Regression help",
+          "score": "0.5017",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/1g92i0f/regression_help/",
+          "content": "Context (Post Title): Regression help\nComment: Your data doesn't need to be normally distributed to use linear regression / OLS"
+        },
+        {
+          "result": "0",
+          "id": "comment_nlhhjsb",
+          "source_type": "Comment",
+          "title": "Assumptions of Linear Regression",
+          "score": "0.5181",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1ogevlk/assumptions_of_linear_regression/",
+          "content": "Context (Post Title): Assumptions of Linear Regression\nComment: You have to check your assumptions (you didn't say that since you said in your first comment that they're assumptions and you don't check them) by checking things like the fitted vs standardized residual plot to see if the assumption of homoscedasticity is violated or if a transformation is needed. You need to check your standardized residuals for normality to also see if you need a transformation. There are other model diagnostics that need to also be looked at to check your model assumptions. This is all stuff that OP is asking about.\n\nSaying that they're just assumptions and you can move on after fitting the model is just incorrect since you use the diagnostics to see if linear regression without transformations is the correct approach or if you need a different approach."
+        },
+        {
+          "result": "0",
+          "id": "comment_lw3corr",
+          "source_type": "Comment",
+          "title": "Can i perform simple linear regression to this data? Is it linear or not how can i understand?",
+          "score": "0.5278",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1gmfzmd/can_i_perform_simple_linear_regression_to_this/",
+          "content": "Context (Post Title): Can i perform simple linear regression to this data? Is it linear or not how can i understand?\nComment: As someone else said, this looks like you have floor effects. Look at your residual plot to determine if your residuals are normal. I'm guessing they are not. There are some approaches you can take to assess the extent to which this violation of assumption matters. Look up Winsorizations and bootstrapping approaches. If your regression results are consistent whether you use a Winsorization, bootstrapping, or raw data approach, then that is a good sign that assumption violations aren't inherently problematic. Depending on your field and what these data represent (e.g., latent variables or manifest variables), your R2 of .18 could be incredibly meaningful."
+        },
+        {
+          "result": "0",
+          "id": "comment_ltaj49y",
+          "source_type": "Comment",
+          "title": "Regression help",
+          "score": "0.5287",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/1g92i0f/regression_help/",
+          "content": "Context (Post Title): Regression help\nComment: The ridge and lasso definitely are wonky.. I tried OLS and a ton of iterations and I can’t get any of the assumptions to fit.. I’m Running out of ideas and thinking it could be the dataset"
+        },
+        {
+          "result": "0",
+          "id": "comment_nlg4k65",
+          "source_type": "Comment",
+          "title": "Assumptions of Linear Regression",
+          "score": "0.5302",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1ogevlk/assumptions_of_linear_regression/",
+          "content": "Context (Post Title): Assumptions of Linear Regression\nComment: Can u elaborate more , what if some of the assumptions are violated how do we deal with that without checking them."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "how to verify basic assumptions of linear regression",
+      "execution_time_seconds": 1.8080226999954903,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://godatadrive.com/blog/basic-guide-to-test-assumptions-of-linear-regression-in-r"
+          ],
+          "content": "Title: A Basic Guide to Testing the Assumptions of Linear Regression in R\nContent:using the Durbin-Watson test"
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://people.duke.edu/~rnau/testing.htm"
+          ],
+          "content": "Title: Testing the assumptions of linear regression - Duke People\nContent:To test for non-time-series violations of independence, you can look at plots of the residuals versus independent variables or plots of residuals versus row ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/assumptions-of-linear-regression/"
+          ],
+          "content": "Title: Understanding the Assumptions of Linear Regression Analysis\nContent:This assumption can be assessed by examining histograms or Q-Q plots of the residuals, or through statistical tests such as the Kolmogorov-Smirnov test. No ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nVerificar las suposiciones básicas de la regresión lineal es crucial para asegurar la validez y fiabilidad de los resultados del modelo. Estas suposiciones son la base sobre la cual se construye la inferencia estadística en la regresión lineal. Ignorar estos controles puede llevar a conclusiones engañosas sobre la relación entre las variables, como se ha observado en discusiones estudiantiles. Los diagnósticos del modelo son esenciales para determinar si la regresión lineal, posiblemente con transformaciones, es el enfoque adecuado, o si se requiere una estrategia diferente.",
+  "final_answer": "Para verificar las suposiciones básicas de la regresión lineal, es fundamental realizar un análisis diagnóstico exhaustivo. A continuación, se detallan las suposiciones clave y los métodos para su verificación:\n\n1.  **Linealidad**: Asume que la relación entre las variables predictoras (independientes) y la variable de respuesta (dependiente) es lineal.\n    *   **Verificación**: Se puede evaluar visualmente mediante diagramas de dispersión de cada variable predictora contra la variable de respuesta. Más formalmente, se examina el gráfico de residuos frente a los valores predichos (o valores ajustados). Un patrón aleatorio de puntos alrededor de la línea horizontal de cero sugiere linealidad.\n\n2.  **Independencia de los Errores (Ausencia de Autocorrelación)**: Se asume que los residuos (errores) del modelo son independientes entre sí. Esto es especialmente importante en datos de series temporales.\n    *   **Verificación**: Se puede observar un gráfico de los residuos versus el orden de recolección de los datos (si aplica) o versus las variables independientes. La prueba de Durbin-Watson es un método estadístico común para detectar la autocorrelación, donde un valor cercano a 2 indica independencia.\n        *   Fuente: https://godatadrive.com/blog/basic-guide-to-test-assumptions-of-linear-regression-in-r\n\n3.  **Homocedasticidad (Varianza Constante de los Errores)**: Se asume que la varianza de los errores es constante en todos los niveles de las variables predictoras.\n    *   **Verificación**: Se evalúa mediante el gráfico de residuos estandarizados frente a los valores ajustados. Una dispersión aleatoria y uniforme de los puntos alrededor de la línea de cero indica homocedasticidad. Si se observa un patrón en forma de embudo o cono, la homocedasticidad podría estar violada.\n        *   Fuente: https://reddit.com/r/AskStatistics/comments/1ogevlk/assumptions_of_linear_regression/\n\n4.  **Normalidad de los Errores**: Se asume que los residuos del modelo siguen una distribución normal.\n    *   **Verificación**: Esto se puede comprobar examinando un histograma de los residuos para ver su forma. Los gráficos Q-Q (cuantil-cuantil) de los residuos son una herramienta visual más precisa, donde los puntos deben seguir aproximadamente una línea recta diagonal. Para un análisis más riguroso, se pueden usar pruebas estadísticas como la prueba de Kolmogorov-Smirnov.\n        *   Fuente: https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/assumptions-of-linear-regression/\n\n**¿Qué hacer si las suposiciones se violan?**\nSi se detectan violaciones de las suposiciones, existen varias estrategias:\n*   **Transformaciones de datos**: Aplicar transformaciones (como logarítmica o de raíz cuadrada) a las variables puede ayudar a corregir problemas de no linealidad, heterocedasticidad o no normalidad de los errores.\n*   **Métodos robustos**: En algunos casos, se pueden utilizar métodos como Winsorization o bootstrapping para evaluar si las violaciones de las suposiciones afectan significativamente los resultados de la regresión. Si los resultados son consistentes con estos enfoques, es una buena señal de que las violaciones no son inherentemente problemáticas.\n    *   Fuente: https://reddit.com/r/AskStatistics/comments/1gmfzmd/can_i_perform_simple_linear_regression_to_this_data_is_it_linear_or_not_how_can_i_understand/\n*   **Modelos alternativos**: Si las violaciones son severas y no se pueden corregir, podría ser necesario considerar modelos de regresión alternativos que no requieran estas suposiciones, como los modelos lineales generalizados (GLM) o métodos no paramétricos.",
+  "error_flag": false
+}

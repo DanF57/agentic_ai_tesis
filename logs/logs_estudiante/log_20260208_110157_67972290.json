@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:01:20.402941",
+  "provider": "openai",
+  "user_question": "¿Qué mide el Population Stability Index (PSI) y por qué se utiliza para detectar cambios entre los datos de entrenamiento y los de producción?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué mide el Population Stability Index (PSI) y por qué se utiliza para detectar cambios entre los datos de entrenamiento y los de producción?"
+    }
+  ],
+  "start_time": 1770566480.4029412,
+  "end_time": 1770566517.7301106,
+  "execution_time_seconds": 37.32716941833496,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "What does Population Stability Index (PSI) measure and why is it used to detect shifts between training and production data?",
+      "execution_time_seconds": 0.5473300000001018,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_g4x26q4",
+          "source_type": "Comment",
+          "title": "PSA: For anyone using Prophet for forecasting, double check to make sure COVID effects weren't picked up in the yearly seasonality feature.",
+          "score": "0.5816",
+          "source_url": "https://reddit.com/r/datascience/comments/iqynqs/psa_for_anyone_using_prophet_for_forecasting/",
+          "content": "Context (Post Title): PSA: For anyone using Prophet for forecasting, double check to make sure COVID effects weren't picked up in the yearly seasonality feature.\nComment: I'm trying to flag outliers on sales data and any STL based method gives the covid week a high seasonality and repeats it across years. Could you explain more on how FB prophet flags these outliers, without much of it dedicated to seasonality?"
+        },
+        {
+          "result": "0",
+          "id": "comment_id90gjr",
+          "source_type": "Comment",
+          "title": "Using Linear Regression to Determine Significance to CPI (and PPI)",
+          "score": "0.5920",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/vhn4o6/using_linear_regression_to_determine_significance/",
+          "content": "Context (Post Title): Using Linear Regression to Determine Significance to CPI (and PPI)\nComment: Cool project! \nEach CPI is a weighted sum of types of goods purchased. I think the weights vary over time. And you could check that with data that broke out the CPI by goods class (food, gas, oil, etc.)\n\nI think that what is usually considered \"total CPI\" is CPI-U which is urban workers. That's a kind of industry, no? I haven't seen an overall total CPI.\n\nSetting aside the relationship between different industries, it would be cool to forecast the CPI's for the industries. What is nice about that is that you would get feedback on the quality of your forecasts every month. If you get any good at it and can forecast out 3 or 6 months with low error, you could probably get a good job just doing that.\n\nAs far as regressing something like CPI-U on the CPI's of each industry, I'm not sure how you would interpret the coefficients, but that interpretation would be an interesting part of the project. Arimax allows you to handle the lack of independence by differencing. That might or might not change the collinearity (or as BurkeyAdademy says, \"co-integration\"). That is something you would have to look at.\n\nCollinearity exists in the world. It's real. Having collinearity in your predictors is something to interpret. Sometimes a factor analysis makes sense. I have never seen a factor analysis of time series data, but I bet there's work on it. ANOTHER COOL aspect of the project!\n\nEnjoy!"
+        },
+        {
+          "result": "0",
+          "id": "comment_endfl2n",
+          "source_type": "Comment",
+          "title": "Using Python or R to tell me the drivers of change to a KPI",
+          "score": "0.5945",
+          "source_url": "https://reddit.com/r/datascience/comments/bnvh5d/using_python_or_r_to_tell_me_the_drivers_of/",
+          "content": "Context (Post Title): Using Python or R to tell me the drivers of change to a KPI\nComment: Performance is measured as number of complaints / number of orders but since number of orders stays fairly constant there's really only one metric at play. I would say the main challenge is identifying the best dimension to describe the change.. I'm not sure if you could say its a question of correlation?"
+        },
+        {
+          "result": "0",
+          "id": "comment_id9pupw",
+          "source_type": "Comment",
+          "title": "Using Linear Regression to Determine Significance to CPI (and PPI)",
+          "score": "0.5986",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/vhn4o6/using_linear_regression_to_determine_significance/",
+          "content": "Context (Post Title): Using Linear Regression to Determine Significance to CPI (and PPI)\nComment: If you are trying to learn time series pick something that is a little more theoretically simple. There are a range of issues with what you are trying to do. \n\nLet’s start with the CPI. This is a weighted basket of goods to try and understand changes in prices. To provide an indicative understanding of the general level of prices. The issue is that the weights are relatively stable. As relative prices increase people will make substitutions. For example, a very large increase in the price of beef will result in people substituting chicken for beef. So the impact of the price of beef will be negated in real life and the CPI will overstate the impact. \n\nOver the longer term, CPI may not capture more persistent changes in tastes or changes in technology well. Technology changes are also an issue for PPIs. \n\nThe issue you raise about the independents being correlated is exactly what you would expect as we know that changes in prices are highly correlated because of the interconnectedness of the economy. \n\nLinear regression is not appropriate in this context. Think about the assumptions of linear regression. Linear relationship - possible failure. Multivariate normality - fail. Multicollinearity - fail. No autocorrelation- fail. Homoskedasicity - fail. \n\nHamilton is a great book for economist trying to learn time series. \n\nIf you want to play around with the data and exploring it. I would start by taking first differences. \n\nI should have pointed out I am an economist so likely think about these things in a different way to you statistics wizards on here :)"
+        },
+        {
+          "result": "0",
+          "id": "comment_i1xjpwc",
+          "source_type": "Comment",
+          "title": "Do p-values matter for population data?",
+          "score": "0.5989",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/tm493u/do_pvalues_matter_for_population_data/",
+          "content": "Context (Post Title): Do p-values matter for population data?\nComment: This question comes down to inferential vs descriptive statistics. If you are trying to infer anything with your data (I.e., how scores predict in a different sample or population) then you should be concerned with the p value. But if your only concern is the sample of interest, then you don’t care about p values. But, there are very few situations where your sample is the same as your population of interest, so my guess is that you should care about the stability of your results in a different sample."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "Population Stability Index PSI definition calculation why used detect shift between training and production data",
+      "execution_time_seconds": 2.200068099999953,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://coralogix.com/ai-blog/a-practical-introduction-to-population-stability-index-psi/"
+          ],
+          "content": "Title: A Practical Introduction to Population Stability Index (PSI)\nContent:PSI, a numerical marker, excels at detecting distributional shifts in data between a model's training dataset and a newer one, often showcasing ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/model-monitoring-psi/population-stability-index-psi-ab133b0a5d42"
+          ],
+          "content": "Title: Population Stability Index (PSI) - model monitoring\nContent:Population Stability Index (PSI) compares the distribution of predicted probability in scoring data with predicted probability in training data."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://arize.com/blog-course/population-stability-index-psi/"
+          ],
+          "content": "Title: Population Stability Index (PSI): What You Need To Know\nContent:PSI is also utilized to ensure that input or output data in production doesn't drastically change from a baseline. The baseline can be a ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.listendata.com/2015/05/population-stability-index.html"
+          ],
+          "content": "Title: Population Stability Index and Characteristic Analysis\nContent:In simple words, Population Stability Index (PSI) compares the distribution of a scoring variable (predicted probability) in scoring data set to a training data ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.nannyml.com/blog/population-stability-index-psi"
+          ],
+          "content": "Title: Population Stability Index (PSI): A Comprehensive Overview\nContent:The Population Stability Index, or PSI, is a method used to quantify covariate shifts between two univariate distributions."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nDefiní el PSI formalmente, describí cómo se calcula y resumí por qué es útil para monitorizar modelos en producción. Señalé supuestos y limitaciones prácticas (binning, ceros, interpretación) y mencioné que en foros estudiantiles se discute frecuentemente la necesidad de vigilar cambios en distribuciones al pasar a producción. Usé fuentes que explican cálculo e interpretación del PSI y dan recomendaciones prácticas.",
+  "final_answer": "Qué mide el PSI\n- El Population Stability Index (PSI) cuantifica el cambio entre dos distribuciones univariadas: una distribución de referencia (p. ej. datos de entrenamiento) y una distribución nueva (p. ej. datos en producción). Es una medida de \"drift\" o estabilidad poblacional para una variable (o la probabilidad predicha).\n\nFórmula y cálculo (resumen)\n- Binear la variable según un criterio (deciles del baseline, ancho fijo, etc.).\n- Para cada bin i, calcular las proporciones: Expected_i (proporción en baseline) y Actual_i (proporción en producción).\n- PSI = sum_i ( (Actual_i - Expected_i) * ln(Actual_i / Expected_i) ).\n- Nota práctica: si alguna proporción es cero, reemplazar por un valor pequeño (epsilon) para evitar log(0).\n\nInterpretación (reglas prácticas)\n- PSI < 0.10: cambio mínimo (estable).\n- 0.10 ≤ PSI < 0.25: cambio moderado (revisar).\n- PSI ≥ 0.25: cambio significativo (posible degradación del modelo).\nEstas son reglas empíricas, no absolutos; contexto y tamaño de muestra importan.\n\nPor qué se utiliza para detectar cambios entre entrenamiento y producción\n- Resume en un solo número cuánto ha cambiado la distribución de una variable (o de las probabilidades predichas), lo que sirve como alerta temprana de:\n  - Covariate drift (cambio en X),\n  - Cambio en la población objetivo,\n  - Posible degradación del desempeño del modelo si las entradas o las probabilidades se desplazan.\n- Es simple, interpretable y fácil de automatizar en pipelines de monitorización por variable.\n\nLimitaciones y supuestos importantes\n- Es un test univariado: compara una variable a la vez (no detecta cambios multivariados complejos).\n- Sensible al esquema de binning (elección de bins puede cambiar el valor del PSI).\n- No distingue entre tipos de drift (p. ej. concept drift – cambio en la relación X→Y– no siempre se detecta solo con PSI).\n- Requiere muestras suficientemente grandes para proporciones estables.\n- Manejo de ceros: usar epsilon razonable para evitar artefactos.\n\nEjemplo conceptual (pseudocódigo)\n1. Definir bins usando la distribución del baseline (por ejemplo, deciles).\n2. Para cada bin i: Expected_i = count_baseline_i / N_baseline; Actual_i = count_prod_i / N_prod.\n3. PSI = sum((Actual_i - Expected_i) * log(Actual_i / Expected_i)).\n\nUsos típicos\n- Monitorear la distribución de la probabilidad predicha por un modelo (score drift).\n- Revisar variables individuales (variables demográficas, feature inputs) tras el despliegue.\n- Disparador para investigar retraining o recalibración del modelo.\n\nFuentes / lecturas recomendadas:\nhttps://arize.com/blog-course/population-stability-index-psi/\nhttps://www.listendata.com/2015/05/population-stability-index.html",
+  "error_flag": false
+}

@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:42:31.453794",
+  "provider": "openai",
+  "user_question": "¿Qué guías, blogs o repositorios describen comprobaciones prácticas básicas para el monitoreo de modelos en producción y qué métricas suelen revisarse?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué guías, blogs o repositorios describen comprobaciones prácticas básicas para el monitoreo de modelos en producción y qué métricas suelen revisarse?"
+    }
+  ],
+  "start_time": 1770568951.4537947,
+  "end_time": 1770568985.918651,
+  "execution_time_seconds": 34.46485638618469,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "practical checks for monitoring ML models in production metrics to monitor guides blogs repositories monitoring model drift data quality feature monitoring model performance RAG examples",
+      "execution_time_seconds": 0.653245799999695,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_ejhfuco",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.3344",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: At the beginning, we did manual validation checks just to ensure our model is useful for production use (I.e. classifies correctly the majority of the time). However, as you can imagine, given the volumes, it’s impossible and so we rely heavily on user feedback in this instance. \n\nIn our production deployment system, we have charts that help us tell whether a model’s performance is deteriorating and alerts us after it passes a certain threshold. It also lets us know when many documents in a row are being mis-classified incorrectly."
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhlc3c",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.3657",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: One way is to take a sample of 100/150 documents, annotate them and then make a bootstrap resampling to estimate the average performance and statistical error of whatever metric you want. But it is slow. If you want something in real time, you can track the binary cross entropy and looking for anomalies. It is not a metric you can comunicate to the shareholder but make you sleep well at night."
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhk2m2",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.3740",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: What's in those charts? How do you infer the model is misclassifying without the labels?"
+        },
+        {
+          "result": "0",
+          "id": "comment_ejipyzc",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.4145",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: I was thinking the same damn thing. Good post, OP"
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhtawm",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.4162",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: Bootstrap resampling and binary cross entropy... I did not know with those concepts, I will learn more about them, thanks for the hint."
+        }
+      ]
+    },
+    {
+      "tool": "RAG",
+      "query": "Evidently ai monitoring guide repository 'Evidently' 'monitoring' RAG 'what metrics' 'drift' 'data quality' 'model performance'",
+      "execution_time_seconds": 0.813778000000184,
+      "results": [
+        {
+          "result": "0",
+          "id": "post_1ode1fk",
+          "source_type": "Post",
+          "title": "Beyond accuracy: What are the real data science metrics for LLM/RAG apps in production?",
+          "score": "0.5026",
+          "source_url": "https://reddit.com/r/datascienceproject/comments/1ode1fk/beyond_accuracy_what_are_the_real_data_science/",
+          "content": "Title: Beyond accuracy: What are the real data science metrics for LLM/RAG apps in production?\nContent: (Full disclosure: I'm the founder of an LLM analytics platform, Optimly, and this is a problem we're obsessed with solving).\n\n\n\nIn traditional ML, we have clear metrics: accuracy, precision, F1, RMSE, etc.\n\nBut with LLMs, especially RAG systems, it's a black box. Once an agent is in production, \"success\" is incredibly hard to quantify. Console logs just show a wall of text, not performance.\n\nWe're trying to build a proper data science framework for this. We're moving beyond \"did it answer?\" to \"how well did it answer?\" These are the key metrics we're finding matter most:\n\n1. **User Frustration Score:** We're treating user behavior as a signal. We're building flags for things like question repetition, high token usage with no resolution, or chat abandonment right after a model's response. You can aggregate this into a \"frustration score\" per session.\n2. **RAG Performance (Source Analysis):** It's not just *if* RAG was used, but *which* documents were used. We're tracking which knowledge sources are cited in successful answers vs. which ones are consistently part of failed/frustrating conversations. This helps us find and prune useless (or harmful) documents from the vector store.\n3. **Response Quality (Estimated):** This is the hardest one. We're using signals like \"did the user have to re-phrase the question?\"or \"did the conversation end immediately after?\" to estimate the quality of a response, even without explicit \"thumbs up/down\" feedback.\n4. **Token/Cost Efficiency:** A pure MLOps metric, but critical. We're tracking token usage per session and per agent, which helps identify outlier conversations or inefficient prompts that are burning money.\n\nIt feels like this is a whole new frontier—turning messy, unstructured conversation logs into a structured dataset of performance indicators.\n\nI'm curious how other data scientists here are approaching this. How are you measuring the \"success\" of your LLM agents in production?"
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhlc3c",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.5207",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: One way is to take a sample of 100/150 documents, annotate them and then make a bootstrap resampling to estimate the average performance and statistical error of whatever metric you want. But it is slow. If you want something in real time, you can track the binary cross entropy and looking for anomalies. It is not a metric you can comunicate to the shareholder but make you sleep well at night."
+        },
+        {
+          "result": "0",
+          "id": "comment_i1ykgoo",
+          "source_type": "Comment",
+          "title": "Most underwritten data science subjects?",
+          "score": "0.5233",
+          "source_url": "https://reddit.com/r/datascience/comments/tm8jrl/most_underwritten_data_science_subjects/",
+          "content": "Context (Post Title): Most underwritten data science subjects?\nComment: 1) Algorithms and governance structures for monitoring models in production\n\n2) Examples of processes to alert end users that a model is having problems and what to do as it's being fixed"
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhk2m2",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.5269",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: What's in those charts? How do you infer the model is misclassifying without the labels?"
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhfuco",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.5289",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: At the beginning, we did manual validation checks just to ensure our model is useful for production use (I.e. classifies correctly the majority of the time). However, as you can imagine, given the volumes, it’s impossible and so we rely heavily on user feedback in this instance. \n\nIn our production deployment system, we have charts that help us tell whether a model’s performance is deteriorating and alerts us after it passes a certain threshold. It also lets us know when many documents in a row are being mis-classified incorrectly."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nSinteticé recomendaciones prácticas y métricas que aparecen recurrentemente en discusiones y posts de la comunidad técnica: comprobaciones de calidad de datos, detección de drift (con y sin etiquetas), métricas de rendimiento cuando hay labels, y señales proxy (UX / coste) para producción. También incluyo ejemplos operativos (muestreo para etiquetado, alertas basadas en umbrales) y las fuentes consultadas que ejemplifican estas prácticas.",
+  "final_answer": "1) Recursos / ejemplos de lectura práctica (ejemplos comunitarios)\n- Hilo con prácticas sobre monitoreo de modelos en producción (discusión sobre muestreo, bootstrap y métricas en tiempo real): https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/\n- Post que discute métricas de producto y señales proxy para sistemas RAG/LLM (frustration score, análisis de fuentes, coste por sesión): https://reddit.com/r/datascienceproject/comments/1ode1fk/beyond_accuracy_what_are_the_real_data_science/\n\n2) Comprobaciones prácticas básicas (checklist)\n- Ingesta / contracto de datos: validar esquema, tipos, ranges, cardinalidades; alertas ante cambios de columnas.\n- Calidad de datos: %missing por columna, outliers por feature, duplicados, concordancia con reglas de negocio.\n- Monitorización de distribución de features (drift covariate / population):\n  - Métricas: PSI (Population Stability Index), KL divergence, Earth Mover’s Distance, KS test por feature.\n  - Visuales: histogramas comparados, QQ-plots, heatmaps de correlación.\n- Monitorización sin etiquetas (señales proxy):\n  - Cambio en la distribución de predicciones (p.ej. shift en la proporción de clases).\n  - Estadísticos de confianza/entropía: mean(max_prob), prediction entropy, calibration buckets.\n  - Métricas de entrada a RAG/LLM: tokens por sesión, reintentos por usuario, abandonment rate (proxy de calidad).\n- Monitorización con etiquetas (cuando se logra etiquetar):\n  - Clasificación: accuracy, precision/recall, F1, AUC-ROC, log-loss / binary cross-entropy.\n  - Regresión: RMSE, MAE, R², cobertura de intervalos de predicción.\n  - Calibration: Brier score, reliability diagram.\n  - Tendencias temporales: rolling-window performance (p.ej. 7/30 días) y estimación de incertidumbre (bootstrap).\n- Salud operacional:\n  - Latencia (p95/p99), throughput (requests/s), error-rate, fallbacks activados, coste por predicción.\n- Señales de negocio / UX:\n  - Conversion rate, churn, “frustration score” (re-asks, negative feedback), correlación con degradación del modelo.\n- Alerting y gobernanza:\n  - Umbrales para métricas clave (p.ej. PSI>0.2, caída de F1 > 10%), alertas automáticas y runbook asociado.\n  - Strategy de muestreo y etiquetado (p.ej. sample 100–200 por día o triggered sampling cuando drift detectado) y estimación de error vía bootstrap.\n\n3) Ejemplos operativos / pseudocódigo corto\n- Detectar drift con PSI (por característica):\n  - baseline = histogram(feature_baseline)\n  - current = histogram(feature_current)\n  - PSI = sum((current_pct - baseline_pct) * log(current_pct / baseline_pct))\n- Monitorear confianza para clasificación:\n  - mean_conf = mean(max(predict_proba))\n  - entropy_mean = mean(-sum(p * log p))\n  - alert if |mean_conf - baseline_mean_conf| > threshold\n- Muestreo para etiquetado y evaluación:\n  - cada N días: sample stratificado por predicción (alto/confuso/baijo prob) -> anotar -> calcular F1 y bootstrap CI\n\n4) Recomendaciones prácticas y supuestos importantes\n- Supuesto: los datos de referencia (baseline) son representativos; si no lo son, recalibrar baseline antes de medir drift.\n- No todas las desviaciones implican degradación del negocio: priorizar métricas con impacto en KPI de negocio.\n- Combinar métricas automáticas (drift, score) con muestreo humano para confirmar y diagnosticar causas.\n- Implementar alertas con tolerancias y un runbook claro (quién investiga, cómo revertir / probar).\n\nFuentes (ejemplos consultados):\nhttps://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/\nhttps://reddit.com/r/datascienceproject/comments/1ode1fk/beyond_accuracy_what_are_the_real_data_science/",
+  "error_flag": false
+}

@@ -1,0 +1,176 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T15:01:51.195174",
+  "provider": "openai",
+  "user_question": "¿Por qué un modelo de regresión múltiple tiende a tener menor suma de errores y mayor R² que un modelo con un solo predictor, incluso cuando los nuevos predictores aportan poca información?\nAdemás, proporciona enlaces a recursos en línea (artículos, visualizaciones o notebooks) que expliquen de forma intuitiva cómo agregar variables afecta el ajuste del modelo y el riesgo de sobreajuste.\n",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Por qué un modelo de regresión múltiple tiende a tener menor suma de errores y mayor R² que un modelo con un solo predictor, incluso cuando los nuevos predictores aportan poca información?\nAdemás, proporciona enlaces a recursos en línea (artículos, visualizaciones o notebooks) que expliquen de forma intuitiva cómo agregar variables afecta el ajuste del modelo y el riesgo de sobreajuste.\n"
+    }
+  ],
+  "start_time": 1770580911.195175,
+  "end_time": 1770581142.601293,
+  "execution_time_seconds": 231.40611815452576,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "why multiple regression lower SSE higher R^2 than single predictor even when added predictors add little information explanation resources visualizations notebooks overfitting",
+      "execution_time_seconds": 0.955881900001259,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_mtdjd74",
+          "source_type": "Comment",
+          "title": "Why exactly is a multiple regression model better than a regression model with just one predictor variable?",
+          "score": "0.3949",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1krgau7/why_exactly_is_a_multiple_regression_model_better/",
+          "content": "Context (Post Title): Why exactly is a multiple regression model better than a regression model with just one predictor variable?\nComment: It will minimize RSS, the more variables you have the less unexplained deviations. Also, you can add interaction effects with multiple regression. If you are worried about your model becoming too complex with unnecessary variables, keep an eye on the Adjusted R\\^2 or do a whites test. But like u/selfintersection, you should be asking **when** instead of **why**"
+        },
+        {
+          "result": "0",
+          "id": "comment_mtdy7sg",
+          "source_type": "Comment",
+          "title": "Why exactly is a multiple regression model better than a regression model with just one predictor variable?",
+          "score": "0.4044",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1krgau7/why_exactly_is_a_multiple_regression_model_better/",
+          "content": "Context (Post Title): Why exactly is a multiple regression model better than a regression model with just one predictor variable?\nComment: Watch the video. Sum of squared errors is probably the easiest way to think about it. A good model, by definition, maximumally reduces the sum of squared errors between your prediction and the data points. A good predictor does the exact same thing. So if a predictor is good, meaning it reduces the sum of squared errors of your prediction, including it in a model must produce a better fitting model because the sum of squared errors is reduced."
+        },
+        {
+          "result": "0",
+          "id": "comment_mtd8hfk",
+          "source_type": "Comment",
+          "title": "Why exactly is a multiple regression model better than a regression model with just one predictor variable?",
+          "score": "0.4061",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1krgau7/why_exactly_is_a_multiple_regression_model_better/",
+          "content": "Context (Post Title): Why exactly is a multiple regression model better than a regression model with just one predictor variable?\nComment: I assume what you mean is- why does adding more predictors generally improve model fit even if they are not really related to the outcome?\n\nIt is mainly a product of sampling error. There will always be some small correlation between two variables even if they are both purely random and that small relationship will marginally improve model fit. You can prove this to yourself by sampling two datasets from a random uniform distribution and correlating them.\n\nThat is why methods like adjusted R square were developed. Essentially to see if the improvement in model fit is beyond what we would expect from sampling error.\n\nYou can also argue that no two variables are truely completely uncorrelated. Even if it is small, the paramater for no correlations is truely zero. It may not be causal, but simply due to the somewhat random nature of all things in the universe or some other unobserved phenomenon all measures have some small correlation."
+        },
+        {
+          "result": "0",
+          "id": "comment_mtdowye",
+          "source_type": "Comment",
+          "title": "Why exactly is a multiple regression model better than a regression model with just one predictor variable?",
+          "score": "0.4090",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1krgau7/why_exactly_is_a_multiple_regression_model_better/",
+          "content": "Context (Post Title): Why exactly is a multiple regression model better than a regression model with just one predictor variable?\nComment: As you continue to add dimensions you can plot a progressively closer hyperplane as any variance will create a slightly closer fit. R squared captures this in numeric form as you add variables. Unless geometry is your area of expertise far easier to tackle this from a different vantage point though as hypergeometry can be very hard to visualize. Other people here gave great explanations including the original comment here."
+        },
+        {
+          "result": "0",
+          "id": "comment_kc81ai1",
+          "source_type": "Comment",
+          "title": "Why a weak predictor in simple regression becomes significant in multiple regression?",
+          "score": "0.4108",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/18c303n/why_a_weak_predictor_in_simple_regression_becomes/",
+          "content": "Context (Post Title): Why a weak predictor in simple regression becomes significant in multiple regression?\nComment: So the weak predictor is affected by the influence of my strong predictor and that's why is significant in the multiple regression? \nTherefore should I exclude it and stick to 1~1 model with my strong predictor? Although the 1~2 model is significantly better than the 1~1? (Lower AIC and higher Adjusted R-squared)"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "why adding predictors increases R^2 decreases RSS explanation adjusted R^2 overfitting visualization notebook 'R-squared always increases with more predictors' 'adjusted R-squared' 'overfitting demo notebook'",
+      "execution_time_seconds": 2.5361621000010928,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.reddit.com/r/statistics/comments/33bu59/why_does_r2_always_increase_when_adding_new/"
+          ],
+          "content": "Title: Why does R^2 always increase when adding new predictors - Reddit\nContent:The adjusted R 2 increases when a new explanator is included only if the new explanator improves the R 2 more than would be expected by chance."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@yxinli92/why-adding-variables-never-increases-r-squared-a-deep-dive-into-regression-analysis-with-python-af53d597a8b2"
+          ],
+          "content": "Title: Why Adding Variables Never Increases R-Squared: A Deep Dive ...\nContent:While a higher R² generally suggests a better fit, blindly adding variables to increase R² can lead to overfitting. Overfitting occurs when the ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://builtin.com/data-science/adjusted-r-squared"
+          ],
+          "content": "Title: R-Squared and Adjusted R-Squared: Explained | Built In\nContent:Adjusted R-squared eliminates this R-squared drawback. It only increases if the newly added predictor improves the model's predicting power. Adjusted R-Squared ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://stats.stackexchange.com/questions/207717/why-does-r2-grow-when-more-predictor-variables-are-added-to-a-model"
+          ],
+          "content": "Title: R - 2 - grow when more predictor variables are added to a model?\nContent:I do understand that R2=SSRSST=1−SSESST, however, I don't understand what changes when more predictor variables are added and how R2 is affected ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.geeksforgeeks.org/machine-learning/r-squared-vs-adjusted-r-squared-difference/"
+          ],
+          "content": "Title: R-squared vs Adjusted R-squared - Difference - GeeksforGeeks\nContent:It always increases when more predictors are added, regardless of their relevance to the model. Adjusted R-squared, on the other hand, adjusts ..."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "notebook demonstrate adding random predictors increases R^2 'add noise features R^2 notebook' 'overfitting demo notebook' 'ISLR labs regression R'",
+      "execution_time_seconds": 1.5623371000001498,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.reddit.com/r/statistics/comments/33bu59/why_does_r2_always_increase_when_adding_new/"
+          ],
+          "content": "Title: Why does R^2 always increase when adding new predictors - Reddit\nContent:I'm having trouble finding a mathematical proof of why R2 always increases (or SSE decreases) when you add more predictors."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://stats.stackexchange.com/questions/312003/r2-increases-if-random-variable-is-added"
+          ],
+          "content": "Title: R2 increases if random variable is added - Stats StackExchange\nContent:The additional variable in the models can decrease the residuals, increasing the R2, even when it does not correlate with the response... ...by ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://stackoverflow.com/questions/71188568/why-do-features-increase-r2-but-not-affect-predictions"
+          ],
+          "content": "Title: Why do features increase R2 but not affect predictions?\nContent:Adding more features will increase R-squared values whereas removing features will decrease R-squared value."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@yxinli92/why-adding-variables-never-increases-r-squared-a-deep-dive-into-regression-analysis-with-python-af53d597a8b2"
+          ],
+          "content": "Title: Why Adding Variables Never Increases R-Squared: A Deep Dive ...\nContent:Overfitting. While a higher R² generally suggests a better fit, blindly adding variables to increase R² can lead to overfitting. Overfitting ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.kaggle.com/code/victorchernozhukov/r-notebook-linear-model-overfiting"
+          ],
+          "content": "Title: R Notebook Linear Model Overfiting - Kaggle\nContent:Explore and run machine learning code with Kaggle Notebooks | Using data from No attached data sources."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nHe consultado ejemplos y discusiones teóricas (RAG) y recursos en la web para combinar una explicación intuitiva (geometría y muestreo) con recomendaciones prácticas (ajustes y prevención de sobreajuste). Destaco por qué la suma de errores (SSE) sólo puede disminuir al agregar predictores, qué papel juega la correlación por azar, y qué métricas y técnicas (R² ajustado, validación cruzada, regularización) corrigen o detectan el sobreajuste. También incluyo enlaces con demostraciones y notebooks para practicar.",
+  "final_answer": "Respuesta pedagógica y estructurada\n\n1) Resumen corto\n- R² = 1 − SSE/SST. Un modelo con más predictores no puede tener SSE mayor que un modelo anidado (con menos columnas): la proyección por mínimos cuadrados sobre un espacio de diseño más grande reduce (o mantiene) la norma del residuo. Por eso R² siempre no decrece al agregar variables, incluso si son irrelevantes por azar.\n\n2) Explicación matemática (breve)\n- Sea X1 la matriz de diseño del modelo simple y X2 = [X1, Z] la del modelo ampliado. Las predicciones son proyecciones de y sobre el espacio columna de X. Al aumentar ese espacio la proyección se acerca (o iguala) a y, luego ||y − P_X2 y||² ≤ ||y − P_X1 y||², por tanto SSE2 ≤ SSE1 y R²2 ≥ R²1.\n- Intuición estadística: en muestras finitas siempre hay correlaciones aleatorias entre variables; un predictor “irrelevante” puede explicar una fracción de varianza por azar y reducir SSE.\n\n3) Riesgo de sobreajuste y cómo detectarlo\n- Problema: aunque SSE baja en la muestra, el error de predicción fuera de la muestra puede aumentar (sobreajuste).\n- Herramientas para controlar esto:\n  - R² ajustado: penaliza por número de predictores y sólo sube si la contribución supera lo esperado por azar.\n  - Criterios de información (AIC, BIC): penalizaciones explícitas por complejidad.\n  - Validación cruzada (CV): estima rendimiento fuera de muestra; es la forma más fiable de detectar sobreajuste.\n  - Regularización (Ridge, Lasso, Elastic Net): reduce varianza y evita que predictores irrelevantes inflen el modelo.\n\n4) Consejos prácticos y reglas de oro\n- No confiar sólo en R² para seleccionar variables.\n- Usar CV para comparar modelos con distinto número de predictores.\n- Considerar R² ajustado y AIC/BIC como filtros iniciales, pero validar con CV.\n- Si hay muchas variables, preferir regularización o selección automática con CV.\n\n5) Demostración rápida (pseudocódigo en R) — útil para experimentar\n- Idea: ajustar modelo con x_true y luego agregar columnas de ruido; comparar R² y R² ajustado.\n  x <- rnorm(n)\n  y <- 2 + 3*x + rnorm(n, sd=1)\n  X_noise <- matrix(rnorm(n * p_noise), n, p_noise)\n  model1 <- lm(y ~ x)\n  model2 <- lm(y ~ x + X_noise)\n  summary(model1)$r.squared\n  summary(model2)$r.squared\n  summary(model2)$adj.r.squared\n  # Repetir por simulación y evaluar CV para ver sobreajuste fuera de muestra\n\n6) Recursos para leer, visualizar y practicar (ejemplos y notebooks)\n- Explicación formal y discusión (StackExchange): por qué R² crece al agregar variables y prueba geométrica:\n  https://stats.stackexchange.com/questions/207717/why-does-r2-grow-when-more-predictor-variables-are-added-to-a-model\n- Introducción práctica a R² y R² ajustado (conceptos y cuándo usarlos):\n  https://builtin.com/data-science/adjusted-r-squared\n- Notebook / demostración práctica (R) que muestra overfitting y comparación de modelos:\n  https://www.kaggle.com/code/victorchernozhukov/r-notebook-linear-model-overfiting\n\nSource URLs:\nhttps://stats.stackexchange.com/questions/207717/why-does-r2-grow-when-more-predictor-variables-are-added-to-a-model\nhttps://builtin.com/data-science/adjusted-r-squared\nhttps://www.kaggle.com/code/victorchernozhukov/r-notebook-linear-model-overfiting",
+  "error_flag": false
+}

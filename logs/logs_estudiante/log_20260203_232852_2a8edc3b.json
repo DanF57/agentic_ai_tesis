@@ -1,0 +1,73 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-03T23:28:18.827618",
+  "provider": "openai",
+  "user_question": "¿Qué se entiende por 'leverage' e 'influencia' en regresión?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué se entiende por 'leverage' e 'influencia' en regresión?"
+    }
+  ],
+  "start_time": 1770179298.8276186,
+  "end_time": 1770179332.9620168,
+  "execution_time_seconds": 34.134398221969604,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "leverage influence regression definition leverage influence regression diagnostics 'leverage' 'influence' studentized residuals Cook's distance Hat matrix RAG",
+      "execution_time_seconds": 1.233104299999468,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_mikukls",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.3876",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Sometimes the distinction is drawn between \"influential\" points and \"high leverage\" points for this exact reason - they are not technically synonyms here. \n\nI would also add that there exists a kind of metric that can help you assess the leverage of various points in a more systematic numerical way - look up Cook's Distance (others exist too)"
+        },
+        {
+          "result": "0",
+          "id": "comment_h6ewtcm",
+          "source_type": "Comment",
+          "title": "I build a predictive model but the prediction is very off on the test dataset...most of the predictions are way lower than the actual value. Do I need to select a new modelling technique? I am using linear regression.",
+          "score": "0.4391",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oqvxil/i_build_a_predictive_model_but_the_prediction_is/",
+          "content": "Context (Post Title): I build a predictive model but the prediction is very off on the test dataset...most of the predictions are way lower than the actual value. Do I need to select a new modelling technique? I am using linear regression.\nComment: In the 'influential observations' plot, I see two observations with much higher leverage than the rest but with disproportionately small residual (some more high leverage observations at around 0.2 but not as extreme as 0.5). This indicates that there are some far-away points that the regression line fits quite closely. What could you deduce from this?"
+        },
+        {
+          "result": "0",
+          "id": "comment_mijiwwf",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.4582",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Same as a lever system in physics. To turn a nut, a short wrench needs more effort than a long wrench.\n\nAnd in regression, the mean of the variables is the fulcrum (the nut), distance between the fulcrum and a data point is the length of the wrench, and error term is the effort.\n\nGiven the same amount the error, a data point can assert more torque if it's further and further away from the fulcrum. --> tilting the line --> more likely influential."
+        },
+        {
+          "result": "0",
+          "id": "post_1al5ye3",
+          "source_type": "Post",
+          "title": "MLR Influential Points?",
+          "score": "0.4589",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/1al5ye3/mlr_influential_points/",
+          "content": "Title: MLR Influential Points?\nContent: I'm hoping that I can ask this beginner stats question here.  Can someone help me to understand a few concepts related to detecting influential points in multiple linear regressions. Cook's Distance, DFFITS, and DFBETAS. How do we know the relationships between 'n observations' and 'p predictors'? And, once that is calculated, how does that relate to influential points? Thanks!"
+        },
+        {
+          "result": "0",
+          "id": "comment_i8ch84b",
+          "source_type": "Comment",
+          "title": "Regression with robust standard errors: high R² but all coefficients are not significant. How to interpret results?",
+          "score": "0.4848",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/uo26gl/regression_with_robust_standard_errors_high_r²/",
+          "content": "Context (Post Title): Regression with robust standard errors: high R² but all coefficients are not significant. How to interpret results?\nComment: 1) An R^2 of 0.239 may or may not be \"high\". In some modeling it is high, and on others it would be considered ridiculously low.\n\n2) Assuming your sample size isn't tiny, you might have imperfect (but still significant) multicollinearity. Calculate Variance Inflation Factors, or with your three variables pairwise correlations would probably suffice. When explanatory variables are highly correlated with each other, standard errors increase. For example, if two of the three have a correlation of 0.71 with each other, then their standard errors will be *at least* 2.017 times larger that they would be if we could magically get rid of this collinearity."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nDefiní los conceptos clave y mostré cómo se relacionan (por qué importan) y qué supuestos intervienen. Señalé las medidas de diagnóstico habituales (hat-values, studentized residuals, Cook’s D, DFFITS, DFBETAS), reglas de corte prácticas y acciones típicas al detectar observaciones problemáticas. Todo orientado a uso en regresión lineal clásica.",
+  "final_answer": "Definiciones esenciales\n- Leverage (apalancamiento): mide cuánto \"está lejos\" una observación en el espacio de las covariables X. Matemáticamente es la diagonal h_ii de la matriz sombrero (hat matrix) H = X (X'X)^{-1} X'. h_ii ∈ (0,1) y su promedio es p/n (p = número de parámetros incluyendo intercepto). Observaciones con h_ii grandes son puntos con mucho apalancamiento: afectan fuertemente la predicción si su y fuera distinto.\n- Influencia: cuantifica cuánto cambia el ajuste o los parámetros del modelo al eliminar una observación. Una observación es influyente si su combinación de residual y apalancamiento altera significativamente coeficientes, predicciones o medidas de ajuste.\n\nRelación entre ambos\n- Leverage ≠ influencia. Un punto puede tener alto leverage pero pequeño residual (bien explicado por la recta) y entonces no ser influyente. Para ser influyente normalmente se necesita: alto leverage y un residual grande (o suficiente efecto combinado).\n\nFórmulas y medidas de diagnóstico (resumen)\n- Hat values: h_ii = (i-ésima diagonal de H).\n- Residual crudo: e_i = y_i − ŷ_i.\n- Studentized (externally) residual: t_i (residual ajustado con varianza sin la observación i) — útil para detectar outliers en y.\n- Cook’s distance:\n  D_i = (e_i^2 / (p·MSE)) · (h_ii / (1 − h_ii)^2)\n  interpreta el cambio global en los coeficientes al retirar i.\n- DFFITS: mide el cambio en la predicción para i al eliminar i; aproximación: DFFITS_i ≈ t_i · sqrt(h_ii/(1−h_ii)).\n- DFBETAS: para cada coeficiente j, DFBETA_{ij} = (β_j − β_j(−i)) / SE_{β_j(−i)} mide cuánto cambia β_j al quitar i.\n\nReglas prácticas (reglas de pulgar)\n- Leverage alto si h_ii > 2p/n (o > 3p/n en casos conservadores).\n- Cook’s D sospechoso si D_i > 4/n (o > 1 como criterio más estricto en muestras pequeñas).\n- DFFITS influyente si |DFFITS_i| > 2·sqrt(p/n).\n- DFBETAS preocupante si |DFBETA_{ij}| > 2/√n (o > 1 para muestras muy pequeñas).\n(Estas son reglas heurísticas; interpretación depende del contexto y tamaño muestral.)\n\nInterpretación práctica y pasos cuando aparecen observaciones con alto leverage / influencia\n1. Investigar la observación: error de medición, entrada errónea, subgrupo diferente o punto válido extremo.\n2. Verificar si el punto cambia conclusiones (signo o significancia de coeficientes, predicciones relevantes).\n3. Considerar transformaciones (variables, ponderación), modelos robustos o informar resultados con y sin la observación (no eliminar sin justificación).\n4. Si se elimina, documentar motivo y efecto en inferencia/predicción.\n\nCómo calcularlo en R (pseudocódigo útil)\n- model <- lm(y ~ x1 + x2, data=d)\n- hatvalues(model)         # h_ii\n- rstudent(model)          # residuales studentizados\n- cooks.distance(model)    # Cook's D\n- dffits(model)            # DFFITS\n- dfbetas(model)           # DFBETAS\n\nBreve ejemplo conceptual\n- Punto A: h_ii grande, residual pequeño → mucho apalancamiento pero poca influencia en coeficientes.\n- Punto B: h_ii moderado, residual grande → posible outlier en y pero no necesariamente influyente en parámetros.\n- Punto C: h_ii grande y residual grande → muy probablemente influyente (revisar y justificar acción).\n\nSource URL:\nhttps://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+  "bert_score": null,
+  "perplexity": null
+}

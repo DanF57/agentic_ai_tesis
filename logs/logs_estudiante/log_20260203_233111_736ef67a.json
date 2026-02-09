@@ -1,0 +1,73 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-03T23:30:49.921246",
+  "provider": "openai",
+  "user_question": "¿Qué significa 'ajustar por confusores' en regresión (intuitivo)?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué significa 'ajustar por confusores' en regresión (intuitivo)?"
+    }
+  ],
+  "start_time": 1770179449.9212463,
+  "end_time": 1770179471.1052916,
+  "execution_time_seconds": 21.18404531478882,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "adjust for confounders regression meaning intuitively",
+      "execution_time_seconds": 1.5076162999994267,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_i3wz7v9",
+          "source_type": "Comment",
+          "title": "How does regression adjust for confounders? What does adjusting for geography mean?",
+          "score": "0.3401",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/",
+          "content": "Context (Post Title): How does regression adjust for confounders? What does adjusting for geography mean?\nComment: Linear model coefficients are about partial correlation, not variance decomposition. The coefficients are scaled versions of the partial correlation between Y and each of the respective X variables.\n\nYou can see by studying the the estimator (X'X)^-1 X'Y (i.e., the inverse covariance matrix of X times the vector of correlations of X and Y)."
+        },
+        {
+          "result": "0",
+          "id": "comment_i3nxpoh",
+          "source_type": "Comment",
+          "title": "How does regression adjust for confounders? What does adjusting for geography mean?",
+          "score": "0.3419",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/",
+          "content": "Context (Post Title): How does regression adjust for confounders? What does adjusting for geography mean?\nComment: I don't think this answers the question as much as it just restates that regression models can isolate out the effects of covariates. I'm interested in how exactly it does that when estimating the coefficients. How is it able to isolate out the explained variance of each predictor from the total variance, accounting for shared variance, and knowing which predictor to allocate that shared variance to?"
+        },
+        {
+          "result": "0",
+          "id": "comment_i3nk3gj",
+          "source_type": "Comment",
+          "title": "How does regression adjust for confounders? What does adjusting for geography mean?",
+          "score": "0.3419",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/",
+          "content": "Context (Post Title): How does regression adjust for confounders? What does adjusting for geography mean?\nComment: Intuition: each coefficient is the expected difference on the outcome between two observations separated by 1 unit on the predictor, if they are otherwise equal on the other predictors (so like you say, if you control for geography, every other coefficient is the difference between two observations who differ by 1 unit on that predictor if they live in the same geographical location)\n\nMath: each coefficient is the expected change on the outcome when increasing the predictor by 1 unit (that's what a slope is), but if you don't hold the other predictors constant when you increase the predictor by 1 unit, then you're changing the outcome by the coefficient + the coefficient of the other values that changed. Mathematically it's got to do with the first derivative: each coefficient is obtained when taking the first derivative with respect to that predictor only, i.e. all the other predictors are treated as constant and therefore each other term (except the predictor of interested) is multiplied by 0\n\nex: y = a + b1\\*income + b2\\*geography\n\ny'\\_income = the first derivative with respect to income = 0+b1+0 = b1 = change in y for each 1-unit increase in income"
+        },
+        {
+          "result": "0",
+          "id": "comment_i3p55u5",
+          "source_type": "Comment",
+          "title": "How does regression adjust for confounders? What does adjusting for geography mean?",
+          "score": "0.3728",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/",
+          "content": "Context (Post Title): How does regression adjust for confounders? What does adjusting for geography mean?\nComment: What regression does is take all of the explanatory variables and see how much all of them *vary together*, and (for the most part) \"throws all of that away\". Basically, only the **unique** variation is then used to see how it explains the variation in Y. \n\nAgain, basically. This is Reddit."
+        },
+        {
+          "result": "0",
+          "id": "comment_i3riy0s",
+          "source_type": "Comment",
+          "title": "How does regression adjust for confounders? What does adjusting for geography mean?",
+          "score": "0.3765",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/",
+          "content": "Context (Post Title): How does regression adjust for confounders? What does adjusting for geography mean?\nComment: I've seen this in the derivation of the OLS estimator, which is basically just minimization of the total error. But I don't understand how minimizing total error leads to the interpretation that the estimates are controlled for all the other variables.\n\nOften on this subreddit for example, someone will post a question along the lines of \"I added x2 to the model and now x1 isn't significant anymore, what happened?\", and then the answer is that the variation is x1 was explainable through x2, so that adding x2 as a control removed the effect of x1. Surely in order to do this, a linear model needs to do some kind of a variance decomposition between the predictors to know where the observed variation originates? No text I find on linear models seems to clarify how this interpretation follows from the math."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nHe explicado qué significa \"ajustar por confusores\" desde una intuición geométrica/condicional y con una guía práctica (residualización) que muestra cómo la regresión separa la variación única de cada variable. Incluyo supuestos clave (confusores medidos, no ajustar colliders/mediadores, forma funcional) porque son esenciales para interpretar el ajuste como control real del sesgo.",
+  "final_answer": "Definición intuitiva\n- \"Ajustar por confusores\" en regresión significa estimar la relación entre una variable X (por ejemplo, ingreso) y un resultado Y (por ejemplo, salud) comparando observaciones que son iguales en las variables confusoras Z (por ejemplo, geografía, edad). Es decir: ¿cuál es la diferencia en Y cuando X cambia, manteniendo Z fijo?\n\nIntuición matemática y geométrica (sin fórmulas extensas)\n- En regresión lineal multivariable, cada coeficiente es un efecto \"condicional\": la pendiente de Y respecto a X cuando todas las otras covariables Z se mantienen constantes.\n- Otra forma intuitiva: la regresión usa solo la variación \"única\" de X que no está explicada por Z. Si quitas (residualizas) la parte de X que viene de Z, y haces lo mismo con Y, la pendiente de esos residuos es exactamente el coeficiente parcial de X.\n\nProcedimiento práctico (residualización)\n1) Ajusta X en función de Z: lm(X ~ Z) → guarda residuos rX = X - E[X|Z].\n2) Ajusta Y en función de Z: lm(Y ~ Z) → guarda residuos rY = Y - E[Y|Z].\n3) Regresa rY ~ rX; la pendiente es igual al coeficiente de X en la regresión Y ~ X + Z.\n- En R: coef(lm(Y ~ X + Z)) == coef(lm(resid(lm(Y ~ Z)) ~ resid(lm(X ~ Z))))\n\nQué asume y advertencias importantes\n- Para que \"ajustar\" elimine sesgo causal, todos los confusores relevantes deben estar medidos e incluidos; si falta un confusor no medido, el sesgo puede persistir.\n- No ajustes por colliders (variables afectadas por X e Y) ni, si buscas el efecto total, por mediadores: eso puede crear o esconder sesgo.\n- La interpretación como \"efecto causal\" requiere además supuestos de ignorabilidad condicional y especificación correcta (linealidad / interacciones si existen).\n- Multicolinealidad fuerte entre X y Z puede hacer imprecisos (alta varianza) los coeficientes aunque no los sesgue necesariamente.\n\nResumen corto\n- Ajustar por confusores = estimar la asociación entre X y Y manteniendo fijas las Z.\n- Equivale a comparar diferencias en Y para unidades que solo difieren en X pero son iguales en Z.\n- Útil para reducir sesgo, pero depende de medir e incluir los confusores correctos y de no ajustar variables inapropiadas.\n\nSource URL:\nhttps://reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/",
+  "bert_score": null,
+  "perplexity": null
+}

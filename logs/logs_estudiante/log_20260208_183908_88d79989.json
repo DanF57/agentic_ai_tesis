@@ -1,0 +1,72 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T18:38:57.311997",
+  "provider": "gemini",
+  "user_question": "Qué se entiende por 'leverage' e 'influencia' en regresión?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Qué se entiende por 'leverage' e 'influencia' en regresión?"
+    }
+  ],
+  "start_time": 1770593937.3119977,
+  "end_time": 1770593948.0145783,
+  "execution_time_seconds": 10.702580690383911,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "leverage and influence in regression",
+      "execution_time_seconds": 1.603794900001958,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_mikukls",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.3810",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Sometimes the distinction is drawn between \"influential\" points and \"high leverage\" points for this exact reason - they are not technically synonyms here. \n\nI would also add that there exists a kind of metric that can help you assess the leverage of various points in a more systematic numerical way - look up Cook's Distance (others exist too)"
+        },
+        {
+          "result": "0",
+          "id": "comment_mijiwwf",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.3966",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Same as a lever system in physics. To turn a nut, a short wrench needs more effort than a long wrench.\n\nAnd in regression, the mean of the variables is the fulcrum (the nut), distance between the fulcrum and a data point is the length of the wrench, and error term is the effort.\n\nGiven the same amount the error, a data point can assert more torque if it's further and further away from the fulcrum. --> tilting the line --> more likely influential."
+        },
+        {
+          "result": "0",
+          "id": "comment_h6ewtcm",
+          "source_type": "Comment",
+          "title": "I build a predictive model but the prediction is very off on the test dataset...most of the predictions are way lower than the actual value. Do I need to select a new modelling technique? I am using linear regression.",
+          "score": "0.4283",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oqvxil/i_build_a_predictive_model_but_the_prediction_is/",
+          "content": "Context (Post Title): I build a predictive model but the prediction is very off on the test dataset...most of the predictions are way lower than the actual value. Do I need to select a new modelling technique? I am using linear regression.\nComment: In the 'influential observations' plot, I see two observations with much higher leverage than the rest but with disproportionately small residual (some more high leverage observations at around 0.2 but not as extreme as 0.5). This indicates that there are some far-away points that the regression line fits quite closely. What could you deduce from this?"
+        },
+        {
+          "result": "0",
+          "id": "comment_miqotsd",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.4389",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: It is not a matter of conflation, just a simple conversational assumption since 99% of regression model discussions revolve around linear regression. Anything deviating from such a ubiquitous standard would be clearly specified, and in cases like OP, it's pretty obviously reasonable to assume they are discussing OLS."
+        },
+        {
+          "result": "0",
+          "id": "comment_migyvpj",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.4458",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Yes. One basic fact may help explain. The least squares line must pass thru the point that's the mean of x and the mean of y, which is the centroid of your scatter plot. So the line can only tilt teeter totter over that point. Just as a literal teeter totter, the further from the pivot, the more influence."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nEn el análisis de regresión, los conceptos de 'leverage' e 'influencia' son fundamentales para entender cómo cada punto de datos afecta el modelo ajustado. Aunque a menudo se usan indistintamente, no son sinónimos y su distinción es crucial para diagnosticar problemas en el modelo, como la presencia de valores atípicos o la robustez de las estimaciones de los coeficientes. La comprensión de estos conceptos ayuda a identificar puntos que podrían estar sesgando los resultados del análisis y, por ende, a tomar decisiones informadas sobre su tratamiento.",
+  "final_answer": "En el contexto de la regresión, 'leverage' e 'influencia' se refieren a dos aspectos distintos pero relacionados sobre cómo los puntos individuales en un conjunto de datos pueden afectar la estimación de la línea de regresión.\n\n*   **Leverage (Apalancamiento):**\n    El leverage de un punto de datos se refiere a la distancia que tiene ese punto en el espacio de las variables predictoras (X) respecto a la media de esas variables. Un punto tiene un alto leverage si sus valores de X están lejos del centro (la media) de los valores de X de todos los demás puntos. Piensa en ello como un sistema de palanca, donde el punto medio de tus datos (la media de X y la media de Y) es el fulcro. Cuanto más lejos esté un punto de este fulcro en el eje X, mayor será su \"brazo de palanca\".\n\n    *   **Ejemplo:** En una discusión sobre regresión, se usa la analogía de un sistema de palanca: \"el promedio de las variables es el punto de apoyo (la tuerca), la distancia entre el punto de apoyo y un punto de datos es la longitud de la llave, y el término de error es el esfuerzo\" (Source: https://www.reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/). Un punto de datos más alejado de la media de X tiene un mayor leverage.\n\n*   **Influencia:**\n    La influencia de un punto de datos se refiere a cuánto cambia la línea de regresión (sus coeficientes, pendiente e intercepto) cuando ese punto se incluye o se excluye del análisis. Un punto influyente es aquel que, si se elimina, alteraría significativamente la ecuación de regresión. La influencia es una combinación del leverage y el residuo (error) del punto.\n\n    *   **Relación Leverage e Influencia:** Un punto con alto leverage *puede* ser influyente, pero no necesariamente lo es. Si un punto tiene un alto leverage pero se ajusta bien a la tendencia general de los datos (es decir, tiene un residuo pequeño), puede que no sea muy influyente. Por otro lado, un punto con alto leverage y un residuo grande (es decir, está lejos de la línea de regresión predicha) será muy influyente, ya que \"tirará\" de la línea de regresión hacia sí mismo.\n    *   **Ejemplo:** Un usuario mencionó que en un gráfico de \"observaciones influyentes\", se vieron \"dos observaciones con mucho mayor leverage que el resto pero con un residuo desproporcionadamente pequeño\". Esto indica que son puntos lejanos que la línea de regresión ajusta de cerca, lo que sugiere que su influencia en la pendiente podría ser menor a pesar de su alto leverage (Source: https://www.reddit.com/r/AskStatistics/comments/oqvxil/i_build_a_predictive_model_but_the_prediction_is/).\n\n*   **Métricas para Evaluar la Influencia:**\n    Para cuantificar la influencia de un punto, existen métricas como la **Distancia de Cook**. Esta métrica combina la información del leverage y del residuo para proporcionar una medida única del impacto de cada observación en el modelo de regresión.\n\n    *   **Ejemplo:** Se recomienda \"buscar la Distancia de Cook (existen otras también)\" como una métrica para evaluar el leverage de varios puntos de manera numérica y sistemática (Source: https://www.reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/).\n\nEn resumen, el leverage mide la posición de un punto en el espacio de las variables predictoras, mientras que la influencia mide el impacto de ese punto en los parámetros estimados del modelo de regresión.",
+  "error_flag": false
+}

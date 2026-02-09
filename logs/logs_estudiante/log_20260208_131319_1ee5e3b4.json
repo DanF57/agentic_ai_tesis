@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T13:12:39.955663",
+  "provider": "openai",
+  "user_question": "¿Qué es el análisis exploratorio de datos (EDA) y proporciona un enlace a un proyecto real (por ejemplo en GitHub o un notebook público) donde se vea aplicado?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué es el análisis exploratorio de datos (EDA) y proporciona un enlace a un proyecto real (por ejemplo en GitHub o un notebook público) donde se vea aplicado?"
+    }
+  ],
+  "start_time": 1770574359.9556632,
+  "end_time": 1770574399.3803172,
+  "execution_time_seconds": 39.42465400695801,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "Exploratory Data Analysis (EDA) definition and example project GitHub notebook public notebook example",
+      "execution_time_seconds": 1.1114564999988943,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_nf09ff6",
+          "source_type": "Comment",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "score": "0.2880",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+          "content": "Context (Post Title): What is Exploratory Data Analysis (EDA) ?\nComment: EDA’s just “getting to know your data.” Sure, you’ll ask simple questions and plot stuff, but the real value is spotting weird outliers, checking if trends make sense, and pulling out storylines. For a project, don’t stop at “2019 had the most sales”, dig into *why* and *what drove it*. Think less coding drills, more “here’s what I’d tell my boss.”"
+        },
+        {
+          "result": "0",
+          "id": "comment_jkchi6w",
+          "source_type": "Comment",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "score": "0.3139",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+          "content": "Context (Post Title): What is Exploratory Data Analysis (EDA) ?\nComment: This is well summarised. Thank you so much"
+        },
+        {
+          "result": "0",
+          "id": "post_13h1dr4",
+          "source_type": "Post",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "score": "0.3173",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+          "content": "Title: What is Exploratory Data Analysis (EDA) ?\nContent: I've just started out venturing into the DA field recently, and I'm having this problem on what to do for a project to display my EDA skills ? \n\nI've searched up for EDA projects online and all they did was to come up with questions and use the right sets of code to answer it. (E.g. Which year has made the most sales?)\n\nIs this what EDA projects is all about?"
+        },
+        {
+          "result": "0",
+          "id": "post_16mhf9f",
+          "source_type": "Post",
+          "title": "Practical Exploratory Data Analysis in Jupyter Notebook with Python",
+          "score": "0.3187",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/16mhf9f/practical_exploratory_data_analysis_in_jupyter/",
+          "content": "Title: Practical Exploratory Data Analysis in Jupyter Notebook with Python\nContent: I have previous experience conducting end-to-end Exploratory Data Analysis (EDA) using SAS Enterprise Miner, and now I'm looking to apply similar EDA techniques in a Jupyter notebook using Python. The dataset I'm working with is related to cancer (it's a biased dataset, the target variable is binary). I'm seeking assistance with practical examples of extensive EDA in Jupyter Notebook to help me get started. Would appreciate it if you could give me a Kaggle/Github/Python file/link."
+        },
+        {
+          "result": "0",
+          "id": "comment_jk2vz66",
+          "source_type": "Comment",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "score": "0.3272",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+          "content": "Context (Post Title): What is Exploratory Data Analysis (EDA) ?\nComment: You described bad EDA projects. Boring projects. \n\nThe best ones are where you come up with a set of questions that real people have and solve them with real data."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "Exploratory Data Analysis Jupyter notebook GitHub example EDA Titanic notebook GitHub",
+      "execution_time_seconds": 1.8374622000010277,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/Amolak001/Titanic-Dataset-Analysis"
+          ],
+          "content": "Title: Titanic Dataset Analysis: Data Cleaning and EDA - GitHub\nContent:This project focuses on comprehensive data cleaning and exploratory data analysis (EDA) of the famous Titanic dataset from Kaggle."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/Awais11227/EDA_on_itanic_Dataset"
+          ],
+          "content": "Title: Exploratory Data Analysis (EDA) on the Titanic dataset using Python ...\nContent:Exploratory Data Analysis (EDA) on the Titanic dataset using Python, including data cleaning, feature analysis, visualizations, and insights."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/topics/titanic-survival-exploration"
+          ],
+          "content": "Title: titanic-survival-exploration · GitHub Topics\nContent:This project focuses on Exploratory Data Analysis (EDA) to identify the key determinants that influenced survival during the infamous Titanic accident."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/VinayBN8997/Titanic-EDA"
+          ],
+          "content": "Title: VinayBN8997/Titanic-EDA: Exploratory Data analysis of the ... - GitHub\nContent:Exploratory Data analysis of the Titanic disaster dataset. Requirements: Python 3.x, Jupyter Notebook , Numpy, Pandas, Matplotlib, Seaborn"
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@thilina.20210324/titanic-survival-analysis-a-step-by-step-exploratory-data-analysis-using-pandas-and-seaborn-d1ab4e25997a"
+          ],
+          "content": "Title: Titanic Survival Analysis: A Step-by-Step Exploratory Data ... - Medium\nContent:In this project, I analyze the Titanic dataset to uncover insights about passenger survival. Using Pandas, Seaborn, and Matplotlib, I walk ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nHe definido EDA como el proceso para “conocer” el conjunto de datos mediante estadísticas descriptivas y visualizaciones, y he señalado por qué es clave (detección de errores, hipótesis y preparación para modelado). También resumo supuestos prácticos a vigilar (calidad de los datos, mecanismo de missingness, sesgos de muestreo). Como ejemplo real he seleccionado un notebook/proyecto público que aplica pasos típicos de EDA (limpieza, análisis univariante y bivariante, visualizaciones e interpretación).",
+  "final_answer": "Qué es EDA (Exploratory Data Analysis)\n- Definición breve: EDA es el conjunto de técnicas (estadísticas descriptivas, gráficos y resúmenes) cuyo objetivo es entender la estructura, patrones, anomalías y relaciones en los datos antes del modelado formal.\n- Objetivos prácticos: comprobar calidad de datos, identificar valores faltantes y outliers, entender distribuciones y correlaciones, generar hipótesis y guiar la ingeniería de variables.\n\nPasos y técnicas comunes\n1. Auditoría inicial\n   - Dimensiones, tipos de variables, porcentaje de missing, valores únicos por variable.\n2. Resúmenes univariantes\n   - Numéricas: media, mediana, IQR, desviación estándar; histogramas y boxplots.\n   - Categóricas: frecuencias, barras, tablas de contingencia.\n3. Análisis bivariante y multivariante\n   - Correlaciones (Pearson/Spearman), scatterplots, tablas cruzadas, violin/box por grupo.\n4. Calidad y limpieza\n   - Tratamiento de missing (imputación, eliminación), detección y decisión sobre outliers, corrección de tipos, normalizaciones/transformaciones.\n5. Visualización y narrativa\n   - Gráficos claros que respalden conclusiones; documentar hallazgos y supuestos.\n6. Preparación para modelado\n   - Crear/seleccionar variables, detectar multicolinealidad, escalado y codificación.\n\nSupuestos y advertencias importantes\n- EDA no requiere supuestos estadísticos estrictos, pero los resultados pueden depender de:\n  - Sesgo de muestreo (no generalizar si la muestra no es representativa).\n  - Mecanismo de missing (MCAR, MAR, MNAR) que condiciona la estrategia de imputación.\n  - Errores de medición o valores atípicos mal registrados.\n  - Escalas de medición (nominal vs ordinal vs continuo) que determinan técnicas de análisis.\n\nPequeño ejemplo conceptual (pseudocódigo con pandas/seaborn)\n- Cargar y revisar:\n  df.info(); df.describe(include='all'); df.isna().mean()\n- Univariado y bivariado:\n  sns.histplot(df['age']); sns.boxplot(x='pclass', y='age', data=df)\n- Agrupar e interpretar:\n  df.groupby('sex')['survived'].mean().sort_values(ascending=False)\n\nEjemplo real (notebook/proyecto público)\n- Proyecto de EDA sobre el dataset Titanic (contiene notebooks con limpieza, visualizaciones y hallazgos interpretativos):\n  https://github.com/VinayBN8997/Titanic-EDA\n\nFuente adicional que resume la idea de “conocer tus datos” y la orientación práctica de EDA:\n  https://www.reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+  "error_flag": false
+}

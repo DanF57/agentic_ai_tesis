@@ -1,0 +1,72 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T19:31:59.158142",
+  "provider": "gemini",
+  "user_question": "¿Qué chequeos iniciales conviene hacer antes de una regresión múltiple?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué chequeos iniciales conviene hacer antes de una regresión múltiple?"
+    }
+  ],
+  "start_time": 1770597119.1581419,
+  "end_time": 1770597126.93552,
+  "execution_time_seconds": 7.777378082275391,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "initial checks before multiple regression",
+      "execution_time_seconds": 0.7800373999998556,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_gjuwl1g",
+          "source_type": "Comment",
+          "title": "Multiple regression initial checks sufficient [Question]",
+          "score": "0.3123",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/l0n12q/multiple_regression_initial_checks_sufficient/",
+          "content": "Context (Post Title): Multiple regression initial checks sufficient [Question]\nComment: Sure - and here is a quick primer on how to use regsubsets if you're using R."
+        },
+        {
+          "result": "0",
+          "id": "comment_gjuw0r5",
+          "source_type": "Comment",
+          "title": "Multiple regression initial checks sufficient [Question]",
+          "score": "0.3479",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/l0n12q/multiple_regression_initial_checks_sufficient/",
+          "content": "Context (Post Title): Multiple regression initial checks sufficient [Question]\nComment: Yea i just found an article where stepwise entry was compared to putting clothes on. Makes sense now to not use it. I will look into ridge and lasso regressions and the difference between AIC and BIC. Thanks a lot!"
+        },
+        {
+          "result": "0",
+          "id": "comment_gjuo6uc",
+          "source_type": "Comment",
+          "title": "Multiple regression initial checks sufficient [Question]",
+          "score": "0.3495",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/l0n12q/multiple_regression_initial_checks_sufficient/",
+          "content": "Context (Post Title): Multiple regression initial checks sufficient [Question]\nComment: > Before conducting the multiple regression analysis initial checks were conducted to test if the assumptions (e.g., linearity, normality, homoscedasticity and multicollinearity). Scatterplots were made to test for the linearity of the data. Normality of the residuals was determined by Predicted-Probability-plots and a Kolmogorov-Smirrnov test.\n\nThis kind of formal testing of your model assumptions is essentially useless, and choosing which model to fit (or how) based on this kind of testing will more or less invalidate any testing you do on the fitted model. For example, your p-values are more or less meaningless. Besides issues with doing model selection and inference on the same data, these kinds of tests have no way to knowing whether any violations of your assumptions are actually severe enough to affect your inference. In practice, they're just tests or whether your sample size was large enough to reject.\n\n> Predictors entered the model following the stepwise regression method and to minimize suppressor effects this was done with the backward method.\n\nStepwise regression is never a good idea. For one, it rarely selects good models. And if you're doing any testing on the fitted model, it generally biases your p-values towards zero."
+        },
+        {
+          "result": "0",
+          "id": "post_l0n12q",
+          "source_type": "Post",
+          "title": "Multiple regression initial checks sufficient [Question]",
+          "score": "0.3538",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/l0n12q/multiple_regression_initial_checks_sufficient/",
+          "content": "Title: Multiple regression initial checks sufficient [Question]\nContent: Hey all,\n\nCurrently im writing my research proposal for my thesis and have a question about if my initial checks for a multiple regression analysis are sufficient, if not what would you add. \n\nI have written the following: \n\nBefore conducting the multiple regression analysis initial checks were conducted to test if the assumptions (e.g., linearity, normality, homoscedasticity and multicollinearity) were met. Scatterplots were made to test for the linearity of the data. Normality of the residuals was determined by Predicted-Probability-plots and a Kolmogorov-Smirrnov test. Scatterplots were also made of the residuals to test the assumption of homoscedasticity. The assumption of independent errors was tested with casewise diagnostics were only cases with a standardized residual greater than 2 were listed. Variance inflation factor (VIF) and tolerance scores were used to test for multicollinearity. \n\nPredictors entered the model following the stepwise regression method and to minimize suppressor effects this was done with the backward method. Furthermore, when a predictor entered the model an Akaike information criterion (AIC) was calculated to assess if the model improved.\n\n&#x200B;\n\nThanks !"
+        },
+        {
+          "result": "0",
+          "id": "comment_gjunqvo",
+          "source_type": "Comment",
+          "title": "Multiple regression initial checks sufficient [Question]",
+          "score": "0.3567",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/l0n12q/multiple_regression_initial_checks_sufficient/",
+          "content": "Context (Post Title): Multiple regression initial checks sufficient [Question]\nComment: If you're using backward deletion for variable selection, you're not entering new variables after providing the initial predictor pool, only removing them, right?\n\nYou may want to say something about your sample size and the precision with which you are likely to be able to estimate the parameters of interest. Note that because of your predictor selection method, you're effectively using more degrees of freedom than your final model would indicate."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nAntes de aplicar un modelo de regresión múltiple, es fundamental realizar una serie de chequeos iniciales para asegurar que los datos cumplen con los supuestos subyacentes del modelo. Esto es crucial porque la validez de las inferencias y la fiabilidad de las predicciones del modelo dependen de la satisfacción de estos supuestos. Ignorar estos chequeos puede llevar a conclusiones erróneas o a un modelo con bajo rendimiento. Las fuentes recuperadas enfatizan la importancia de verificar la linealidad, normalidad, homoscedasticidad y multicolinealidad, aunque también advierten sobre la limitación de las pruebas formales y el uso de la regresión por pasos.",
+  "final_answer": "Para asegurar la validez y robustez de un modelo de regresión múltiple, se recomienda realizar los siguientes chequeos iniciales:\n\n1.  **Linealidad:** Verificar que existe una relación lineal entre las variables predictoras y la variable de respuesta.\n    *   **Cómo chequear:** Se pueden usar diagramas de dispersión (scatterplots) para visualizar la relación entre cada predictor y la variable dependiente, o entre los residuos y los valores predichos.\n    *   **Ejemplo:** Un estudiante mencionó el uso de scatterplots para probar la linealidad de los datos antes de la regresión múltiple, lo cual es una práctica común.\n\n2.  **Normalidad de los residuos:** Los residuos (errores del modelo) deben seguir una distribución normal.\n    *   **Cómo chequear:** Se pueden utilizar gráficos de probabilidad normal (Predicted-Probability-plots) o histogramas de los residuos. Aunque la fuente también menciona el uso de pruebas formales como Kolmogorov-Smirnov, se advierte que estas pruebas pueden ser \"esencialmente inútiles\" y que \"en la práctica, solo prueban si el tamaño de la muestra fue lo suficientemente grande como para rechazar\".\n    *   **Nota:** Es importante recordar que la normalidad se refiere a los *residuos*, no necesariamente a las variables en sí.\n\n3.  **Homoscedasticidad:** La varianza de los residuos debe ser constante en todos los niveles de las variables predictoras (es decir, la dispersión de los residuos debe ser similar a lo largo de todo el rango de valores predichos).\n    *   **Cómo chequear:** Graficar los residuos frente a los valores predichos. Un patrón aleatorio sin forma definida indica homoscedasticidad. Un patrón en forma de cono, por ejemplo, sugeriría heteroscedasticidad.\n    *   **Ejemplo:** Otro método es crear diagramas de dispersión de los residuos para probar la asunción de homoscedasticidad.\n\n4.  **Ausencia de multicolinealidad:** Las variables predictoras no deben estar altamente correlacionadas entre sí. Una alta multicolinealidad puede dificultar la interpretación de los coeficientes de regresión y aumentar sus errores estándar.\n    *   **Cómo chequear:** Calcular el Factor de Inflación de la Varianza (VIF) y la tolerancia para cada variable predictora. Valores de VIF altos (comúnmente > 5 o > 10) indican problemas de multicolinealidad.\n    *   **Ejemplo:** La utilización de VIF y las puntuaciones de tolerancia fueron explícitamente mencionadas como métodos para evaluar la multicolinealidad.\n\n5.  **Independencia de los errores:** Los residuos deben ser independientes entre sí. Esto es particularmente importante en series de tiempo, donde los errores pueden estar autocorrelacionados.\n    *   **Cómo chequear:** Se puede utilizar un gráfico de los residuos en el orden en que se recogieron los datos, o pruebas estadísticas como la prueba de Durbin-Watson. La fuente sugiere el uso de diagnósticos de casos donde solo se listaron casos con un residuo estandarizado mayor a 2 para probar la independencia de los errores.\n\nEs crucial tener en cuenta que, si bien estos chequeos son importantes, la interpretación de los resultados debe ser cuidadosa y no depender únicamente de pruebas formales. Además, métodos como la regresión por pasos para la selección de variables no son recomendables, ya que pueden invalidar las pruebas estadísticas posteriores y sesgar los p-valores.\n\nSource URL: https://reddit.com/r/AskStatistics/comments/l0n12q/multiple_regression_initial_checks_sufficient/",
+  "error_flag": false
+}

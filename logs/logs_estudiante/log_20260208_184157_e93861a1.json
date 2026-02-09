@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T18:41:46.949905",
+  "provider": "gemini",
+  "user_question": "Qué significa 'ajustar por confusores' en regresión (intuitivo)?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Qué significa 'ajustar por confusores' en regresión (intuitivo)?"
+    }
+  ],
+  "start_time": 1770594106.9499056,
+  "end_time": 1770594117.3528588,
+  "execution_time_seconds": 10.402953147888184,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "ajustar por confusores en regresión intuitivo",
+      "execution_time_seconds": 1.2437292999966303,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_fdjux6j",
+          "source_type": "Comment",
+          "title": "Newbie question, which of the following 2 regressions would you trust more?",
+          "score": "0.5686",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/els7xd/newbie_question_which_of_the_following_2/",
+          "content": "Context (Post Title): Newbie question, which of the following 2 regressions would you trust more?\nComment: Is there a theoretical reason why x_2 should be in the model? If yes, then it should stay.\n\nAnyway, you should use adjusted R squared when comparing nested models with different number of predictors."
+        },
+        {
+          "result": "0",
+          "id": "comment_ltaj49y",
+          "source_type": "Comment",
+          "title": "Regression help",
+          "score": "0.5734",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/1g92i0f/regression_help/",
+          "content": "Context (Post Title): Regression help\nComment: The ridge and lasso definitely are wonky.. I tried OLS and a ton of iterations and I can’t get any of the assumptions to fit.. I’m Running out of ideas and thinking it could be the dataset"
+        },
+        {
+          "result": "0",
+          "id": "comment_gmv5y0y",
+          "source_type": "Comment",
+          "title": "Dummy Variables in Logistic Regression",
+          "score": "0.5781",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/lh3atz/dummy_variables_in_logistic_regression/",
+          "content": "Context (Post Title): Dummy Variables in Logistic Regression\nComment: Sorry if my advice is not relative, but with reducing number of variables, aren't you looking for LASSO?"
+        },
+        {
+          "result": "0",
+          "id": "comment_kr4ydrg",
+          "source_type": "Comment",
+          "title": "Remove non-significant independent variabels and re-run multiple regression",
+          "score": "0.5783",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1att9as/remove_nonsignificant_independent_variabels_and/",
+          "content": "Context (Post Title): Remove non-significant independent variabels and re-run multiple regression\nComment: Bozo is a technical term of geek speak  It is intended to have shock value. This idea is ludicrously wrong.  It has zero support from any authority.  It is easy to make up cases where it does something obviously wrong. With highly collinear predictors, it can tell you to drop all of them when the omnibus F tells you something is in them.\n\nAnd I do say that many naive uses invent this for themselves. The stupid stars in regression printouts suggest it. But it is 100% wrong."
+        },
+        {
+          "result": "0",
+          "id": "comment_gtglc6t",
+          "source_type": "Comment",
+          "title": "How should I do regression if all variables are ordinal, including the indepedent variables?",
+          "score": "0.5824",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/mke1d6/how_should_i_do_regression_if_all_variables_are/",
+          "content": "Context (Post Title): How should I do regression if all variables are ordinal, including the indepedent variables?\nComment: Why not use a fisher exact test? Assuming you have fixed margins"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "intuitive explanation adjusting for confounders regression",
+      "execution_time_seconds": 1.6083385000019916,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8522571/"
+          ],
+          "content": "Title: Confounding and regression adjustment in difference ... - PMC - NIH\nContent:Done properly, regression adjustment can alleviate bias caused by diverging trends due to measured confounders."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.reddit.com/r/AskStatistics/comments/txqzi7/how_does_regression_adjust_for_confounders_what/"
+          ],
+          "content": "Title: How does regression adjust for confounders? What does ... - Reddit\nContent:What regression does is take all of the explanatory variables and see how much all of them vary together, and (for the most part) \"throws all of ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.researchgate.net/post/How_to_interpret_adjusted_variables_in_linear_regression"
+          ],
+          "content": "Title: How to interpret adjusted variables in linear regression?\nContent:Multivariate analysis adjusts for confounders while showing the strength of associations. Further adjustments are not required."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.youtube.com/watch?v=jfXaklClBQo"
+          ],
+          "content": "Title: Adjusting for confounders: everything you need to know in 6 minutes\nContent:If you don't know what a confounder is, watch this first: https://www.youtube.com/watch?v=CSyF3ZU_9k8&t=1s. For higher level techniques like ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://statisticsbyjim.com/regression/confounding-variables-bias/"
+          ],
+          "content": "Title: Confounding Variable: Definition & Examples - Statistics By Jim\nContent:Statistical Control. Statistical control involves using analytical techniques to adjust for the effect of confounding variables in the analysis phase."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nEl concepto de \"ajustar por confusores\" es fundamental en el análisis de regresión para garantizar que las relaciones observadas entre las variables sean genuinas y no estén sesgadas por factores externos. Un confusor es una variable que afecta tanto a la variable independiente (predictora) como a la variable dependiente (resultado) en un modelo, creando una asociación espuria o distorsionando la verdadera relación que estamos tratando de estudiar. Al ajustar por estas variables, se busca aislar el efecto real de la variable de interés, obteniendo estimaciones más precisas y confiables. La regresión multivariante es una técnica clave para lograr este ajuste estadístico.",
+  "final_answer": "En el contexto de la regresión, 'ajustar por confusores' significa controlar estadísticamente el impacto de variables que podrían estar distorsionando la relación que te interesa estudiar entre otras dos variables. Imagina que quieres saber si el consumo de café (variable independiente) afecta el riesgo de una enfermedad cardíaca (variable dependiente). Sin embargo, sabes que fumar (un posible confusor) también está relacionado tanto con el consumo de café (muchos fumadores también beben café) como con las enfermedades cardíacas.\n\nSi no ajustas por fumar, podrías concluir erróneamente que el café es un gran factor de riesgo para las enfermedades cardíacas, cuando en realidad, gran parte de esa relación aparente podría deberse a que los consumidores de café que estudias también fuman, y es el tabaquismo lo que realmente eleva el riesgo cardíaco.\n\nCuando \"ajustas por confusores\" en una regresión, lo que el modelo hace intuitivamente es:\n\n1.  **Identificar la influencia del confusor**: El modelo primero evalúa cómo la variable confusora (fumar) afecta a la variable dependiente (enfermedad cardíaca) y a la variable independiente (consumo de café).\n2.  **Neutralizar su efecto**: Luego, el modelo intenta \"eliminar\" o \"mantener constante\" estadísticamente el efecto de la variable confusora. Es como si estuviera comparando solo a personas con el mismo nivel de tabaquismo, o eliminando la parte de la variación en las enfermedades cardíacas que puede explicarse por fumar.\n3.  **Observar la relación pura**: Una vez que se ha neutralizado el efecto del confusor, el modelo puede observar la relación entre el consumo de café y las enfermedades cardíacas de una manera más \"pura\" o aislada. Esto te permite obtener una estimación más precisa del verdadero efecto del café, independientemente del hábito de fumar.\n\nEn esencia, al incluir una variable confusora en tu modelo de regresión, le estás diciendo al modelo que considere esa variable al calcular la relación entre tu variable principal independiente y tu variable dependiente, evitando así que el efecto del confusor se atribuya incorrectamente a la variable de interés.\n\nFuente:\nhttps://statisticsbyjim.com/regression/confounding-variables-bias/",
+  "error_flag": false
+}

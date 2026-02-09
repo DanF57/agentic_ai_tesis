@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:29:42.071460",
+  "provider": "openai",
+  "user_question": "¿Qué recursos en línea (artículos, repositorios o guías) muestran ejemplos de preguntas y análisis sobre meta-análisis y sensibilidad, como forest plots dominados por un solo estudio?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué recursos en línea (artículos, repositorios o guías) muestran ejemplos de preguntas y análisis sobre meta-análisis y sensibilidad, como forest plots dominados por un solo estudio?"
+    }
+  ],
+  "start_time": 1770568182.0714607,
+  "end_time": 1770568221.8765254,
+  "execution_time_seconds": 39.80506467819214,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "meta-analysis sensitivity analysis examples forest plot dominated by a single study resources articles repositories guides",
+      "execution_time_seconds": 0.6073203000000831,
+      "results": [
+        {
+          "result": "0",
+          "id": "post_ny5t4k",
+          "source_type": "Post",
+          "title": "Need help with meta-analysis study and effect size",
+          "score": "0.4331",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/ny5t4k/need_help_with_metaanalysis_study_and_effect_size/",
+          "content": "Title: Need help with meta-analysis study and effect size\nContent: Hello a newbie here,\n\nI am doing a meta-analysis on a medical topic and have a problem with effect size.\n\nI have 9 studies for data and when put into a forest plot one study has abnormally large weight over the others >95%.\n\nWhat should I do here is this ok? or should I exclude this study?\n\nThank you for the help!"
+        },
+        {
+          "result": "0",
+          "id": "comment_h1jouwj",
+          "source_type": "Comment",
+          "title": "Need help with meta-analysis study and effect size",
+          "score": "0.4695",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/ny5t4k/need_help_with_metaanalysis_study_and_effect_size/",
+          "content": "Context (Post Title): Need help with meta-analysis study and effect size\nComment: that’s fine then—it’s completely correct that the weight difference is drastic if the difference in sample sizes is so drastic. with that study contributing such a large sample, you’d lose a lot of precision by excluding it. \n\nhowever you could always run an additional sensitivity analysis without this sample just to see if the results are consistent. i just wouldn’t exclude it outright."
+        },
+        {
+          "result": "0",
+          "id": "comment_gc961gz",
+          "source_type": "Comment",
+          "title": "[Q] Are sensitivity analysis performed in observational studies?",
+          "score": "0.5053",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/jtz3xr/q_are_sensitivity_analysis_performed_in/",
+          "content": "Context (Post Title): [Q] Are sensitivity analysis performed in observational studies?\nComment: Personally, I would like to know the robustness of any finding a study presents. \n\nI'm curious if anyone has an example of a time and place where a sensitivity analysis wouldn't be appropriate."
+        },
+        {
+          "result": "0",
+          "id": "comment_h1il0ho",
+          "source_type": "Comment",
+          "title": "Need help with meta-analysis study and effect size",
+          "score": "0.5096",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/ny5t4k/need_help_with_metaanalysis_study_and_effect_size/",
+          "content": "Context (Post Title): Need help with meta-analysis study and effect size\nComment: why is the weight so high? does it have a much larger sample size than the other studies?"
+        },
+        {
+          "result": "0",
+          "id": "comment_h1ilhjp",
+          "source_type": "Comment",
+          "title": "Need help with meta-analysis study and effect size",
+          "score": "0.5178",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/ny5t4k/need_help_with_metaanalysis_study_and_effect_size/",
+          "content": "Context (Post Title): Need help with meta-analysis study and effect size\nComment: yes this one study has over 50000 patients and other studies 300-1000patients"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "meta-analysis sensitivity analysis influence diagnostics forest plot dominated by a single study metafor vignette Baujat plot 'dominated by a single study'",
+      "execution_time_seconds": 2.609596500000407,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC7006175/"
+          ],
+          "content": "Title: Charting the landscape of graphical displays for meta-analysis ...\nContent:by M Kossmeier · 2020 · Cited by 79 — The rich and diverse set of available meta-analytic graphs offers a variety of options to display many different aspects of meta-analyses."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://dmetar.protectlab.org/reference/influenceanalysis"
+          ],
+          "content": "Title: Influence Diagnostics — InfluenceAnalysis - dmetar\nContent:Conducts an influence analysis of a meta-analysis generated by meta functions, and allows to produce influence diagnostic plots."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.metafor-project.org/doku.php/plots:plot_of_influence_diagnostics"
+          ],
+          "content": "Title: Plot of Influence Diagnostics\nContent:Description. A variety of outlier and influential case diagnostics can be computed when conducting a meta-analysis (Viechtbauer & Cheung, 2010)."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://ppw.kuleuven.be/mesrg/documents/sr2015-course-text/workshop-r/Manual-metafor.pdf"
+          ],
+          "content": "Title: Package 'metafor'\nContent:by W Viechtbauer · Cited by 286 — The package includes functions to calculate various effect sizes or out- come measures, fit fixed-, random-, and mixed-effects models to such ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://cran.r-universe.dev/meta/doc/manual.html"
+          ],
+          "content": "Title: Package 'meta' reference manual\nContent:Baujat plot to explore heterogeneity in meta-analysis ( baujat. ... Performs a influence analysis; pooled estimates are calculated omitting one study at a time."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nBusqué ejemplos prácticos y guías sobre análisis de sensibilidad e influencia en meta-análisis (incluyendo forest plots dominados por un solo estudio). Me concentré en recursos didácticos (vignettes, manuales y artículos) que muestran diagnósticos: leave‑one‑out, Baujat plots, análisis de influencia y gráficas alternativas para detectar estudios dominantes. También incorporo una anécdota encontrada en foros estudiantiles que ilustra el caso de un estudio con peso excesivo.",
+  "final_answer": "Aquí tienes una selección de recursos en línea con ejemplos y análisis prácticos sobre meta‑análisis y sensibilidad —útiles cuando un forest plot parece estar “dominado” por un estudio—, junto con notas rápidas sobre qué ofrece cada recurso y fragmentos R sugeridos.\n\nRecursos prácticos y tutoriales\n- Metafor — Plot of Influence Diagnostics (documentación y ejemplos)\n  - Qué muestra: diagnósticos de influencia (influence measures), gráficas y cómo interpretarlas.\n  - Uso típico en R: ajustar rma(), usar influence(), plot(inf).\n  - URL: https://www.metafor-project.org/doku.php/plots:plot_of_influence_diagnostics\n\n- Metafor — Manual / workshop (Viechtbauer)\n  - Qué muestra: funciones del paquete metafor, ejemplos de códigos y recomendaciones para análisis de sensibilidad.\n  - URL: https://ppw.kuleuven.be/mesrg/documents/sr2015-course-text/workshop-r/Manual-metafor.pdf\n\n- dmetar — InfluenceAnalysis (referencia)\n  - Qué muestra: funciones que automatizan análisis de influencia y generan gráficos (complemento útil sobre meta o metafor).\n  - URL: https://dmetar.protectlab.org/reference/influenceanalysis\n\n- Package meta — manual (Baujat plot y leave‑one‑out)\n  - Qué muestra: Baujat plot para identificar estudios que contribuyen mucho a la heterogeneidad y funciones para análisis de influencia (omit‑one study).\n  - Uso típico en R: metacont()/metabin() y baujat(), influence(), metainf().\n  - URL: https://cran.r-universe.dev/meta/doc/manual.html\n\nRecursos conceptuales y de visualización\n- Kossmeier et al. (2020) — \"Charting the landscape of graphical displays for meta-analysis\"\n  - Qué muestra: revisión de gráficas para meta‑análisis (incluye discusión sobre cómo detectar y mostrar estudios influyentes).\n  - URL (artículo libre): https://pmc.ncbi.nlm.nih.gov/articles/PMC7006175/\n\nEjemplo de caso práctico (anécdota en foro)\n- Publicación en foro donde un usuario reporta un estudio con >95% de peso en un forest plot; las respuestas sugieren no excluir automáticamente sino realizar análisis de sensibilidad (leave‑one‑out) para evaluar robustez.\n  - URL (ejemplo de discusión estudiantil): https://reddit.com/r/AskStatistics/comments/ny5t4k/need_help_with_metaanalysis_study_and_effect_size/\n\nMétodos de sensibilidad e influencia (resumen y R pseudocódigo)\n- Leave‑one‑out / omit‑one study\n  - Idea: recalcular el meta‑análisis omitiendo cada estudio uno a uno; ver si la estimación pooled cambia sustancialmente.\n  - R (metafor): \n    - fit <- rma(yi, vi, data=dat)\n    - loo <- leave1out(fit); print(loo)\n- Análisis de influencia (influence diagnostics)\n  - Idea: calcular DFBETAS, Cook’s distance, hat values, y representar gráficamente.\n  - R (metafor):\n    - inf <- influence(fit)\n    - plot(inf)\n- Baujat plot (identifica contribución a heterogeneidad y efecto)\n  - R (meta package):\n    - m <- metacont(...); baujat(m)\n- Sensibilidad por modelo (fixed vs random; restringir por calidad o tamaño)\n  - Recalcular con modelos alternativos o excluyendo el estudio grande y comparar intervalos de confianza y heterogeneidad (I^2).\n- Visualizaciones alternativas\n  - Influence plots, cumulative meta‑analysis, forest plots con tamaños de punto escalados y anotaciones para mostrar peso.\n\nConsejos prácticos\n- No excluyas automáticamente el estudio más grande: si su metodología es válida, su peso refleja mayor precisión. Haz análisis de sensibilidad (leave‑one‑out) y reporta resultados con y sin ese estudio.\n- Reporta medidas de heterogeneidad (I^2, tau^2) y métricas de influencia (DFBETAS, Cook’s distance).\n- Usa gráficas específicas (Baujat, influence plots) para justificar cualquier decisión de exclusión o subanálisis.\n\nFuentes (ejemplos utilizados)\n- https://www.metafor-project.org/doku.php/plots:plot_of_influence_diagnostics\n- https://ppw.kuleuven.be/mesrg/documents/sr2015-course-text/workshop-r/Manual-metafor.pdf\n- https://dmetar.protectlab.org/reference/influenceanalysis\n- https://cran.r-universe.dev/meta/doc/manual.html\n- https://pmc.ncbi.nlm.nih.gov/articles/PMC7006175/\n- https://reddit.com/r/AskStatistics/comments/ny5t4k/need_help_with_metaanalysis_study_and_effect_size/",
+  "error_flag": false
+}

@@ -1,0 +1,176 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:36:16.250275",
+  "provider": "openai",
+  "user_question": "¿Qué artículos, blogs o repositorios recopilan ejemplos reales de problemas y frustraciones comunes durante el análisis exploratorio de datos (EDA)?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué artículos, blogs o repositorios recopilan ejemplos reales de problemas y frustraciones comunes durante el análisis exploratorio de datos (EDA)?"
+    }
+  ],
+  "start_time": 1770568576.2502759,
+  "end_time": 1770568657.915984,
+  "execution_time_seconds": 81.66570806503296,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "real-world EDA problems frustrations examples articles blogs repositories 'exploratory data analysis' 'common pitfalls' 'real examples'",
+      "execution_time_seconds": 0.7965918999998394,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_jk2vz66",
+          "source_type": "Comment",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "score": "0.2965",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+          "content": "Context (Post Title): What is Exploratory Data Analysis (EDA) ?\nComment: You described bad EDA projects. Boring projects. \n\nThe best ones are where you come up with a set of questions that real people have and solve them with real data."
+        },
+        {
+          "result": "0",
+          "id": "comment_nf09ff6",
+          "source_type": "Comment",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "score": "0.3142",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/13h1dr4/what_is_exploratory_data_analysis_eda/",
+          "content": "Context (Post Title): What is Exploratory Data Analysis (EDA) ?\nComment: EDA’s just “getting to know your data.” Sure, you’ll ask simple questions and plot stuff, but the real value is spotting weird outliers, checking if trends make sense, and pulling out storylines. For a project, don’t stop at “2019 had the most sales”, dig into *why* and *what drove it*. Think less coding drills, more “here’s what I’d tell my boss.”"
+        },
+        {
+          "result": "0",
+          "id": "comment_hyxpsze",
+          "source_type": "Comment",
+          "title": "Good resources for advanced EDA?",
+          "score": "0.3246",
+          "source_url": "https://reddit.com/r/datascience/comments/t2uspm/good_resources_for_advanced_eda/",
+          "content": "Context (Post Title): Good resources for advanced EDA?\nComment: I'll go a slightly different route here. EDA is not something that you can get from a book or medium article - its not a cookie cutter process - the whole point of EDA is that its exploratory. Its meant to help you understand the data - why is it a certain way. Its like you're waterboarding the data trying to extract any bit of insight from it. \n\nAn example that I had recently was that we were receiving some sensor data at a 1 minute interval - but every now and then we would receive a data point at either a sub minute interval or at a much greater interval. Why is this? Does it matter? How should you account for this in a time series model? \n\nAnother recent example is we queried some data from a datamart (again, sensor reading) - but when spot checking the data using a gui frontend, the numbers didnt match up. Why is this the case? Does this matter when integrating it back to the business? Is there some logic that was put in place - and if so why was this logic put in place? \n\nOnce you ask those kind of questions - you can start to probe with statistical techniques like corr plots, feature importance, causal inference (as mentioned below), etc... \n\nIn short EDA is not about going down a checklist of tests - its about creativity - flipping the next rock in search of insights...asking the next 'why' question. And its honestly one of the things that I see data scientists struggle with the most."
+        },
+        {
+          "result": "0",
+          "id": "comment_jmh67w6",
+          "source_type": "Comment",
+          "title": "What things do you do in EDA exploratory data analysis",
+          "score": "0.3281",
+          "source_url": "https://reddit.com/r/datascience/comments/13x5stj/what_things_do_you_do_in_eda_exploratory_data/",
+          "content": "Context (Post Title): What things do you do in EDA exploratory data analysis\nComment: People should look up 'Initial Data Analysis' (IDA)"
+        },
+        {
+          "result": "0",
+          "id": "comment_jbklhap",
+          "source_type": "Comment",
+          "title": "Favorite resources for EDA?",
+          "score": "0.3320",
+          "source_url": "https://reddit.com/r/datascience/comments/11mz57q/favorite_resources_for_eda/",
+          "content": "Context (Post Title): Favorite resources for EDA?\nComment: That „x type of data“ already gives it away. Beyond some basic plotting, drilling into any kind of dataset requires a varying degree of knowledge about the data and the field (be it marketing, natural sciences, music etc.). Just to get a rough idea what people are doing these days, there’s plenty of examples on Kaggle. \n\nYou need to develop some feeling for trends in data, potential correlations, the importance of certain features, assumptions backed by experience etc. to make EDA yield results I feel like.\n\nShopify and other big tech companies do have great blog posts and how they apply EDA to their niche, e.g.:"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "exploratory data analysis examples common pitfalls blogs repositories Kaggle notebooks 'EDA pitfalls' 'real-world' 'case studies'",
+      "execution_time_seconds": 2.010340699999688,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://fintechpython.pages.oit.duke.edu/jupyternotebooks/6-Data%20Science/7-eda-10-pitfalls.html"
+          ],
+          "content": "Title: Common Pitfalls in Exploratory Data Analysis\nContent:Below is a polished, graduate-level Common Pitfalls in Exploratory Data Analysis section, tied to real-world financial failures and supported with ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@amit25173/exploratory-data-analysis-eda-datasets-7f5115864b7d"
+          ],
+          "content": "Title: Exploratory Data Analysis (EDA) Datasets | by Amit Yadav - Medium\nContent:One of the most common pitfalls is working with a dataset that is biased. For instance, if you're analyzing survey data, but the survey was only ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.trantorinc.com/blog/exploratory-data-analysis"
+          ],
+          "content": "Title: Exploratory Data Analysis (EDA): Types, Tools, Process - Trantorinc\nContent:Common EDA Pitfalls and How to Avoid Them. 1. Confirmation Bias. Problem: Seeing patterns that confirm preconceptions. Fix: Document null ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://towardsdatascience.com/four-common-pitfalls-to-avoid-in-exploratory-data-analysis-85d822dd5e34/"
+          ],
+          "content": "Title: Four common pitfalls to avoid in Exploratory Data Analysis\nContent:To achieve the stated goals of EDA, data practitioners must avoid the following pitfalls during data exploration: Unclear business problems."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.kaggle.com/general/329404"
+          ],
+          "content": "Title: Exploratory Data Analysis (EDA) - Kaggle\nContent:Exploratory Data Analysis (EDA) ... Common bivariate chart types include:. 🔹️ Root and leaf plots showing all data values ​​and the shape of the distribution."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "GitHub repositories 'EDA pitfalls' 'exploratory data analysis' examples 'real-world' 'common issues'",
+      "execution_time_seconds": 2.1022917999998754,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/topics/exploratory-data-analysis-eda"
+          ],
+          "content": "Title: exploratory-data-analysis-eda\nContent:An open-source Python library for Data Scientists & Data Analysts designed to simplify the exploratory data analysis process. Using Edvart, you can explore data ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://fintechpython.pages.oit.duke.edu/jupyternotebooks/6-Data%20Science/7-eda-10-pitfalls.html"
+          ],
+          "content": "Title: Common Pitfalls in Exploratory Data Analysis\nContent:Below is a polished, graduate-level Common Pitfalls in Exploratory Data Analysis section, tied to real-world financial failures and supported with appropriate ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/Yashvi-Vekariya/Customer-Data-Modeling-and-Analysis"
+          ],
+          "content": "Title: Yashvi-Vekariya/Customer-Data-Modeling-and-Analysis\nContent:This collection is designed to provide data analysts with practical examples of common, real-world data analysis problems and solutions. Each project in this ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://github.com/SamarthGarge/30-Days-Of-DataScience"
+          ],
+          "content": "Title: 30 Days of Data Science is a daily challenge ...\nContent:In this challenge, you will dive into the essential concepts of data science, from foundational programming skills to data analysis, visualization, and machine ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@amit25173/exploratory-data-analysis-projects-with-python-code-from-beginner-to-advanced-b5e1502859e6"
+          ],
+          "content": "Title: Exploratory Data Analysis Projects with Python Code\nContent:We're going to explore several real-world EDA projects, each designed to teach you different aspects of the EDA process."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nBusqué y prioricé recursos que recopilan ejemplos prácticos, errores frecuentes y discusiones de la comunidad sobre EDA (foros, posts técnicos, repositorios con notebooks). Estos recursos son útiles para aprender frustraciones reales (datos sucios, muestreo sesgado, problemas temporales, discrepancias entre fuentes) y ver soluciones mediante notebooks reproducibles o posts de blog que explican pasos y causas comunes.",
+  "final_answer": "Aquí tienes una lista seleccionada de artículos, blogs y repositorios que recopilan ejemplos reales de problemas y frustraciones recurrentes durante EDA, con una breve explicación de lo que encontrarás en cada uno:\n\n- Duke — “Common Pitfalls in Exploratory Data Analysis” (notebook): resumen académico/práctico de errores típicos en EDA con ejemplos comentados (sesgos, outliers, malas interpretaciones).  \n  URL: https://fintechpython.pages.oit.duke.edu/jupyternotebooks/6-Data%20Science/7-eda-10-pitfalls.html\n\n- Towards Data Science — “Four common pitfalls to avoid in Exploratory Data Analysis”: artículo que describe trampas prácticas (problemas de objetivos, confirmación, limpieza defectuosa) y cómo mitigarlas con ejemplos.  \n  URL: https://towardsdatascience.com/four-common-pitfalls-to-avoid-in-exploratory-data-analysis-85d822dd5e34/\n\n- Medium (Amit Yadav) — “Exploratory Data Analysis (EDA) Datasets” y otras entradas de EDA: posts con notebooks y proyectos que muestran pasos reales de EDA y dificultades encontradas (datos faltantes, incoherencias).  \n  URL: https://medium.com/@amit25173/exploratory-data-analysis-eda-datasets-7f5115864b7d\n\n- Kaggle — Sección y cuadernos de EDA (notebooks públicos): colección masiva de EDA reales sobre datasets diversos; útil para ver errores y comprobaciones prácticas (validación cruzada de supuestos, tratamiento de outliers).  \n  URL: https://www.kaggle.com/general/329404\n\n- GitHub — topic “exploratory-data-analysis-eda”: repositorios y librerías con ejemplos de notebooks de EDA y pipelines de limpieza/visualización que ilustran problemas reales. Explora proyectos etiquetados para encontrar casos prácticos.  \n  URL: https://github.com/topics/exploratory-data-analysis-eda\n\n- Repositorio de ejemplo — “Customer-Data-Modeling-and-Analysis” (GitHub): colección de proyectos/EDA sobre datos de clientes; contiene ejemplos de transformaciones, manejo de inconsistencias y pasos tomados ante problemas reales.  \n  URL: https://github.com/Yashvi-Vekariya/Customer-Data-Modeling-and-Analysis\n\n- Foros y discusiones (reddits y comunidades): hilos donde estudiantes/profesionales comparten frustraciones reales (problemas de integridad entre fuentes, intervalos de tiempo irregulares, discrepancias entre frontend/backend). Busca en r/dataanalysis y r/datascience para ver casos concretos y respuestas de la comunidad.  \n  Ejemplo de búsqueda en Reddit: https://www.reddit.com/r/dataanalysis/  (navega hilos sobre EDA)\n\nCómo usar estos recursos para aprender:\n- Lee notebooks completos y reproduce los pasos: identifica dónde se detectan discrepancias y qué tests/visualizaciones usan.  \n- Compila una “checklist” personal (integridad, sesgo, timestamps, outliers, metadatos) basada en los problemas reales que encuentres.  \n- Guarda ejemplos concretos de fallos y la solución aplicada (p. ej. imputación razonada vs. eliminación de filas) para referencia futura.\n\nFuentes:\nhttps://fintechpython.pages.oit.duke.edu/jupyternotebooks/6-Data%20Science/7-eda-10-pitfalls.html  \nhttps://towardsdatascience.com/four-common-pitfalls-to-avoid-in-exploratory-data-analysis-85d822dd5e34/  \nhttps://medium.com/@amit25173/exploratory-data-analysis-eda-datasets-7f5115864b7d  \nhttps://www.kaggle.com/general/329404  \nhttps://github.com/topics/exploratory-data-analysis-eda  \nhttps://github.com/Yashvi-Vekariya/Customer-Data-Modeling-and-Analysis  \nhttps://www.reddit.com/r/dataanalysis/",
+  "error_flag": false
+}

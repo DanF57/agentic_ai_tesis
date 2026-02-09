@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T21:10:46.181199",
+  "provider": "gemini",
+  "user_question": "¿Cómo detectar concept drift en modelos desplegados en producción?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Cómo detectar concept drift en modelos desplegados en producción?"
+    }
+  ],
+  "start_time": 1770603046.181199,
+  "end_time": 1770603057.7671778,
+  "execution_time_seconds": 11.585978746414185,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "detecting concept drift in production models",
+      "execution_time_seconds": 1.2891601000010269,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_hwz6xh9",
+          "source_type": "Comment",
+          "title": "My model seems too accurate, what can I do to ensure it is correct?",
+          "score": "0.4960",
+          "source_url": "https://reddit.com/r/datascience/comments/ssbez3/my_model_seems_too_accurate_what_can_i_do_to/",
+          "content": "Context (Post Title): My model seems too accurate, what can I do to ensure it is correct?\nComment: - Ensure there is variance in your target - this sounds like a value that would likely be quite stable.\n\n- Check for information leakage; ie, ensure that any information you are using as a feature would be available at inference time in production\n\n- Check if your target values are highly autocorrelated in time, and if so, either don't shuffle before train-test splitting or better yet use TimeSeriesSplit."
+        },
+        {
+          "result": "0",
+          "id": "comment_hwyx2gy",
+          "source_type": "Comment",
+          "title": "My model seems too accurate, what can I do to ensure it is correct?",
+          "score": "0.5066",
+          "source_url": "https://reddit.com/r/datascience/comments/ssbez3/my_model_seems_too_accurate_what_can_i_do_to/",
+          "content": "Context (Post Title): My model seems too accurate, what can I do to ensure it is correct?\nComment: One of my colleagues was working with sensor data to predict if something fails. And if they got close to failing, the patters get massively out of line that it was trivial to get a 100% prediction with that (which was later also observed in prod)."
+        },
+        {
+          "result": "0",
+          "id": "comment_hx0h5el",
+          "source_type": "Comment",
+          "title": "My model seems too accurate, what can I do to ensure it is correct?",
+          "score": "0.5194",
+          "source_url": "https://reddit.com/r/datascience/comments/ssbez3/my_model_seems_too_accurate_what_can_i_do_to/",
+          "content": "Context (Post Title): My model seems too accurate, what can I do to ensure it is correct?\nComment: Do you have counts of failures over total counts? Then use Poisson regression. Do you have % failure per product like a measure of degradation? Use Beta regression. Do you have lifetime data for products that fail and others that are still functioning? Use survival regression. Do you have products that fail, don’t fail and some have a % failure? Consider a zero or one inflated regression model. Can’t decide and feeling adventurous? Try a Tweedie GLM."
+        },
+        {
+          "result": "0",
+          "id": "comment_hwzyjuj",
+          "source_type": "Comment",
+          "title": "My model seems too accurate, what can I do to ensure it is correct?",
+          "score": "0.5231",
+          "source_url": "https://reddit.com/r/datascience/comments/ssbez3/my_model_seems_too_accurate_what_can_i_do_to/",
+          "content": "Context (Post Title): My model seems too accurate, what can I do to ensure it is correct?\nComment: In my industry we'd use the Time Between Failure distributions to predict failures. If your data can tell you that, it could be a useful secondary model to help with validation."
+        },
+        {
+          "result": "0",
+          "id": "comment_hwxq8fr",
+          "source_type": "Comment",
+          "title": "My model seems too accurate, what can I do to ensure it is correct?",
+          "score": "0.5281",
+          "source_url": "https://reddit.com/r/datascience/comments/ssbez3/my_model_seems_too_accurate_what_can_i_do_to/",
+          "content": "Context (Post Title): My model seems too accurate, what can I do to ensure it is correct?\nComment: +1 on this. It’s not _too_ crazy to have a model this good in manufacturing / IoT applications. Sometimes the data required by the real world physical model is actually available."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "how to detect concept drift in machine learning models in production",
+      "execution_time_seconds": 1.6136955000038142,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.evidentlyai.com/ml-in-production/concept-drift"
+          ],
+          "content": "Title: What is concept drift in ML, and how to detect and address it\nContent:monitor model quality using metrics like accuracy or mean error"
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@iagomodesto/mastering-drift-strategies-for-monitoring-ml-models-in-production-115c4b0cf7d7"
+          ],
+          "content": "Title: Mastering Drift: Strategies for Monitoring ML Models in Production\nContent:A common technique for detecting concept drift is to monitor model performance metrics over time. If these metrics deteriorate over time, it ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://techcommunity.microsoft.com/blog/fasttrackforazureblog/identifying-drift-in-ml-models-best-practices-for-generating-consistent-reliable/4040531"
+          ],
+          "content": "Title: Identifying drift in ML models: Best practices\nContent:Concept drift occurs when the purpose of the original model changes over time and is recognized in four varieties, sudden drift, gradual drift, ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.datadoghq.com/blog/ml-model-monitoring-in-production-best-practices/"
+          ],
+          "content": "Title: Machine learning model monitoring: Best practices\nContent:Learn about key metrics and best practices for monitoring the functional performance of ML models to spot issues such as concept drift and data"
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.reddit.com/r/mlops/comments/1ppd9ro/how_do_you_actually_detect_model_drift_in/"
+          ],
+          "content": "Title: How do you actually detect model drift in production? : r/mlops - Reddit\nContent:I'm exploring solutions for drift detection and I see a lot of options: PSI, Wasserstein, KL divergence, embedding-based approaches…"
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nLa detección de \"concept drift\" es fundamental en la ciencia de datos para asegurar que los modelos desplegados en producción mantengan su rendimiento y relevancia a lo largo del tiempo. Este fenómeno ocurre cuando la relación entre las variables de entrada y la variable objetivo cambia, o cuando la distribución de los datos de entrada se altera. Su importancia radica en que, si no se detecta y aborda, un modelo puede volverse obsoleto y generar predicciones incorrectas, afectando negativamente las decisiones basadas en sus resultados. Las estrategias para su detección suelen involucrar el monitoreo continuo de métricas de rendimiento del modelo y el análisis de la distribución de los datos, usando técnicas estadísticas para identificar desviaciones significativas.",
+  "final_answer": "Detectar \"concept drift\" en modelos de Machine Learning desplegados en producción es crucial para mantener su validez y rendimiento. El \"concept drift\" se refiere a cambios en la relación subyacente entre las variables de entrada y la variable objetivo, o en la distribución de los propios datos de entrada, que el modelo fue entrenado para predecir.\n\nExisten varias estrategias y métodos para detectar el \"concept drift\":\n\n1.  **Monitoreo de Métricas de Rendimiento del Modelo:**\n    *   Una técnica común es supervisar métricas clave del modelo (por ejemplo, precisión, recall, F1-score para clasificación; MAE, RMSE para regresión) a lo largo del tiempo.\n    *   Si estas métricas se deterioran de forma consistente, puede ser un indicio de \"concept drift\".\n    *   **Ejemplo:** Un foro de discusión menciona que monitorear la calidad del modelo usando métricas como la precisión o el error medio es una forma efectiva.\n    Fuente: https://www.evidentlyai.com/ml-in-production/concept-drift\n\n2.  **Análisis de la Distribución de Datos (Data Drift):**\n    *   Más allá del rendimiento del modelo, es importante monitorear la distribución de las características de entrada y la variable objetivo en los datos en producción.\n    *   Cambios significativos en estas distribuciones pueden indicar \"concept drift\", incluso antes de que el rendimiento del modelo se vea afectado notablemente.\n    *   Se pueden usar pruebas estadísticas para comparar las distribuciones de los datos recientes con las de los datos de entrenamiento o con un período de referencia.\n\n3.  **Uso de Métricas de Divergencia Estadística:**\n    *   Existen medidas estadísticas diseñadas para cuantificar la diferencia entre dos distribuciones de probabilidad. Algunas de las más utilizadas incluyen:\n        *   **Índice de Estabilidad de la Población (PSI - Population Stability Index):** Compara la distribución de una variable en dos periodos de tiempo.\n        *   **Distancia de Wasserstein:** Mide la distancia entre distribuciones de probabilidad.\n        *   **Divergencia KL (Kullback-Leibler):** Cuantifica cuánta información se pierde cuando una distribución se aproxima a otra.\n    *   **Ejemplo:** Un usuario de Reddit en el subreddit r/mlops menciona la exploración de soluciones para la detección de drift utilizando opciones como PSI, Wasserstein y KL divergence.\n    Fuente: https://www.reddit.com/r/mlops/comments/1ppd9ro/how_do_you_actually_detect_model_drift_in/\n\n4.  **Tipos de Concept Drift a Considerar:**\n    *   El \"concept drift\" puede manifestarse de diferentes maneras, como:\n        *   **Drift Súbito (Sudden Drift):** Un cambio abrupto en el concepto.\n        *   **Drift Gradual (Gradual Drift):** El cambio ocurre lentamente a lo largo del tiempo.\n    *   **Ejemplo:** Microsoft Tech Community destaca que el \"concept drift\" ocurre cuando el propósito del modelo original cambia con el tiempo y se reconoce en cuatro variedades, incluyendo el drift súbito y gradual.\n    Fuente: https://techcommunity.microsoft.com/blog/fasttrackforazureblog/identifying-drift-in-ml-models-best-practices-for-generating-consistent-reliable/4040531\n\nLa implementación de un sistema de monitoreo robusto que combine estas técnicas es esencial para asegurar la fiabilidad y la eficacia continua de los modelos de Machine Learning en entornos de producción.",
+  "error_flag": false
+}

@@ -1,0 +1,132 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-03T23:53:20.493693",
+  "provider": "openai",
+  "user_question": "Qué buenas prácticas de negocio–a–modelo propone el marco CS-FS?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Qué buenas prácticas de negocio–a–modelo propone el marco CS-FS?"
+    }
+  ],
+  "start_time": 1770180800.493693,
+  "end_time": 1770181056.2590756,
+  "execution_time_seconds": 255.76538252830505,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "CS-FS framework business-to-model best practices 'CS-FS' marco CS-FS buenas prácticas negocio a modelo",
+      "execution_time_seconds": 0.5250450000003184,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_h1uaahu",
+          "source_type": "Comment",
+          "title": "Convincing SME depite good result model",
+          "score": "0.5479",
+          "source_url": "https://reddit.com/r/datascience/comments/o07hrm/convincing_sme_depite_good_result_model/",
+          "content": "Context (Post Title): Convincing SME depite good result model\nComment: > Ask him if he feels that way and discuss each variable.\n\nI think this is the best start. If you're going with an easily interpretable logistic regression model, then I'd ensure there isn't some coefficient that is wildly, obvious unintuitive that might suggest overfitting.\n\nAnother suggestion -- have you implemented your model in a dry-run (i.e. the model runs in the background but doesn't immediately impact your product or business decision)? I've found that SME's tend to adopt a model over time if they're being \"consulted\" by the model rather than immediately forced to use it."
+        },
+        {
+          "result": "0",
+          "id": "comment_immhtdh",
+          "source_type": "Comment",
+          "title": "How to convey that EDA is enough and not everything needs a model?",
+          "score": "0.5570",
+          "source_url": "https://reddit.com/r/datascience/comments/x2n79h/how_to_convey_that_eda_is_enough_and_not/",
+          "content": "Context (Post Title): How to convey that EDA is enough and not everything needs a model?\nComment: Your department's job is to add business value. Oftentimes there is \"low hanging fruit\", that simple analysis and a \"scorecard\" can pick up. Take the easy wins and build a reputation for adding value\n\nThen after those wins (baseline improvement), pitch an improvement and let them weigh it against the opportunity cost\n\nCredit card was using \"scorecards\" for years because it added enough business value. Then the space got competitive and the went to more advanced models."
+        },
+        {
+          "result": "0",
+          "id": "comment_lqtg6t8",
+          "source_type": "Comment",
+          "title": "We are not only model builders! Stop with that!",
+          "score": "0.5669",
+          "source_url": "https://reddit.com/r/datascience/comments/1fy9jfq/we_are_not_only_model_builders_stop_with_that/",
+          "content": "Context (Post Title): We are not only model builders! Stop with that!\nComment: >I’m part of the group that believes data scientists should be the business team's best friends. As long as we understand what kind of decision is being made, we can help. Today, data science is often treated as a purely technical function, and I’m not sure this is the right approach. We shouldn’t just receive tasks in JIRA like we're simply developing features. The business team shouldn't be the ones deciding how and when we create a model, for example. After all, do you go to the doctor and ask for surgery right away?\n\nAgree with this 100%. Love the doctor analogy - patients go to the doctor and define the top level goal \"I want to get better/not die\", and the doctor is responsible for diagnosing the problem and performing the surgery. Similarly, I think business teams and data scientists work together best when business stakeholders define the top level objective, e.g. \"we want to increase retention / engagement / revenue etc within X constraints\" then work together with DS to figure it out. vs directly saying \"build this model\"/\"cut out my liver\""
+        },
+        {
+          "result": "0",
+          "id": "comment_etpb0tf",
+          "source_type": "Comment",
+          "title": "Favorite book on the practical modeling side of data science",
+          "score": "0.5702",
+          "source_url": "https://reddit.com/r/datascience/comments/cckm07/favorite_book_on_the_practical_modeling_side_of/",
+          "content": "Context (Post Title): Favorite book on the practical modeling side of data science\nComment: Ah but I think integrating domain/business knowledge is key to the practical side of ML, which is partially what I was getting at."
+        },
+        {
+          "result": "0",
+          "id": "comment_mc579l1",
+          "source_type": "Comment",
+          "title": "Takehomes, how do you approach them and how to get better?",
+          "score": "0.5702",
+          "source_url": "https://reddit.com/r/datascience/comments/1imf5q9/takehomes_how_do_you_approach_them_and_how_to_get/",
+          "content": "Context (Post Title): Takehomes, how do you approach them and how to get better?\nComment: Yeah, I would personally say, spend less time on modelling. \n\nClean data -> slap it through a simple model like logistic or RF, then explain the fuck out of it and how you would improve on the model and/or data.\n\nIn banking for example, a well explained RF model that performs worse, is a better choice than a full black-box DNN approach and pointing this out shows you know more about the field even if your modelling is 'worse'."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "\"CS-FS\" framework \"business to model\" CS-FS marco \"CS-FS\" data science framework",
+      "execution_time_seconds": 1.8794451000012486,
+      "results": []
+    },
+    {
+      "tool": "WEB",
+      "query": "CRISP-DM business understanding IBM 'business understanding' data mining 'translate business problem into model' best practices",
+      "execution_time_seconds": 1.3101341999990836,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.ibm.com/docs/it/SS3RA7_18.3.0/pdf/ModelerCRISPDM.pdf"
+          ],
+          "content": "Title: [PDF] IBM SPSS Modeler CRISP-DM Guide\nContent:Your first task is to try to gain as much insight as possible into the business goals for data mining. This may not be as easy as it seems, but you can minimize ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.datascience-pm.com/crisp-dm-2/"
+          ],
+          "content": "Title: What is CRISP DM?\nContent:The CRoss Industry Standard Process for Data Mining (CRISP-DM) is a process model with six phases that describes the data science life cycle."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://subscription.packtpub.com/book/web-development/9781788291118/1/ch01lvl1sec9/crisp-dm-overview"
+          ],
+          "content": "Title: Introduction to Data Mining and Predictive Analytics\nContent:The CRISP-DM is considered to be the de facto standard for conducting a data mining project. Starting with the Business Understanding phase and ending with ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/donato-story/crisp-dm-business-understanding-as-the-foundation-of-data-mining-e2d854f8c05a"
+          ],
+          "content": "Title: CRISP-DM: Business Understanding as the Foundation of ...\nContent:The Business Understanding phase of the CRISP-DM framework is the first step in any data mining project. It involves identifying the business problem and pain ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://online.csp.edu/resources/article/data-mining-business-analytics/"
+          ],
+          "content": "Title: Understanding CRISP-DM and Data Mining in Business Analytics\nContent:This guide explores each phase of the CRISP-DM process and demonstrates how analytics professionals apply data mining in complex business ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "El agente no pudo generar una respuesta. Intenta reformular tu pregunta.",
+  "bert_score": null,
+  "perplexity": null,
+  "missing_final_answer_marker": true
+}

@@ -1,0 +1,176 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:46:54.326850",
+  "provider": "openai",
+  "user_question": "¿Dónde encontrar la documentación oficial y tutoriales actualizados de herramientas automáticas de EDA como ydata-profiling o Sweetviz?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Dónde encontrar la documentación oficial y tutoriales actualizados de herramientas automáticas de EDA como ydata-profiling o Sweetviz?"
+    }
+  ],
+  "start_time": 1770569214.326851,
+  "end_time": 1770569249.0267975,
+  "execution_time_seconds": 34.699946641922,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "ydata-profiling official documentation and tutorials Sweetviz official documentation and tutorials",
+      "execution_time_seconds": 0.5396986999994624,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_jbn1eom",
+          "source_type": "Comment",
+          "title": "Favorite resources for EDA?",
+          "score": "0.4880",
+          "source_url": "https://reddit.com/r/datascience/comments/11mz57q/favorite_resources_for_eda/",
+          "content": "Context (Post Title): Favorite resources for EDA?\nComment: Pandas profiling and sweetviz are the tools I mainly use for preliminary EDA. Deep dives usually require more tailored approaches, though"
+        },
+        {
+          "result": "0",
+          "id": "comment_j8fbi67",
+          "source_type": "Comment",
+          "title": "Do you use tools for automatic EDA? Which ones? Why?",
+          "score": "0.5404",
+          "source_url": "https://reddit.com/r/datascience/comments/111bdx7/do_you_use_tools_for_automatic_eda_which_ones_why/",
+          "content": "Context (Post Title): Do you use tools for automatic EDA? Which ones? Why?\nComment: I just googled it and it appears to have been repacked as ydata-profiling to decouple the concept from just pandas df"
+        },
+        {
+          "result": "0",
+          "id": "comment_g0b53ec",
+          "source_type": "Comment",
+          "title": "How do you make your EDA workflow sexy?",
+          "score": "0.5419",
+          "source_url": "https://reddit.com/r/datascience/comments/i3enx8/how_do_you_make_your_eda_workflow_sexy/",
+          "content": "Context (Post Title): How do you make your EDA workflow sexy?\nComment: Pandas profiling in a notebook does a good job at a first past EDA. I recommend that python module."
+        },
+        {
+          "result": "0",
+          "id": "comment_efr3506",
+          "source_type": "Comment",
+          "title": "pandas-profiling - Really cool, easy tool to get nice looking reports for exploratory analysis.",
+          "score": "0.5422",
+          "source_url": "https://reddit.com/r/datascience/comments/an1xn9/pandasprofiling_really_cool_easy_tool_to_get_nice/",
+          "content": "Context (Post Title): pandas-profiling - Really cool, easy tool to get nice looking reports for exploratory analysis.\nComment: I love using pandas-profiling! I enjoy having it all the visuals built alongside the stat numbers I can keep as an html and consult it later if needed."
+        },
+        {
+          "result": "0",
+          "id": "comment_efqnmqc",
+          "source_type": "Comment",
+          "title": "pandas-profiling - Really cool, easy tool to get nice looking reports for exploratory analysis.",
+          "score": "0.5504",
+          "source_url": "https://reddit.com/r/datascience/comments/an1xn9/pandasprofiling_really_cool_easy_tool_to_get_nice/",
+          "content": "Context (Post Title): pandas-profiling - Really cool, easy tool to get nice looking reports for exploratory analysis.\nComment: Love pandas profiling! \n\nDo be cautious running on wide datasets, as all of those charts will take a while to render. In my experience don't run on more than 30ish columns at a time!"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "ydata-profiling official documentation tutorial",
+      "execution_time_seconds": 1.361901499999476,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://ydata-profiling.ydata.ai/"
+          ],
+          "content": "Title: YData Profiling: Welcome\nContent:How to master exploratory data analysis with ydata-profiling? Check this step-by-step tutorial. · Looking on how to do exploratory data analysis for Time-series ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://docs.profiling.ydata.ai/latest/getting-started/quickstart/"
+          ],
+          "content": "Title: Quickstart - YData Profiling\nContent:Start by loading your pandas DataFrame as you normally would, eg by using: To generate the standard profiling report, merely run:"
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://pypi.org/project/ydata-profiling/"
+          ],
+          "content": "Title: ydata-profiling\nContent:ydata-profiling delivers an extended analysis of a DataFrame while allowing the data analysis to be exported in different formats such as html and json."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.datacamp.com/tutorial/pandas-profiling-ydata-profiling-in-python-guide"
+          ],
+          "content": "Title: Pandas Profiling (ydata-profiling) in Python: A Guide for ...\nContent:Learn how to use the ydata-profiling library in Python to generate detailed reports for datasets with many features."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.youtube.com/watch?v=HJOXl5zsUnU"
+          ],
+          "content": "Title: EDA using Pandas Profiling | YData Profiling\nContent:📊 In this video, we'll guide you through the installation process with pip install and demonstrate how to use the ProfileReport class to speed ..."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "Sweetviz official documentation tutorial",
+      "execution_time_seconds": 1.4194494000003033,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://analyticsindiamag.com/deep-tech/step-by-step-guide-to-data-analysis-using-sweetviz/"
+          ],
+          "content": "Title: Step By Step Guide To Data Analysis Using SweetViz\nContent:Sweetviz is an open-source Python library that helps generate beautiful, highly detailed visualizations to Exploratory Data Analysis with a single line of code."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.geeksforgeeks.org/data-analysis/sweetviz-automated-exploratory-data-analysis-eda/"
+          ],
+          "content": "Title: SweetViz | Automated Exploratory Data Analysis (EDA)\nContent:SweetViz is an open-source Python library, this is used for automated exploratory data analysis (EDA), it helps data analysts/scientists quickly generate ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.youtube.com/watch?v=W7731eicVys"
+          ],
+          "content": "Title: SweetViz Tutorial: 1 Line of Python Code = Full Exploratory ...\nContent:This video walks through how to instantly generate comprehensive, visual data analysis reports using the Sweetviz library—perfect for fast ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://pypi.org/project/sweetviz/"
+          ],
+          "content": "Title: sweetviz\nContent:Sweetviz is an open-source Python library that generates beautiful, high-density visualizations article describing its features in depth and see examples in ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@abhinandan198/exploring-data-with-sweetviz-a-comprehensive-guide-4ccd7d59d957"
+          ],
+          "content": "Title: Exploring Data with Sweetviz: A Comprehensive Guide\nContent:This article will introduce you to sweetviz , its features, and how it can help you visualize and understand your data more effectively."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nHe buscado las fuentes oficiales y tutoriales públicos más actualizados para dos herramientas de EDA automático populares (ydata‑profiling y Sweetviz). Estas referencias son importantes porque ofrecen guía de instalación, ejemplos de uso mínimo (quickstart), opciones de configuración y notas de rendimiento/compatibilidad —supuestos clave al aplicar informes automáticos a datasets grandes o anchos. A continuación resumo dónde encontrar la documentación oficial y entrego ejemplos de uso rápido.",
+  "final_answer": "1) ydata‑profiling (antes pandas‑profiling)\n- Documentación oficial y guía rápida (Quickstart): contiene instalación, ejemplos (ProfileReport), configuración de salida (HTML/JSON) y recomendaciones de rendimiento.\n- Instalación y quickstart (ejemplo mínimo):\n  - pip install ydata-profiling\n  - Ejemplo (pseudocódigo):\n    from ydata_profiling import ProfileReport\n    report = ProfileReport(df, title=\"Reporte EDA\")\n    report.to_file(\"report.html\")\n- Recursos oficiales:\n  - Sitio principal / landing: https://ydata-profiling.ydata.ai/\n  - Documentación / Quickstart: https://docs.profiling.ydata.ai/latest/getting-started/quickstart/\n  - PyPI (paquete): https://pypi.org/project/ydata-profiling/\n\n2) Sweetviz\n- Página del paquete / referencia y ejemplos de uso: incluye instalación, análisis comparativo (compare), y exportación a HTML.\n- Instalación y quickstart (ejemplo mínimo):\n  - pip install sweetviz\n  - Ejemplo (pseudocódigo):\n    import sweetviz as sv\n    report = sv.analyze(df)\n    report.show_html(\"sweetviz_report.html\")\n  - También permite comparaciones: report = sv.compare([df_train, \"Train\"], [df_test, \"Test\"])\n- Recursos útiles:\n  - PyPI (paquete): https://pypi.org/project/sweetviz/\n  - Tutorial introductorio y ejemplos prácticos: https://www.geeksforgeeks.org/data-analysis/sweetviz-automated-exploratory-data-analysis-eda/\n\nNotas prácticas rápidas\n- Ambos generan HTML interactivo; para datasets muy grandes conviene muestrear o ajustar opciones para evitar tiempos de render largos.\n- Revisa la versión del paquete y las notas de la documentación (breaking changes) antes de actualizar entornos de producción.\n\nFuentes:\nhttps://ydata-profiling.ydata.ai/\nhttps://docs.profiling.ydata.ai/latest/getting-started/quickstart/\nhttps://pypi.org/project/ydata-profiling/\nhttps://pypi.org/project/sweetviz/\nhttps://www.geeksforgeeks.org/data-analysis/sweetviz-automated-exploratory-data-analysis-eda/",
+  "error_flag": false
+}

@@ -1,0 +1,184 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-03T23:48:01.383354",
+  "provider": "openai",
+  "user_question": "Qué buenas prácticas de negocio–a–modelo propone el marco CS-FS?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Qué buenas prácticas de negocio–a–modelo propone el marco CS-FS?"
+    }
+  ],
+  "start_time": 1770180481.3833542,
+  "end_time": 1770180729.543225,
+  "execution_time_seconds": 248.15987086296082,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "CS-FS framework business-to-model best practices",
+      "execution_time_seconds": 1.1944385999995575,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_lqtg6t8",
+          "source_type": "Comment",
+          "title": "We are not only model builders! Stop with that!",
+          "score": "0.5235",
+          "source_url": "https://reddit.com/r/datascience/comments/1fy9jfq/we_are_not_only_model_builders_stop_with_that/",
+          "content": "Context (Post Title): We are not only model builders! Stop with that!\nComment: >I’m part of the group that believes data scientists should be the business team's best friends. As long as we understand what kind of decision is being made, we can help. Today, data science is often treated as a purely technical function, and I’m not sure this is the right approach. We shouldn’t just receive tasks in JIRA like we're simply developing features. The business team shouldn't be the ones deciding how and when we create a model, for example. After all, do you go to the doctor and ask for surgery right away?\n\nAgree with this 100%. Love the doctor analogy - patients go to the doctor and define the top level goal \"I want to get better/not die\", and the doctor is responsible for diagnosing the problem and performing the surgery. Similarly, I think business teams and data scientists work together best when business stakeholders define the top level objective, e.g. \"we want to increase retention / engagement / revenue etc within X constraints\" then work together with DS to figure it out. vs directly saying \"build this model\"/\"cut out my liver\""
+        },
+        {
+          "result": "0",
+          "id": "comment_h1uaahu",
+          "source_type": "Comment",
+          "title": "Convincing SME depite good result model",
+          "score": "0.5268",
+          "source_url": "https://reddit.com/r/datascience/comments/o07hrm/convincing_sme_depite_good_result_model/",
+          "content": "Context (Post Title): Convincing SME depite good result model\nComment: > Ask him if he feels that way and discuss each variable.\n\nI think this is the best start. If you're going with an easily interpretable logistic regression model, then I'd ensure there isn't some coefficient that is wildly, obvious unintuitive that might suggest overfitting.\n\nAnother suggestion -- have you implemented your model in a dry-run (i.e. the model runs in the background but doesn't immediately impact your product or business decision)? I've found that SME's tend to adopt a model over time if they're being \"consulted\" by the model rather than immediately forced to use it."
+        },
+        {
+          "result": "0",
+          "id": "comment_fzputz7",
+          "source_type": "Comment",
+          "title": "The fear (in industry) of complex models with many features",
+          "score": "0.5386",
+          "source_url": "https://reddit.com/r/datascience/comments/hzxzu6/the_fear_in_industry_of_complex_models_with_many/",
+          "content": "Context (Post Title): The fear (in industry) of complex models with many features\nComment: Take each concern and address them as you can. \n\nIf you have several years of data then you can address the concern of stability over time. E.g. the model I created on 2019 data still performs well/better on 2016 data and vice versa. \n\nAlso, does it do well across lines-of-business, geographies, whatever?\n\nQuantify their concerns and the value added. This won’t address infrastructure concerns but it’s a big first step."
+        },
+        {
+          "result": "0",
+          "id": "comment_lqsv2px",
+          "source_type": "Comment",
+          "title": "We are not only model builders! Stop with that!",
+          "score": "0.5395",
+          "source_url": "https://reddit.com/r/datascience/comments/1fy9jfq/we_are_not_only_model_builders_stop_with_that/",
+          "content": "Context (Post Title): We are not only model builders! Stop with that!\nComment: 100%. Everything needs to be connected to the business outcome."
+        },
+        {
+          "result": "0",
+          "id": "comment_immhtdh",
+          "source_type": "Comment",
+          "title": "How to convey that EDA is enough and not everything needs a model?",
+          "score": "0.5411",
+          "source_url": "https://reddit.com/r/datascience/comments/x2n79h/how_to_convey_that_eda_is_enough_and_not/",
+          "content": "Context (Post Title): How to convey that EDA is enough and not everything needs a model?\nComment: Your department's job is to add business value. Oftentimes there is \"low hanging fruit\", that simple analysis and a \"scorecard\" can pick up. Take the easy wins and build a reputation for adding value\n\nThen after those wins (baseline improvement), pitch an improvement and let them weigh it against the opportunity cost\n\nCredit card was using \"scorecards\" for years because it added enough business value. Then the space got competitive and the went to more advanced models."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "CS-FS framework business to model CS-FS best practices 'CS-FS' framework data science",
+      "execution_time_seconds": 1.808145400000285,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.researchgate.net/publication/320663102_Theoretical_framework_of_critical_success_factors_CSFs_for_Business_Intelligence_BI_System"
+          ],
+          "content": "Title: Theoretical framework of critical success factors (CSFs) for Business ...\nContent:BI-related CSFs will provide clear perceptions of important factors for the organization in order to increase the likelihood of successful implementation of BI ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.sciencedirect.com/science/article/abs/pii/S0166361514002176"
+          ],
+          "content": "Title: Towards a framework of critical success factors for implementing ...\nContent:We build a framework of 13 CSFs for implementing supply chain information systems. ... Important supply chain characteristics have been overlooked in CSF ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.tandfonline.com/doi/full/10.1080/09537287.2023.2286282"
+          ],
+          "content": "Title: Unpacking critical success factors to improve supply chain ...\nContent:This paper seeks to guide supply chain managers regarding critical success factors (CSFs) by examining decision-making themes associated with effectiveness."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://core.ac.uk/download/pdf/234628812.pdf"
+          ],
+          "content": "Title: [PDF] Business Intelligence Implementation Success Framework - CORE\nContent:This study adopted the approach of previous studies, whereas the proposed conceptual framework aims to identify the most essential CSFs impacting the BI system ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.scitepress.org/papers/2017/63031/63031.pdf"
+          ],
+          "content": "Title: [PDF] A Proposed Best-practice Framework for Information Security ...\nContent:Based on the literature review, this research identifies seventeen initial CSFs for ISG that affect the long-term success of organisations. For clear high-level ..."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "\"CS-FS\" framework \"business to model\" CS-FS data science framework \"CS-FS\" model business-to-model",
+      "execution_time_seconds": 1.4983102999995026,
+      "results": []
+    },
+    {
+      "tool": "RAG",
+      "query": "CS-FS marco CS-FS buenas prácticas negocio a modelo 'CS-FS' 'marco' 'negocio a modelo'",
+      "execution_time_seconds": 1.3629189999992377,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_lqszw1z",
+          "source_type": "Comment",
+          "title": "We are not only model builders! Stop with that!",
+          "score": "0.5741",
+          "source_url": "https://reddit.com/r/datascience/comments/1fy9jfq/we_are_not_only_model_builders_stop_with_that/",
+          "content": "Context (Post Title): We are not only model builders! Stop with that!\nComment: \"Business scientist\" is somewhat trendy (cf Matt Dancho).\n\nIt's kind of overlapping with the \"Product Data Scientist\" role too wich may be even more trending."
+        },
+        {
+          "result": "0",
+          "id": "comment_mlxxt28",
+          "source_type": "Comment",
+          "title": "Cash Flow Forecasting: A Case of CPA Marketing",
+          "score": "0.6019",
+          "source_url": "https://reddit.com/r/datascienceproject/comments/1jtyo6m/cash_flow_forecasting_a_case_of_cpa_marketing/",
+          "content": "Context (Post Title): Cash Flow Forecasting: A Case of CPA Marketing\nComment: Your comments and feedback are appreciated."
+        },
+        {
+          "result": "0",
+          "id": "comment_h1uaahu",
+          "source_type": "Comment",
+          "title": "Convincing SME depite good result model",
+          "score": "0.6025",
+          "source_url": "https://reddit.com/r/datascience/comments/o07hrm/convincing_sme_depite_good_result_model/",
+          "content": "Context (Post Title): Convincing SME depite good result model\nComment: > Ask him if he feels that way and discuss each variable.\n\nI think this is the best start. If you're going with an easily interpretable logistic regression model, then I'd ensure there isn't some coefficient that is wildly, obvious unintuitive that might suggest overfitting.\n\nAnother suggestion -- have you implemented your model in a dry-run (i.e. the model runs in the background but doesn't immediately impact your product or business decision)? I've found that SME's tend to adopt a model over time if they're being \"consulted\" by the model rather than immediately forced to use it."
+        },
+        {
+          "result": "0",
+          "id": "comment_mc579l1",
+          "source_type": "Comment",
+          "title": "Takehomes, how do you approach them and how to get better?",
+          "score": "0.6060",
+          "source_url": "https://reddit.com/r/datascience/comments/1imf5q9/takehomes_how_do_you_approach_them_and_how_to_get/",
+          "content": "Context (Post Title): Takehomes, how do you approach them and how to get better?\nComment: Yeah, I would personally say, spend less time on modelling. \n\nClean data -> slap it through a simple model like logistic or RF, then explain the fuck out of it and how you would improve on the model and/or data.\n\nIn banking for example, a well explained RF model that performs worse, is a better choice than a full black-box DNN approach and pointing this out shows you know more about the field even if your modelling is 'worse'."
+        },
+        {
+          "result": "0",
+          "id": "comment_lqsv2px",
+          "source_type": "Comment",
+          "title": "We are not only model builders! Stop with that!",
+          "score": "0.6142",
+          "source_url": "https://reddit.com/r/datascience/comments/1fy9jfq/we_are_not_only_model_builders_stop_with_that/",
+          "content": "Context (Post Title): We are not only model builders! Stop with that!\nComment: 100%. Everything needs to be connected to the business outcome."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "El agente no pudo generar una respuesta. Intenta reformular tu pregunta.",
+  "bert_score": null,
+  "perplexity": null,
+  "missing_final_answer_marker": true
+}

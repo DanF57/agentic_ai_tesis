@@ -1,95 +1,103 @@
+# tests/calibrate_threshold.py
 import os
 import chromadb
 from chromadb.utils import embedding_functions
 from dotenv import load_dotenv
 from pathlib import Path
 
-# 1. Load Environment Variables
 load_dotenv()
 
-# Configuration (Must match populate_db.py)
-# Get the path relative to this test file's location
 TEST_DIR = Path(__file__).parent
 PROJECT_ROOT = TEST_DIR.parent
 DB_PATH = str(PROJECT_ROOT / "server" / "knowledge" / "chroma_db_data")
 COLLECTION_NAME = "reddit_datascience_openai"
 
-def run_test():
-    # Check API Key
+def calibrate_threshold():
+    """
+    Ejecuta múltiples queries de prueba para encontrar el threshold óptimo.
+    """
     api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key:
-        print("❌ Error: OPENAI_API_KEY not found in .env file.")
-        return
-
-    print(f"--- DIAGNOSTICS: Connecting to DB at {DB_PATH} ---")
-
-    # 2. Setup Embedding Function (CRITICAL: Must match ingestion model)
     openai_ef = embedding_functions.OpenAIEmbeddingFunction(
         api_key=api_key,
         model_name="text-embedding-3-small"
     )
-
-    # 3. Connect to Database
-    try:
-        client = chromadb.PersistentClient(path=DB_PATH)
-        collection = client.get_collection(
-            name=COLLECTION_NAME,
-            embedding_function=openai_ef
-        )
-    except Exception as e:
-        print(f"❌ Connection Failed: {e}")
-        print("Tip: Check if the folder './chroma_db_data' exists.")
-        return
-
-    # 4. Basic Stats
-    count = collection.count()
-    print(f"✅ Connection Successful!")
-    print(f"📊 Total Documents in Collection: {count}")
     
-    if count == 0:
-        print("⚠️ WARNING: Collection is empty. Run populate_db.py first.")
-        return
-
-    # 5. Perform Test Query
-    test_query = "EDA good practices" # <--- Change this to test specific topics
-    print(f"\n🔍 Running Test Query: '{test_query}'")
-    
-    results = collection.query(
-        query_texts=[test_query],
-        n_results=3,
-        include=["documents", "metadatas", "distances"]
+    client = chromadb.PersistentClient(path=DB_PATH)
+    collection = client.get_collection(
+        name=COLLECTION_NAME,
+        embedding_function=openai_ef
     )
+    
+    # Queries de prueba variadas
+    test_queries = [
+        #test con resultado perfecto
+        "Context (Post Title): Lack of Hold-Out Set Leads to State Wasting $365k\nComment: holdout set is the same as a test set, as in training set, validation set and testing set, right?" #test con resultado perfecto
 
-    # 6. Display Results
-    print("\n--- RETRIEVAL RESULTS ---")
-    ids = results['ids'][0]
-    docs = results['documents'][0]
-    metas = results['metadatas'][0]
-    distances = results['distances'][0]
-
-    for i in range(len(ids)):
-        score = distances[i]
-        doc_type = metas[i].get('type', 'unknown').upper()
-        subreddit = metas[i].get('subreddit', 'unknown')
-        post_title = metas[i].get('post_title', 'No Title')
+        # Muy específicas (se esperan scores bajos)
+        "overfitting in multiple linear regression",
+        "what is eda?",    
         
-        # Interpretation of Score (L2 Distance)
-        relevance = "⭐⭐⭐" if score < 1.0 else ("⭐⭐" if score < 1.25 else "⭐")
-
-        print(f"\nResult #{i+1} | Score: {score:.4f} {relevance}")
-        print(f"[{doc_type}] from r/{subreddit}")
-        print(f"Context: {post_title}")
-        print(f"Snippet: {docs[i][:200]}...") # Print first 150 chars
-        print("-" * 50)
-        print("Estructura de metadata:\n")
-        print(metas[i])
-    print("-" * 50)
-    print("Estructura de resultados:\n")
-    print(results)
-    print("-" * 50)
-    print("Collection Metadata:\n")
-    print(collection.metadata)
-    print("-" * 50)
-
+        # Moderadamente específicas
+        "how to evaluate machine learning models",
+        "data cleaning best practices",
+        
+        # Generales 
+        "machine learning tutorials",
+        "statistics basics",
+        
+        # Fuera de tema
+        "how to cook pasta",
+        "causes of cancer"
+    ]
+    
+    all_scores = []
+    
+    print("=" * 60)
+    print("CALIBRATION REPORT: Score Distribution Analysis")
+    print("=" * 60)
+    
+    for query in test_queries:
+        results = collection.query(
+            query_texts=[query],
+            n_results=5,
+            include=["distances"]
+        )
+        
+        distances = results['distances'][0]
+        all_scores.extend(distances)
+        
+        print(f"\nQuery: '{query}'")
+        print(f"  Min: {min(distances):.4f} | Max: {max(distances):.4f} | Avg: {sum(distances)/len(distances):.4f}")
+    
+    # Estadísticas globales
+    all_scores.sort()
+    print("\n" + "=" * 60)
+    print("GLOBAL STATISTICS")
+    print("=" * 60)
+    print(f"Absolute Min Score: {min(all_scores):.4f}")
+    print(f"Absolute Max Score: {max(all_scores):.4f}")
+    print(f"Overall Average:    {sum(all_scores)/len(all_scores):.4f}")
+    print(f"Median:             {all_scores[len(all_scores)//2]:.4f}")
+    
+    # Percentiles
+    p25 = all_scores[len(all_scores)//4]
+    p50 = all_scores[len(all_scores)//2]
+    p75 = all_scores[3*len(all_scores)//4]
+    p90 = all_scores[9*len(all_scores)//10]
+    
+    print(f"\nPercentiles:")
+    print(f"  25th: {p25:.4f} (muy relevante)")
+    print(f"  50th: {p50:.4f} (relevante)")
+    print(f"  75th: {p75:.4f} (moderadamente relevante)")
+    print(f"  90th: {p90:.4f} (poco relevante)")
+    
+    # Recomendaciones
+    print("\n" + "=" * 60)
+    print("THRESHOLD RECOMMENDATIONS")
+    print("=" * 60)
+    print(f"Strict (high precision):    {p50:.4f}")
+    print(f"Balanced (recommended):     {p75:.4f}")
+    print(f"Permissive (high recall):   {p90:.4f}")
+    
 if __name__ == "__main__":
-    run_test()
+    calibrate_threshold()

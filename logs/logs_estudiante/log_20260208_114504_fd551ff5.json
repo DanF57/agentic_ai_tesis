@@ -1,0 +1,124 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:43:52.780253",
+  "provider": "openai",
+  "user_question": "¿Qué recursos explican qué tipos de herramientas se utilizan para monitorear modelos en producción y muestran ejemplos de dashboards o flujos de trabajo?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué recursos explican qué tipos de herramientas se utilizan para monitorear modelos en producción y muestran ejemplos de dashboards o flujos de trabajo?"
+    }
+  ],
+  "start_time": 1770569032.7802532,
+  "end_time": 1770569104.8507547,
+  "execution_time_seconds": 72.07050156593323,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "tools for monitoring machine learning models in production dashboards workflows examples",
+      "execution_time_seconds": 1.2767524000000776,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_ejhfuco",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.3833",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: At the beginning, we did manual validation checks just to ensure our model is useful for production use (I.e. classifies correctly the majority of the time). However, as you can imagine, given the volumes, it’s impossible and so we rely heavily on user feedback in this instance. \n\nIn our production deployment system, we have charts that help us tell whether a model’s performance is deteriorating and alerts us after it passes a certain threshold. It also lets us know when many documents in a row are being mis-classified incorrectly."
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhk2m2",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.3987",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: What's in those charts? How do you infer the model is misclassifying without the labels?"
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhlc3c",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.4226",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: One way is to take a sample of 100/150 documents, annotate them and then make a bootstrap resampling to estimate the average performance and statistical error of whatever metric you want. But it is slow. If you want something in real time, you can track the binary cross entropy and looking for anomalies. It is not a metric you can comunicate to the shareholder but make you sleep well at night."
+        },
+        {
+          "result": "0",
+          "id": "comment_ejhtawm",
+          "source_type": "Comment",
+          "title": "How do you monitor the performance of models deployed to production ?",
+          "score": "0.4294",
+          "source_url": "https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+          "content": "Context (Post Title): How do you monitor the performance of models deployed to production ?\nComment: Bootstrap resampling and binary cross entropy... I did not know with those concepts, I will learn more about them, thanks for the hint."
+        },
+        {
+          "result": "0",
+          "id": "comment_i1ykgoo",
+          "source_type": "Comment",
+          "title": "Most underwritten data science subjects?",
+          "score": "0.4423",
+          "source_url": "https://reddit.com/r/datascience/comments/tm8jrl/most_underwritten_data_science_subjects/",
+          "content": "Context (Post Title): Most underwritten data science subjects?\nComment: 1) Algorithms and governance structures for monitoring models in production\n\n2) Examples of processes to alert end users that a model is having problems and what to do as it's being fixed"
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "model monitoring tools dashboards examples Evidently Arize WhyLabs Fiddler Grafana Prometheus tutorial dashboards examples",
+      "execution_time_seconds": 1.6531319000000622,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://neptune.ai/blog/ml-model-monitoring-best-tools"
+          ],
+          "content": "Title: Best Tools to Do ML Model Monitoring\nContent:Arize AI is an ML model monitoring platform that is capable of boosting the observability of your project and helping you with troubleshooting production AI."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.evidentlyai.com/blog/evidently-and-grafana-ml-monitoring-live-dashboards"
+          ],
+          "content": "Title: Real-time ML monitoring: building live dashboards with ...\nContent:You can use Evidently together with Prometheus and Grafana to set up live monitoring dashboards. We created an integration example for Data Drift monitoring."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@tanish.kandivlikar1412/comprehensive-comparison-of-ml-model-monitoring-tools-evidently-ai-alibi-detect-nannyml-a016d7dd8219"
+          ],
+          "content": "Title: Evidently AI, Alibi Detect, NannyML, WhyLabs, and Fiddler AI\nContent:This report provides a detailed analysis of five leading ML model monitoring tools — Evidently AI, Alibi Detect, NannyML, WhyLabs, and Fiddler ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.cmarix.com/qanda/ai-model-monitoring-tools-and-frameworks-for-post-deployment/"
+          ],
+          "content": "Title: AI Model Monitoring: Tools and Frameworks for Post- ...\nContent:Using tools like Evidently, WhyLabs, Fiddler, or SageMaker Model Monitor, you can keep your AI models healthy and aligned with business goals."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.dailydoseofds.com/mlops-crash-course-part-17/"
+          ],
+          "content": "Title: Practical Tooling with Evidently, Prometheus, and Grafana\nContent:Prometheus efficiently scrapes, stores, and queries metrics; Grafana then visualizes these metrics through interactive dashboards. Together, ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nBusqué recursos que describen las categorías de herramientas para monitoring de modelos en producción y que además muestran ejemplos prácticos (dashboards o integraciones). El monitoreo es importante para detectar degradación (concept/data drift), problemas de latencia y sesgos; las fuentes recuperadas incluyen guías de herramientas open‑source y comparativas de plataformas comerciales, y en la base interna (RAG) hay ejemplos anecdóticos de quejas/alertas en producción (charts, muestreos, métricas como binary cross‑entropy).",
+  "final_answer": "A continuación tienes recursos organizados por tipo (qué muestran y por qué son útiles), más un esquema de flujo de trabajo típico y qué widgets/dashboard conviene incluir.\n\n1) Resúmenes y comparativas (para elegir herramienta)\n- Neptune (blog): comparativa de herramientas de monitoring ML, útil para entender pros/cons entre soluciones comerciales y open‑source.\n  Source URL: https://neptune.ai/blog/ml-model-monitoring-best-tools\n\n- Análisis comparativo (Medium): revisión de Evidently, Alibi Detect, NannyML, WhyLabs, Fiddler — útil para ver casos de uso y cobertura funcional (drift, explainability, alerting).\n  Source URL: https://medium.com/@tanish.kandivlikar1412/comprehensive-comparison-of-ml-model-monitoring-tools-evidently-ai-alibi-detect-nannyml-a016d7dd8219\n\n2) Tutoriales / ejemplos de dashboards (implementación práctica)\n- Evidently + Grafana (tutorial): muestra cómo integrar Evidently (métricas de drift/quality) con Prometheus/Grafana para dashboards en tiempo real — contiene ejemplos de paneles y métricas a visualizar.\n  Source URL: https://www.evidentlyai.com/blog/evidently-and-grafana-ml-monitoring-live-dashboards\n\n- Practical tooling (blog técnico): ejemplo práctico de uso de Prometheus y Grafana para exponer y visualizar métricas de modelos (scraping, series temporales, alertas).\n  Source URL: https://www.dailydoseofds.com/mlops-crash-course-part-17/\n\n3) Plataformas comerciales / producto (ejemplos de dashboards listos)\n- Plataformas como Arize, WhyLabs, Fiddler, SageMaker Model Monitor ofrecen dashboards preconstruidos con panels de performance, drift, cohort analysis y explainability. (Ver comparativas en los enlaces anteriores para detalles de cada producto.)\n\n4) Ejemplo de flujo de trabajo operativo (workflow recomendado)\n- Instrumentación: enviar logs y métricas desde la inferencia (predicción, score, input features, timestamps).\n- Almacenamiento: métricas en Prometheus/TSDB y registros en data lake o servicio de observabilidad.\n- Cálculo de métricas: accuracy/ROC (si hay labels atrasadas), calibración, distributional drift (KL, PSI, Wasserstein), feature importance shifts.\n- Visualización: dashboards (Grafana / plataforma comercial) con panels: tasa de error por cohort, histogramas de predicción vs. entrenamiento, drift por feature, latencia y throughput.\n- Alerting & gobernanza: definir umbrales (p. ej. PSI>0.2, aumento súbito de loss) → notificaciones (PagerDuty/Slack) → runbook para investigación y possible rollback/retraining.\n- Validación humana: muestreo anotado (bootstrapping) para estimar performance real si labels tardan.\n\n5) Qué incluir en un dashboard (componentes prácticos)\n- Time series: metricas clave (loss, accuracy, AUC) con ventanas móviles.\n- Distribution plots: predicciones y features (train vs. production).\n- Drift scores por feature y agregado.\n- Population stability index (PSI) / KL divergence.\n- Error analysis: confusion matrix y ejemplos representativos (misclassifications).\n- Latency and throughput metrics.\n- Explainability snapshots: top features por predicción (SHAP/ICE) para cohorts.\n\n6) Nota práctica / evidencia anecdótica\n- En foros (ej. un hilo de data science) se mencionan prácticas comunes: gráficos para detectar degradación, alertas por lotes de mala clasificación y muestreo manual + bootstrap para estimar performance cuando las etiquetas llegan tarde.\n  Source URL: https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/\n\nReferencias / URLs utilizadas:\n- https://neptune.ai/blog/ml-model-monitoring-best-tools\n- https://www.evidentlyai.com/blog/evidently-and-grafana-ml-monitoring-live-dashboards\n- https://www.dailydoseofds.com/mlops-crash-course-part-17/\n- https://medium.com/@tanish.kandivlikar1412/comprehensive-comparison-of-ml-model-monitoring-tools-evidently-ai-alibi-detect-nannyml-a016d7dd8219\n- https://reddit.com/r/datascience/comments/b5yx8h/how_do_you_monitor_the_performance_of_models/",
+  "error_flag": false
+}

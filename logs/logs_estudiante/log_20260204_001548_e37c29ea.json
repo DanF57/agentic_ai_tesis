@@ -1,0 +1,73 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-04T00:15:14.222765",
+  "provider": "openai",
+  "user_question": "\"¿Cómo verificar que las suposiciones básicas de la regresión lineal se cumplen?\"",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "\"¿Cómo verificar que las suposiciones básicas de la regresión lineal se cumplen?\""
+    }
+  ],
+  "start_time": 1770182114.222765,
+  "end_time": 1770182148.3708549,
+  "execution_time_seconds": 34.14808988571167,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "how to check linear regression assumptions",
+      "execution_time_seconds": 0.6975080000011076,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_lzx295r",
+          "source_type": "Comment",
+          "title": "Assumptions of Linear Regression",
+          "score": "0.2994",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1h422as/assumptions_of_linear_regression/",
+          "content": "Context (Post Title): Assumptions of Linear Regression\nComment: The lack of multicollinearity is not a formal assumption of linear regression, though it can significantly affect the interpretation of the model coefficients. Instead the assumptions are, \n\n1. Linearity: The relationship between predictors and the response variable must be linear, meaning changes in predictors correspond to linear changes in the response.\n2. Independence: The residual errors must be independent observations. They should not significantly influence other errors which would weaken results.\n3. Homoscedasticity: Constant variance of errors; the spread should be consistent so that the model is accurate across the range of results.\n4. Normality: Errors must be approximately normal, ensuring accurate estimation and valid hypothesis testing. \n\nIf you think about these logically, they make intuitive sense. All of these assumptions increase model accuracy; without them, the model is far less reliable. However, with larger sample sizes, these conditions become a little less strict, and excessive transformations or removing outliers may lead to an overfitting model. It is possible for a model not to satisfy all assumptions while still being better than one that does."
+        },
+        {
+          "result": "0",
+          "id": "comment_nlg4k65",
+          "source_type": "Comment",
+          "title": "Assumptions of Linear Regression",
+          "score": "0.3006",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1ogevlk/assumptions_of_linear_regression/",
+          "content": "Context (Post Title): Assumptions of Linear Regression\nComment: Can u elaborate more , what if some of the assumptions are violated how do we deal with that without checking them."
+        },
+        {
+          "result": "0",
+          "id": "comment_nlhhjsb",
+          "source_type": "Comment",
+          "title": "Assumptions of Linear Regression",
+          "score": "0.3133",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1ogevlk/assumptions_of_linear_regression/",
+          "content": "Context (Post Title): Assumptions of Linear Regression\nComment: You have to check your assumptions (you didn't say that since you said in your first comment that they're assumptions and you don't check them) by checking things like the fitted vs standardized residual plot to see if the assumption of homoscedasticity is violated or if a transformation is needed. You need to check your standardized residuals for normality to also see if you need a transformation. There are other model diagnostics that need to also be looked at to check your model assumptions. This is all stuff that OP is asking about.\n\nSaying that they're just assumptions and you can move on after fitting the model is just incorrect since you use the diagnostics to see if linear regression without transformations is the correct approach or if you need a different approach."
+        },
+        {
+          "result": "0",
+          "id": "comment_j2i5dr1",
+          "source_type": "Comment",
+          "title": "Assumptions Violated for Linear Regression",
+          "score": "0.3327",
+          "source_url": "https://reddit.com/r/dataanalysis/comments/100id2z/assumptions_violated_for_linear_regression/",
+          "content": "Context (Post Title): Assumptions Violated for Linear Regression\nComment: Slice up your data and make some plots. There's no way to know unless you investigate yourself since we don't have your data. \n\nVerify the assumptions yourself. Keep in mind that non-linear association isn't bad altogether, heteroscedasticity can sometimes be fixed by a transformation of your data, and your normality assumption can be interpretive rather than a binary 'Okay' vs 'Not okay'."
+        },
+        {
+          "result": "0",
+          "id": "post_1ogevlk",
+          "source_type": "Post",
+          "title": "Assumptions of Linear Regression",
+          "score": "0.3487",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1ogevlk/assumptions_of_linear_regression/",
+          "content": "Title: Assumptions of Linear Regression\nContent: How do u verify all the assumptions of LR when the dimensions of the data is very high means we have 2000 features something like that."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nDescribo las suposiciones estándar de la regresión lineal (linealidad, independencia, homocedasticidad, normalidad de errores) porque son clave para validez de estimaciones e inferencia. Para cada suposición incluyo diagnósticos prácticos (gráficos y pruebas estadísticas) y acciones correctivas habituales (transformaciones, métodos robustos, remuestreo, etc.). Esto permite tanto detectar violaciones como elegir remedios apropiados.",
+  "final_answer": "Resumen de las suposiciones y cómo verificarlas (con remedios breves):\n\n1) Linealidad (la relación esperada entre predictoras y respuesta es lineal)\n- Diagnóstico: gráficos de Y vs cada X; gráfico de residuos ajustados (fitted vs residuals) buscando tendencia no aleatoria; partial residual / added-variable plots.\n- Pruebas/gráficos en R: plot(fit, which=1); car::avPlots(fit).\n- Remedios: añadir términos polinómicos o interacciones; transformar variables (log, sqrt); usar splines o modelos no lineales/GBM.\n\n2) Independencia de los errores (no autocorrelación)\n- Diagnóstico: gráfico de residuos en orden temporal; ACF de residuos; Durbin–Watson test.\n- R: acf(resid(fit)); lmtest::dwtest(fit).\n- Remedios: incluir efecto temporal/series (ARIMA/GLS/lagged predictors), usar modelos con correlación (nlme::gls).\n\n3) Homocedasticidad (varianza constante de errores)\n- Diagnóstico: gráfico fitted vs |residuals| o Scale-Location plot; tests: Breusch–Pagan (lmtest::bptest), White test.\n- R: plot(fit, which=3); lmtest::bptest(fit).\n- Remedios: transformar la respuesta (Box–Cox), usar weighted least squares, estimadores de varianzas robustas (sandwich), modelos de varianza heterogénea (nlme).\n\n4) Normalidad de los errores (para inferencia y intervalos)\n- Diagnóstico: QQ-plot de residuos; test de Shapiro–Wilk (para muestras pequeñas/medianas).\n- R: qqnorm(resid(fit)); qqline(resid(fit)); shapiro.test(resid(fit)).\n- Remedios: transformar la respuesta, usar estimadores robustos o métodos de remuestreo (bootstrap) si la normalidad falla pero el tamaño muestral es grande.\n\nChecks adicionales importantes\n\n- Multicolinealidad (no es requisito teórico pero afecta interpretación y varianzas)\n  - Diagnóstico: VIF (car::vif). VIF>5–10 indica problema.\n  - Remedios: eliminar/combinar variables, centrar, usar PCA, o regularización (Ridge/Lasso).\n\n- Observaciones influyentes y outliers\n  - Diagnóstico: Leverage, Cook’s distance, DFBETAS; plot(fit, which=4/5) en R.\n  - Remedios: investigar datos, robust regression (M-estimators: MASS::rlm, robustbase::lmrob), o ajustar sin observaciones problemáticas si hay justificación.\n\nConsejos prácticos (flujo recomendado)\n1. Ajustar modelo OLS base.\n2. Inspeccionar gráficos: Residuales vs Fitted, QQ-plot, Scale-Location, Residuales vs cada predictor.\n3. Ejecutar tests: bptest, dwtest, shapiro.test (interpretando p-valores con cuidado).\n4. Si hay violaciones: intentar transformaciones simples; si persiste, usar WLS/GLS/robust SEs o modelos no lineales; para inferencia, bootstrap es una alternativa sólida.\n\nFragmentos útiles en R (breve)\n- fit <- lm(y ~ x1 + x2, data)\n- plot(fit)                        # incluye Residuals vs Fitted y QQ-plot\n- car::vif(fit)                    # VIF\n- lmtest::bptest(fit)              # Breusch–Pagan\n- lmtest::dwtest(fit)              # Durbin–Watson\n- cooks <- cooks.distance(fit); which(cooks > 4/length(cooks))\n- MASS::boxcox(fit)                # buscar transformación de la respuesta\n\nLecturas y recursos (ejemplo práctico)\nFuente utilizada: https://reddit.com/r/AskStatistics/comments/1h422as/assumptions_of_linear_regression/",
+  "bert_score": null,
+  "perplexity": null
+}

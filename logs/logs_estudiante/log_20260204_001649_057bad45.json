@@ -1,0 +1,125 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-04T00:16:22.022092",
+  "provider": "openai",
+  "user_question": "¿Qué es Cook’s Distance y para qué se utiliza en regresión?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Qué es Cook’s Distance y para qué se utiliza en regresión?"
+    }
+  ],
+  "start_time": 1770182182.0220926,
+  "end_time": 1770182209.4706213,
+  "execution_time_seconds": 27.44852876663208,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "Cook's distance what is and use in regression",
+      "execution_time_seconds": 0.41982530000314,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_h4x8if3",
+          "source_type": "Comment",
+          "title": "How to calculate this distance in a linear regression/what keyword should I google with?",
+          "score": "0.4287",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oirmoy/how_to_calculate_this_distance_in_a_linear/",
+          "content": "Context (Post Title): How to calculate this distance in a linear regression/what keyword should I google with?\nComment: This is Orthogonal Regression or more generally Deming Regression. You can also look up errors-in-variables models."
+        },
+        {
+          "result": "0",
+          "id": "comment_hph7o4x",
+          "source_type": "Comment",
+          "title": "How to calculate this distance in a linear regression/what keyword should I google with?",
+          "score": "0.4349",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oirmoy/how_to_calculate_this_distance_in_a_linear/",
+          "content": "Context (Post Title): How to calculate this distance in a linear regression/what keyword should I google with?\nComment: A good daily example is chemical laboratory equipment calibration. The royal chemistry society has a paper and a calculator for this."
+        },
+        {
+          "result": "0",
+          "id": "comment_h4xknmo",
+          "source_type": "Comment",
+          "title": "How to calculate this distance in a linear regression/what keyword should I google with?",
+          "score": "0.4504",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oirmoy/how_to_calculate_this_distance_in_a_linear/",
+          "content": "Context (Post Title): How to calculate this distance in a linear regression/what keyword should I google with?\nComment: Not the space between the point and the line, but the vertical distance between them"
+        },
+        {
+          "result": "0",
+          "id": "comment_h4x5g21",
+          "source_type": "Comment",
+          "title": "How to calculate this distance in a linear regression/what keyword should I google with?",
+          "score": "0.4513",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oirmoy/how_to_calculate_this_distance_in_a_linear/",
+          "content": "Context (Post Title): How to calculate this distance in a linear regression/what keyword should I google with?\nComment: Why do you need this? Normally we only care about the vertical distance (i.e. The distance parallel to the y-axis). This distance is described by the standard error."
+        },
+        {
+          "result": "0",
+          "id": "comment_h4xanx8",
+          "source_type": "Comment",
+          "title": "How to calculate this distance in a linear regression/what keyword should I google with?",
+          "score": "0.4604",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oirmoy/how_to_calculate_this_distance_in_a_linear/",
+          "content": "Context (Post Title): How to calculate this distance in a linear regression/what keyword should I google with?\nComment: Subtract the intercept and compute the scalar projection unto a vector perpendicular to the regression line (which now goes through origo). Having said that, I somehow doubt this is something you want to be doing in a statistical context."
+        }
+      ]
+    },
+    {
+      "tool": "WEB",
+      "query": "Cook's distance definition and use in regression",
+      "execution_time_seconds": 1.400463599999057,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@hiteshtaneja/in-depth-guide-to-cooks-distance-40697cda2c9d"
+          ],
+          "content": "Title: In-Depth Guide to Cook's Distance | by Hitesh Taneja - Medium\nContent:an aggregate measure that assesses the influence of each observation on the overall regression model"
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.statisticshowto.com/cooks-distance/"
+          ],
+          "content": "Title: Cook's Distance / Cook's D: Definition, Interpretation\nContent:Cook's distance, Di, is used in Regression Analysis to find influential outliers in a set of predictor variables. In other words, it's a way to identify points ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://en.wikipedia.org/wiki/Cook%27s_distance"
+          ],
+          "content": "Title: Cook's distance - Wikipedia\nContent:In statistics, Cook's distance or Cook's D is a commonly used estimate of the influence of a data point when performing a least-squares regression analysis."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://online.stat.psu.edu/stat462/node/173/"
+          ],
+          "content": "Title: 9.5 - Identifying Influential Data Points | STAT 462 - Statistics Online\nContent:Cook's Distance · Di directly summarizes how much all of the fitted values change when the ith observation is deleted. · A data point having a large Di indicates ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.mathworks.com/help/stats/cooks-distance.html"
+          ],
+          "content": "Title: Cook's Distance - MATLAB & Simulink - MathWorks\nContent:Cook's distance is the scaled change in fitted values, which is useful for identifying outliers in the X values (observations for predictor variables)."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nExplico de forma breve qué mide Cook’s Distance, por qué es útil para detectar observaciones influyentes en regresión lineal, qué supuestos intervienen (modelo OLS y dependencia de residuos y leverage) y cómo se interpreta junto a reglas prácticas y acciones recomendadas.",
+  "final_answer": "¿Qué es?\n- Cook’s Distance (Di) es una medida que cuantifica la influencia de la i-ésima observación sobre todos los valores ajustados del modelo de regresión. Resume cuánto cambian las predicciones (y, indirectamente, los coeficientes) si se elimina esa observación.\n\nFórmulas útiles (intuición):\n- Definición en términos de fitted values:\n  Di = sum_j (yhat_j - yhat_j(-i))^2 / (p * MSE)\n  donde yhat_j(-i) son los valores ajustados al re-estimar el modelo sin la observación i, p = número de parámetros (incluye intercepto), MSE = error cuadrático medio.\n- Fórmula equivalente usando residuos y leverage:\n  Di = (e_i^2 / (p * MSE)) * (h_ii / (1 - h_ii)^2)\n  donde e_i es el residuo y h_ii es la diagonal de la matriz de proyección (leverage) para la observación i.\n\nPara qué se usa (prácticamente)\n- Identificar observaciones influyentes que pueden distorsionar la estimación de coeficientes y predicciones.\n- Priorizar casos para inspección: una observación con residuo grande y/o alto leverage tiende a tener Di grande.\n- Evaluar la sensibilidad del modelo: comparando el ajuste con y sin la observación influyente.\n\nReglas prácticas de interpretación\n- No hay umbral absoluto; reglas frecuentes:\n  - Di > 4/n (n = número de observaciones) es una señal de posible influencia.\n  - Di > 1 a menudo se considera fuerte influencia en modelos pequeños.\n- Siempre complementar con leverage (h_ii) y residuos estandarizados; investigar la razón detrás de la influencia antes de eliminar datos.\n\nLimitaciones y supuestos\n- Se basa en OLS: si el modelo es inadecuado (no linealidad, heterocedasticidad, errores no normales), la interpretación puede ser engañosa.\n- Cook’s D indica influencia, no si la observación es “errónea”. Requiere inspección contextual (errores de medición, casos reales extremos, subgrupos, etc.).\n\nAcciones recomendadas tras detectar un Di grande\n- Revisar los datos (errores de entrada/medición).\n- Re-estimar el modelo sin la observación para cuantificar el cambio en coeficientes.\n- Considerar transformaciones, variables adicionales, modelos robustos o reportar análisis de sensibilidad.\n- Documentar decisiones y, si se elimina un punto, justificarlo claramente.\n\nCómo calcularlo en R (ejemplo)\n- Usando función base: cooks.distance(modelo_lm)\n- Ejemplo: fit <- lm(y ~ x1 + x2, data); cooks <- cooks.distance(fit)\n\nFuentes:\n- Penn State STAT 462 — Identifying Influential Data Points: https://online.stat.psu.edu/stat462/node/173/\n- Wikipedia — Cook's distance: https://en.wikipedia.org/wiki/Cook%27s_distance",
+  "bert_score": null,
+  "perplexity": null
+}

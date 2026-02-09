@@ -1,0 +1,72 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T11:39:54.098853",
+  "provider": "openai",
+  "user_question": "¿Dónde se pueden encontrar ejemplos inspiradores de proyectos de EDA, incluyendo notebooks completos, datasets públicos y estructuras de trabajo reutilizables?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "¿Dónde se pueden encontrar ejemplos inspiradores de proyectos de EDA, incluyendo notebooks completos, datasets públicos y estructuras de trabajo reutilizables?"
+    }
+  ],
+  "start_time": 1770568794.0988538,
+  "end_time": 1770568822.1824577,
+  "execution_time_seconds": 28.083603858947754,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "inspiring EDA projects examples notebooks full notebooks public datasets reusable project structure examples",
+      "execution_time_seconds": 0.6604228000001058,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_jbl5sok",
+          "source_type": "Comment",
+          "title": "Favorite resources for EDA?",
+          "score": "0.3790",
+          "source_url": "https://reddit.com/r/datascience/comments/11mz57q/favorite_resources_for_eda/",
+          "content": "Context (Post Title): Favorite resources for EDA?\nComment: Kaggle notebooks might be helpful? Eg"
+        },
+        {
+          "result": "0",
+          "id": "comment_hypvlfv",
+          "source_type": "Comment",
+          "title": "Good resources for advanced EDA?",
+          "score": "0.3804",
+          "source_url": "https://reddit.com/r/datascience/comments/t2uspm/good_resources_for_advanced_eda/",
+          "content": "Context (Post Title): Good resources for advanced EDA?\nComment: Any tips on finding “good” examples? I’m sure there are thousands of notebooks I could look at."
+        },
+        {
+          "result": "0",
+          "id": "comment_itjlat3",
+          "source_type": "Comment",
+          "title": "How do you make your EDA workflow sexy?",
+          "score": "0.4078",
+          "source_url": "https://reddit.com/r/datascience/comments/i3enx8/how_do_you_make_your_eda_workflow_sexy/",
+          "content": "Context (Post Title): How do you make your EDA workflow sexy?\nComment: tell me you have a repo / nb on GH with some of these reusable EDA functions!"
+        },
+        {
+          "result": "0",
+          "id": "comment_fr0sbzq",
+          "source_type": "Comment",
+          "title": "How do you organise your data science projects? Code, data, learnings.",
+          "score": "0.4086",
+          "source_url": "https://reddit.com/r/datascience/comments/gk9ggo/how_do_you_organise_your_data_science_projects/",
+          "content": "Context (Post Title): How do you organise your data science projects? Code, data, learnings.\nComment: I didn't do it too much, because in my DS department we were only 3 and each one focus in one area, so we didn't cross validate the code. When I entered I made them setup DvC to put the data in azure blob storage while keeping the code in gitlab, airflow for ETLs and I normally made the presentations for business with the interactive plots embedding the html files of the graphs in the .pptx, I think you can only do this in Windows, at least my boss on mac couldn't do it, but is a nice touch for them to explore the data and tell you any weirdness that you couldn't find or some question that they may think checking the data closely.\n\nBut one of my ideas was to set up and create a basic template for notebooks, in which we always had the same sections like Data Prep, EDA, paragraph of what errors you detected in the EDA... and with all in the knowledge repo been able to send that link to anyone in business and let them confirm our findings, or complete the explanation of why the data of airplanes was not recollected over certain period of time, or ask more things about the data."
+        },
+        {
+          "result": "0",
+          "id": "post_dbwuqu",
+          "source_type": "Post",
+          "title": "Jupyter notebook or EDA examples with lat/long data?",
+          "score": "0.4259",
+          "source_url": "https://reddit.com/r/datascience/comments/dbwuqu/jupyter_notebook_or_eda_examples_with_latlong_data/",
+          "content": "Title: Jupyter notebook or EDA examples with lat/long data?\nContent: I'm stuck at doing my EDA at the moment, and I'm not sure how to pick at it. It's a huge data set (1mil+ rows, 100+ columns) and I am losing my mind staring at it. It would be extremely helpful to find something to give me inspiration on what questions to ask myself wit this data.\n\nMy data mostly consists of lat / long points, dates, time, and device ID. The rest is a bit more granular."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nBusqué ejemplos prácticos y discusiones en la base de conocimiento (RAG) centradas en recursos repetibles para EDA (notebooks, datasets públicos y plantillas de proyecto). La respuesta prioriza sitios donde se suelen publicar notebooks completos (ej.: Kaggle, GitHub), prácticas para organizar proyectos (estructura de ficheros, DVC/ETL) y criterios para escoger buenos ejemplos (narrativa, reproducibilidad). Se mencionan ideas reutilizables y ejemplos de estructura para que puedas replicarlos.",
+  "final_answer": "Aquí tienes un conjunto práctico de lugares y recursos para encontrar proyectos de EDA inspiradores, más consejos y una plantilla reutilizable:\n\n1) Plataformas con notebooks completos (buscar por “EDA”, “exploratory data analysis”, “notebook”)\n- Kaggle Notebooks: miles de EDA completas sobre datasets públicos (busca por tags “EDA” o por el nombre del dataset).  \n- GitHub: muchos repos con notebooks (.ipynb) y plantillas de proyecto; busca términos “exploratory data analysis notebook” o “EDA template”.  \n- Google Colab: notebooks compartidos y forks de notebooks de GitHub/Kaggle que puedes ejecutar en la nube.\n\n2) Fuentes de datasets públicos (para practicar EDA)\n- Repositorios comunes: Kaggle Datasets, UCI Machine Learning Repository, OpenML, data.gov, FiveThirtyEight, repos de universidades y concursos (DrivenData).  \n- Elegir datasets: prioriza datasets con metadatos claros y ejemplos de uso para poder reproducir análisis.\n\n3) Plantillas y prácticas reutilizables\n- Estructura de proyecto reproducible: usa control de versiones (git), notebooks bien seccionados, scripts reutilizables y gestión de datos (DVC o almacenamiento organizado).  \n- Buenas prácticas en notebooks: encabezado con objetivo, carga y verificación de datos, limpieza mínima reproducible, EDA (univariado → bivariado → multivariado), visualizaciones clave y resumen de hallazgos/acciones.\n\n4) Plantilla mínima reutilizable (ejemplo de estructura)\nproject-name/\n- data/\n  - raw/             # datos sin tocar\n  - processed/       # datos preparados\n- notebooks/\n  - 01_overview.ipynb        # objetivo, carga, primeras estadísticas\n  - 02_univariate.ipynb      # distribuciones, outliers\n  - 03_bivariate.ipynb       # correlaciones, tablas pivot\n  - 04_time_geo.ipynb        # series temporales / mapas (si aplica)\n- src/\n  - eda_utils.py             # funciones reutilizables (plots, resumen)\n- reports/\n  - figures/\n- environment.yml or requirements.txt\n- README.md\n\n5) Qué buscar en un notebook para que sea «inspirador»\n- Narrativa clara: problema y preguntas exploratorias.  \n- Reproducibilidad: se puede ejecutar desde cero (instrucciones de entorno).  \n- Código modular: funciones en src/ en lugar de repetir en celdas.  \n- Visualizaciones informativas y limpias con comentarios interpretativos.  \n- Evidencia de detección de problemas de datos (missing, duplicados, sesgos) y propuestas de tratamiento.\n\nReferencias / ejemplo de discusión sobre recursos y plantillas (ejemplo de hilo donde se recomiendan Kaggle notebooks y plantillas de proyecto):\nhttps://www.reddit.com/r/datascience/comments/11mz57q/favorite_resources_for_eda/  \nhttps://www.reddit.com/r/datascience/comments/gk9ggo/how_do_you_organise_your_data_science_projects/",
+  "error_flag": false
+}
