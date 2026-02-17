@@ -135,9 +135,11 @@ def search_knowledge_base(query: str) -> str:
 
     # 1. LOGGING: Guardamos el JSON completo y estructurado (NO TOCAR)
     ExecutionLogger.record_tool_execution("RAG", query, response_dict)
-
+    # Print de resultados enviados (primeros 100 caracteres) para debug
+    formatted_output = format_results_for_llm(response_dict["results"])
+    print(f"[RAG] Preview resultados enviados al LLM (100 chars) \n: {formatted_output[:100]}")
     # 2. RETURN: Devolvemos solo texto limpio al LLM para que no se confunda
-    return format_results_for_llm(response_dict["results"])
+    return formatted_output
 
 
 @mcp.tool

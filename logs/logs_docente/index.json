@@ -1,0 +1,191 @@
+{
+  "topic_reports": [
+    {
+      "report_id": "topic_20260209_231229449802",
+      "subreddit": "datascience",
+      "model": "openai",
+      "top_n": 50,
+      "generated_at": "2026-02-09T23:12:29.449802",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\datascience_20260209_231229449802.json"
+    },
+    {
+      "report_id": "topic_20260210_002144728632",
+      "subreddit": "datascience",
+      "model": "gemini",
+      "top_n": 50,
+      "generated_at": "2026-02-10T00:21:44.728632",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\datascience_20260210_002144728632.json"
+    },
+    {
+      "report_id": "topic_20260210_010724071606",
+      "subreddit": "datascience",
+      "model": "openai",
+      "top_n": 30,
+      "generated_at": "2026-02-10T01:07:24.071606",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\datascience_20260210_010724071606.json"
+    },
+    {
+      "report_id": "topic_20260210_012850511449",
+      "subreddit": "datascience",
+      "model": "openai",
+      "top_n": 10,
+      "generated_at": "2026-02-10T01:28:50.511449",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\datascience_20260210_012850511449.json"
+    },
+    {
+      "report_id": "topic_20260210_013246400861",
+      "subreddit": "dataanalysis",
+      "model": "openai",
+      "top_n": 50,
+      "generated_at": "2026-02-10T01:32:46.400861",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\dataanalysis_20260210_013246400861.json"
+    },
+    {
+      "report_id": "topic_20260210_014242811766",
+      "subreddit": "datascience",
+      "model": "gemini",
+      "top_n": 30,
+      "generated_at": "2026-02-10T01:42:42.811766",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\datascience_20260210_014242811766.json"
+    },
+    {
+      "report_id": "topic_20260210_015748543479",
+      "subreddit": "datascience",
+      "model": "gemini",
+      "top_n": 10,
+      "generated_at": "2026-02-10T01:57:48.543479",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\datascience_20260210_015748543479.json"
+    },
+    {
+      "report_id": "topic_20260210_015935756036",
+      "subreddit": "dataanalysis",
+      "model": "gemini",
+      "top_n": 50,
+      "generated_at": "2026-02-10T01:59:35.756036",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\dataanalysis_20260210_015935756036.json"
+    },
+    {
+      "report_id": "topic_20260210_135826005982",
+      "subreddit": "dataanalysis",
+      "top_n": 20,
+      "generated_at": "2026-02-10T13:58:26.005982",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\dataanalysis_20260210_135826005982.json",
+      "model": "openai"
+    },
+    {
+      "report_id": "topic_20260210_140135827483",
+      "subreddit": "dataanalysis",
+      "top_n": 20,
+      "generated_at": "2026-02-10T14:01:35.827483",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_1_topics\\dataanalysis_20260210_140135827483.json",
+      "model": "gemini"
+    }
+  ],
+  "lesson_plans": [
+    {
+      "plan_id": "addie_20260209_235045883067",
+      "source_report_id": "topic_20260209_231229449802",
+      "selected_topic": "Group 1: Train / test split timing and procedure",
+      "generated_at": "2026-02-09T23:50:45.883067",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260209_235045883067.json"
+    },
+    {
+      "plan_id": "addie_20260210_001211948752",
+      "source_report_id": "topic_20260209_231229449802",
+      "selected_topic": "Group 1: Train / test split timing and procedure",
+      "generated_at": "2026-02-10T00:12:11.948752",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_001211948752.json"
+    },
+    {
+      "plan_id": "addie_20260210_001606298845",
+      "source_report_id": "topic_20260209_231229449802",
+      "selected_topic": "Group 7: Choosing algorithms and implementing ML methods",
+      "generated_at": "2026-02-10T00:16:06.298845",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_001606298845.json"
+    },
+    {
+      "plan_id": "addie_20260210_003935116922",
+      "source_report_id": "topic_20260210_002144728632",
+      "selected_topic": "Group 3: Exploratory Data Analysis (EDA) Tools and Techniques",
+      "generated_at": "2026-02-10T00:39:35.116922",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_003935116922.json"
+    },
+    {
+      "plan_id": "addie_20260210_031424354851",
+      "source_report_id": "topic_20260209_231229449802",
+      "selected_topic": "Group 2: Data cleaning / SQL vs Python / reshaping CSVs",
+      "generated_at": "2026-02-10T03:14:24.354851",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_031424354851.json"
+    },
+    {
+      "plan_id": "addie_20260210_031632740139",
+      "source_report_id": "topic_20260210_010724071606",
+      "selected_topic": "Group 1: SQL vs Python and value of data cleaning projects",
+      "generated_at": "2026-02-10T03:16:32.740139",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_031632740139.json"
+    },
+    {
+      "plan_id": "addie_20260210_031734860190",
+      "source_report_id": "topic_20260210_012850511449",
+      "selected_topic": "Group 1: Tools, workflows and the role/value of data wrangling",
+      "generated_at": "2026-02-10T03:17:34.860190",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_031734860190.json"
+    },
+    {
+      "plan_id": "addie_20260210_032409081334",
+      "source_report_id": "topic_20260210_013246400861",
+      "selected_topic": "Group 5: Tools, environments and automation (Python / SQL / notebooks / ChatGPT)",
+      "generated_at": "2026-02-10T03:24:09.081334",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_032409081334.json"
+    },
+    {
+      "plan_id": "addie_20260210_032611890039",
+      "source_report_id": "topic_20260209_231229449802",
+      "selected_topic": "Group 2: Data cleaning / SQL vs Python / reshaping CSVs",
+      "generated_at": "2026-02-10T03:26:11.890039",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_032611890039.json"
+    },
+    {
+      "plan_id": "addie_20260210_033120042991",
+      "source_report_id": "topic_20260210_010724071606",
+      "selected_topic": "Group 1: SQL vs Python and value of data cleaning projects",
+      "generated_at": "2026-02-10T03:31:20.042991",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_033120042991.json"
+    },
+    {
+      "plan_id": "addie_20260210_033210511840",
+      "source_report_id": "topic_20260210_012850511449",
+      "selected_topic": "Group 1: Tools, workflows and the role/value of data wrangling",
+      "generated_at": "2026-02-10T03:32:10.511840",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_033210511840.json"
+    },
+    {
+      "plan_id": "addie_20260210_033606168043",
+      "source_report_id": "topic_20260210_013246400861",
+      "selected_topic": "Group 5: Tools, environments and automation (Python / SQL / notebooks / ChatGPT)",
+      "generated_at": "2026-02-10T03:36:06.168043",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_033606168043.json"
+    },
+    {
+      "plan_id": "addie_20260210_140255215807",
+      "source_report_id": "topic_20260210_013246400861",
+      "selected_topic": "Group 3: Exploratory Data Analysis (EDA) and dataset sourcing",
+      "generated_at": "2026-02-10T14:02:55.215807",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260210_140255215807.json"
+    },
+    {
+      "plan_id": "addie_20260216_220717631713",
+      "source_report_id": "topic_20260210_013246400861",
+      "selected_topic": "Group 1: Regression methods and model questions",
+      "generated_at": "2026-02-16T22:07:17.631713",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260216_220717631713.json"
+    },
+    {
+      "plan_id": "addie_20260216_224825705447",
+      "source_report_id": "topic_20260210_013246400861",
+      "selected_topic": "Group 3: Exploratory Data Analysis (EDA) and dataset sourcing",
+      "generated_at": "2026-02-16T22:48:25.705447",
+      "file": "C:\\Users\\Daniel\\Utpl\\Tesis\\Code\\agentic_ai_tesis\\logs_docente\\reports\\agente_2_addie\\addie_20260216_224825705447.json"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "user_rol": "teacher",
+  "timestamp": "2026-02-10T03:26:11.890039",
+  "provider": "gemini",
+  "user_question": "ADDIE plan for Group 2: Data cleaning / SQL vs Python / reshaping CSVs",
+  "conversation_history": [],
+  "start_time": 1770711971.89004,
+  "end_time": 1770711984.5330489,
+  "execution_time_seconds": 12.643008947372437,
+  "tool_calls": [
+    {
+      "tool": "WEB",
+      "query": "plataformas y herramientas para limpieza de datos SQL y Python",
+      "execution_time_seconds": 1.6373080000048503,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.verdantis.com/es/principales-herramientas-de-limpieza-de-datos/"
+          ],
+          "content": "Title: 9 herramientas de software para la limpieza de datos de todo tipo\nContent:DataBlist se posiciona como una herramienta práctica de calidad de datos y preparación de listas dirigida a equipos que manejan regularmente ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.reddit.com/r/dataanalysis/comments/1bpv4fs/what_are_the_best_tools_a_data_analyst_can_use_to/?tl=es-419"
+          ],
+          "content": "Title: ¿Cuáles son las mejores herramientas que un Analista de Datos ...\nContent:Para medianos - grandes, usa SQL. Para grandes - extra grandes, usa Python. Después están herramientas como dbt o escalar el almacén virtual de ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.datacamp.com/es/blog/top-data-science-tools"
+          ],
+          "content": "Title: Las 10 mejores herramientas de ciencia de datos para usar en 2026\nContent:Pandas facilita la limpieza, manipulación, análisis y ingeniería de características de datos en Python. Es la biblioteca más utilizada por los ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "    - Plataforma de gestión del aprendizaje (LMS) como Moodle o Canvas para la distribución de materiales y seguimiento.\n    - Entorno de desarrollo integrado (IDE) para Python: Jupyter Notebooks o Google Colab para la programación en Python con Pandas.\n    - Cliente SQL: PgAdmin, DBeaver o DataGrip para la ejecución de consultas SQL.\n    - Base de datos relacional: PostgreSQL o MySQL.\n\n**4. FASE DE IMPLEMENTACIÓN**\n- Instrucciones de Acceso: Los estudiantes accederán a los materiales del curso a través del LMS. Las instrucciones detalladas para la instalación o configuración de los entornos de Python y SQL, así como el acceso a la base de datos, se proporcionarán en un módulo introductorio específico. Los datasets y casos prácticos estarán disponibles para descarga en el LMS.\n- Cronograma / Tiempo Estimado: Se estima una duración de 8 horas de trabajo, distribuidas en:\n    - 2 horas de revisión de conceptos y teoría.\n    - 3 horas de práctica guiada con SQL y Python.\n    - 3 horas para la resolución del caso práctico de evaluación.\n- Plan de Soporte: Se establecerá un foro de discusión en el LMS para que los estudiantes publiquen sus dudas y el docente o asistentes resuelvan las consultas. Adicionalmente, se programarán sesiones de consulta semanales en línea para abordar preguntas más complejas o revisar el progreso de los estudiantes.\n\n**5. FASE DE EVALUACIÓN**\n- Indicadores de Éxito (KPIs):\n    - 80% de los estudiantes logran limpiar y transformar correctamente el dataset relacional utilizando SQL.\n    - 80% de los estudiantes logran reestructurar y limpiar el archivo CSV complejo utilizando Python (Pandas).\n    - 70% de los estudiantes justifican coherentemente la elección de herramientas en el informe de evaluación.\n- Feedback del Usuario:\n    - ¿Qué aspectos de la comparación entre SQL y Python para la limpieza de datos te resultaron más útiles o claros?\n    - ¿Qué dificultades encontraste al aplicar las técnicas de reestructuración de CSVs y cómo crees que podrían abordarse mejor en futuras actividades?",
+  "error_flag": false,
+  "source_report_id": "topic_20260209_231229449802",
+  "selected_topic": "Group 2: Data cleaning / SQL vs Python / reshaping CSVs"
+}

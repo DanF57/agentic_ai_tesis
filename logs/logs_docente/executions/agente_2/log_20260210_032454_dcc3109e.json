@@ -1,0 +1,69 @@
+{
+  "user_rol": "teacher",
+  "timestamp": "2026-02-10T03:24:09.081334",
+  "provider": "openai",
+  "user_question": "ADDIE plan for Group 5: Tools, environments and automation (Python / SQL / notebooks / ChatGPT)",
+  "conversation_history": [],
+  "start_time": 1770711849.0813348,
+  "end_time": 1770711894.5577343,
+  "execution_time_seconds": 45.476399421691895,
+  "tool_calls": [
+    {
+      "tool": "WEB",
+      "query": "best tools for data science notebooks Jupyter Google Colab VS Code Databricks Kaggle Papermill nbconvert Airflow Prefect LangChain ChatGPT integration 2024",
+      "execution_time_seconds": 2.4302764000021853,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://wininlifeacademy.com/top-data-science-tools/"
+          ],
+          "content": "Title: Top Data Science Tools to Learn in 2026\nContent:Discover the top Data Science tools in 2026, mapped to the real DS workflow Python, SQL, ML frameworks, cloud platforms, and more."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.nb-data.com/p/reviewing-the-top-data-science-platforms"
+          ],
+          "content": "Title: Reviewing the Top Data Science Platforms of 2024\nContent:There are so many free data science platform tools to learn and use. In this newsletter, we try to summarize our top 5 data science platforms for you to use."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://julius.ai/articles/jupyter-notebook-alternatives"
+          ],
+          "content": "Title: 16 Best Jupyter Notebook Alternatives for Data Teams in ...\nContent:Google Colab: Best for GPU training and quick experiments. Google Colab is a browser notebook from Google that runs Python code on hosted ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.augmentcode.com/tools/best-ai-coding-tools-for-data-science-and-ml"
+          ],
+          "content": "Title: 11 Best AI Coding Tools for Data Science & ML in 2026\nContent:AI coding tools that understand entire workflows across large codebases offer meaningful advantages for data science and machine learning teams."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.globaltechcouncil.org/data-science/data-science-tools/"
+          ],
+          "content": "Title: Top 10 Data Science Tools in 2025\nContent:The top 10 data science tools in 2025 are Python, R, Jupyter Notebook, Tableau, Power BI, Apache Spark, TensorFlow, RapidMiner, KNIME, ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "### Plantilla de Diseño Instruccional (Modelo ADDIE)\n- Título de la Actividad: Automatización reproducible de un flujo de análisis: Python, SQL, entornos de notebooks y asistencia con agentes (ChatGPT)\n\n**1. FASE DE ANÁLISIS**  \nProblema / Brecha Detectada:  \nEstudiantes confunden roles y elecciones entre entornos (Jupyter, Colab, VS Code, plataformas gestionadas), no distinguen claramente cuándo usar SQL versus Python en cada etapa del flujo, carecen de habilidades para transformar notebooks en procesos reproducibles y programables (p. ej. papermill, CI/CD), y muestran incertidumbre sobre integración segura y justificable de agentes tipo ChatGPT en el flujo de trabajo. Esto provoca análisis no reproducibles, dificultades para automatizar tareas repetitivas y riesgos de uso inapropiado de asistentes IA.\n\n**2. FASE DE DISEÑO**  \n- Objetivo de Aprendizaje General:  \nAl finalizar la actividad, el estudiante podrá configurar un entorno de trabajo apropiado, implementar y documentar un pipeline reproducible que extrae datos vía SQL, procesa y analiza con Python en un notebook parametrizado, y automatiza su ejecución mediante un mecanismo de orquestación (p. ej. GitHub Actions o Prefect), además de describir y justificar un uso ético y seguro de un agente tipo ChatGPT como apoyo en el flujo.\n\n- Estrategia Didáctica:  \nEnfoque activo y basado en proyecto: breve exposición conceptual, demostración guiada, laboratorio práctico por parejas sobre un repositorio plantilla, checkpoints formativos (revisiones de código/PR) y presentación final con demo reproducible. Inclusión de micro-feedback (rubrica) y análisis crítico sobre la integración de agentes IA.\n\n- Esquema de Contenidos:  \n1. Comparación de entornos: Jupyter Notebook/Lab, Google Colab, VS Code Notebooks, plataformas gestionadas (Databricks/Kaggle).  \n2. Conectividad SQL desde Python: controladores, SQLAlchemy, buenas prácticas para consultas parametrizadas.  \n3. Notebooks reproducibles: parametrización (papermill), conversión (nbconvert), estructuración modular (scripts vs notebooks).  \n4. Automatización y orquestación: GitHub Actions, cron vs Airflow/Prefect, contenedores básicos (Docker) y triggers.  \n5. Control de versiones y colaboración: git, repositorios, manejo de secretos para DB/API.  \n6. Integración de agentes/LLMs: uso de API (ChatGPT), prompt design, límites, registros y aspectos éticos.  \n7. Logging, manejo de errores, y pruebas básicas de pipelines.  \n\n- Mecanismo de Evaluación:  \nEvaluación basada en producto (proyecto final) y rúbrica. El estudiante demostrará el aprendizaje entregando: repositorio con código versionado, notebook parametrizado que ejecuta una consulta SQL y produce un informe, workflow automatizado (p. ej. GitHub Action) que ejecuta el notebook y almacena resultado/logs, documentación (README) y breve demo oral (5–7 min). La rúbrica cubre: funcionalidad, reproducibilidad (ejecución desde cero), calidad del código/queries, documentación y evidencia de uso responsable de ChatGPT (si aplica).\n\n**3. FASE DE DESARROLLO**  \n- Materiales de Contenido:  \n1. Slides de introducción (comparativa de entornos y flujo recomendado).  \n2. Repositorio plantilla en Git con: notebook inicial (starter), script de extracción SQL ejemplo, archivo de parámetros para papermill, workflow de GitHub Actions de ejemplo, Dockerfile mínimo opcional.  \n3. Guía paso a paso (lab) para: conectar a DB, parametrizar notebook con papermill, configurar secrets en GitHub, y ejecutar workflow.  \n4. Video corto (10–15 min) mostrando ejecución completa del pipeline.  \n5. Hoja de rúbrica y checklist de reproducibilidad.  \n6. Banco de prompts y políticas de uso para integrar ChatGPT (ejemplos, límites y registro de prompts).  \n7. Scripts de evaluación automática (tests básicos que la cátedra ejecuta para comprobar reproducibilidad).  \n\n- Plataforma / Herramientas:  \nJupyter Notebook / JupyterLab, Google Colab, VS Code (Python + Notebooks), Databricks / Kaggle notebooks (opcional); Python 3.8+, pandas, SQLAlchemy, drivers DB (psycopg2 o equivalente), papermill, nbconvert; Git + GitHub (repositorios y Actions); Docker (opcional); Airflow o Prefect (opcional para orquestación avanzada); clientes SQL (DBeaver/pgAdmin) para inspección; API de OpenAI / ChatGPT o SDKs/alternativas para integración; herramientas de CI (GitHub Actions) y sistema de gestión de secretos (GitHub Secrets).  \n\n**4. FASE DE IMPLEMENTACIÓN**  \n- Instrucciones de Acceso:  \n1. Profesor entrega enlace al repositorio plantilla y a la guía del laboratorio.  \n2. Estudiante hace fork/clone del repositorio, instala dependencias (requirements.txt o entorno conda).  \n3. Configura variables de entorno/secrets (credenciales de DB y API de ChatGPT) según la guía.  \n4. Ejecuta el notebook starter localmente o en Colab (subiendo secrets de forma segura), ajusta parámetros y valida salida.  \n5. Crea un branch y desarrolla la versión automatizada; abre PR para revisión de pares/TA.  \n6. Fusionado el PR, verifica que el workflow de GitHub Actions ejecute el pipeline y genere artefactos (informe, logs).  \n\n- Cronograma / Tiempo Estimado:  \nSesión 1 (90 min): conceptual y setup de entornos; Sesión 2 (180 min): laboratorio guiado — extracción SQL y notebook parametrizado; Trabajo autónomo (2–4 horas): integrar orquestación y documentación; Sesión 3 (60–90 min): entregas, demos y retroalimentación. Tiempo total estimado por estudiante: 8–10 horas.  \n\n- Plan de Soporte:  \nSoporte mediante: (a) foro de la asignatura / canal Slack con etiquetas para errores comunes; (b) 2 horas semanales de consultoría en vivo (office hours) con TAs; (c) issues template en el repositorio para reportar fallos reproducibles; (d) lista de troubleshooting con errores frecuentes (conexión DB, secrets, dependencias).\n\n**5. FASE DE EVALUACIÓN**  \n- Indicadores de Éxito (KPIs):  \n1. Porcentaje de estudiantes cuyo pipeline se ejecuta automáticamente (desde el repositorio) sin intervención manual (>80% objetivo).  \n2. Porcentaje de entregas que alcanzan al menos 75% en la rúbrica (funcionalidad, reproducibilidad, documentación).  \n3. Número de PRs con mejoras tras feedback (indicador de aprendizaje iterativo).  \n4. Evidencia documentada de uso responsable de ChatGPT en al menos X% de proyectos donde fue integrado (registro de prompts y justificativo).  \n\n- Feedback del Usuario:  \n1. ¿Qué decisiones técnicas (entorno, orquestador, método de parametrización) tomaste y cómo justifican la reproducibilidad de tu pipeline?  \n2. ¿Qué riesgos o limitaciones identificaste al integrar un agente tipo ChatGPT en el flujo y cómo los mitigaste?",
+  "error_flag": false,
+  "source_report_id": "topic_20260210_013246400861",
+  "selected_topic": "Group 5: Tools, environments and automation (Python / SQL / notebooks / ChatGPT)"
+}

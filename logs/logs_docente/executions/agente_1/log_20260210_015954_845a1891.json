@@ -1,0 +1,322 @@
+{
+  "user_rol": "teacher",
+  "timestamp": "2026-02-10T01:59:35.756036",
+  "provider": "gemini",
+  "user_question": "subreddit: dataanalysis top 50",
+  "conversation_history": [],
+  "start_time": 1770706775.756036,
+  "end_time": 1770706794.8183105,
+  "execution_time_seconds": 19.06227445602417,
+  "tool_calls": [
+    {
+      "tool": "collect_posts",
+      "query": "subreddit=dataanalysis, top_n=50",
+      "execution_time_seconds": 0.09716150000167545,
+      "results": [
+        {
+          "rank": 1,
+          "id": "post_x8uurf",
+          "title": "Do i need to know Python Data Structures for interviews ?",
+          "votes": 1
+        },
+        {
+          "rank": 2,
+          "id": "post_167nsus",
+          "title": "Requesting Feedback on my Spaceship Titanic Competition EDA - How Did I Do?",
+          "votes": 1
+        },
+        {
+          "rank": 3,
+          "id": "post_wdigzl",
+          "title": "Is these the right module to learn to start my journey as a data analyst ?",
+          "votes": 1
+        },
+        {
+          "rank": 4,
+          "id": "post_vwerqb",
+          "title": "which is better ? Jupyter vs Google Collab",
+          "votes": 1
+        },
+        {
+          "rank": 5,
+          "id": "post_1aoc6rr",
+          "title": "What’s the difference between data profiling and data validation?",
+          "votes": 1
+        },
+        {
+          "rank": 6,
+          "id": "post_w94258",
+          "title": "is there anyone in here that can help me with a data analysis assignment? i'm studying hr and need to pass this course but i'm hopeless and need help!!",
+          "votes": 1
+        },
+        {
+          "rank": 7,
+          "id": "post_w8zum9",
+          "title": "How to predict future date releases based on past release dates?",
+          "votes": 1
+        },
+        {
+          "rank": 8,
+          "id": "post_1byv29v",
+          "title": "[Question] Why does the essentialist slope in this bivariate plot look steeper than the constructivist, but my regression analysis indicates the opposite?",
+          "votes": 1
+        },
+        {
+          "rank": 9,
+          "id": "post_16qp1oj",
+          "title": "any good tutorial for Logistic Regression?",
+          "votes": 1
+        },
+        {
+          "rank": 10,
+          "id": "post_k5jvwn",
+          "title": "Stepwise Regression - Dependent Variable?",
+          "votes": 1
+        },
+        {
+          "rank": 11,
+          "id": "post_1c3cx3y",
+          "title": "Understanding how to analyze this set of customer data?",
+          "votes": 1
+        },
+        {
+          "rank": 12,
+          "id": "post_125maf7",
+          "title": "Where can I find a dataset with numerical features only?",
+          "votes": 1
+        },
+        {
+          "rank": 13,
+          "id": "post_15lwjf3",
+          "title": "Self-selecting independent variables for linear regression?",
+          "votes": 1
+        },
+        {
+          "rank": 14,
+          "id": "post_1gyvq3b",
+          "title": "How to train a multiple regression on SPSS with different data?",
+          "votes": 1
+        },
+        {
+          "rank": 15,
+          "id": "post_onyzqb",
+          "title": "Variance explained by a mono/multivariate linear regression model?",
+          "votes": 1
+        },
+        {
+          "rank": 16,
+          "id": "post_1cbc64n",
+          "title": "Ordinal or multinomial analysis?",
+          "votes": 1
+        },
+        {
+          "rank": 17,
+          "id": "post_1m5jdt4",
+          "title": "How does one report  non estimable data in their univariate analysis tables?",
+          "votes": 1
+        },
+        {
+          "rank": 18,
+          "id": "post_v5z98w",
+          "title": "Are regression models the best way to predict pricing precision?",
+          "votes": 1
+        },
+        {
+          "rank": 19,
+          "id": "post_12zqi4z",
+          "title": "How can I best analyse my data?",
+          "votes": 1
+        },
+        {
+          "rank": 20,
+          "id": "post_vowz1m",
+          "title": "Can \"Age\" be independent variable? Meaning of p-value of intercept = 0?",
+          "votes": 1
+        },
+        {
+          "rank": 21,
+          "id": "post_15nwete",
+          "title": "Help! How can I estimate this?",
+          "votes": 1
+        },
+        {
+          "rank": 22,
+          "id": "post_1bt8ek5",
+          "title": "Data exploration tools?",
+          "votes": 1
+        },
+        {
+          "rank": 23,
+          "id": "post_1egjti9",
+          "title": "Data analysis for Likert scale - What analyses would you perform?",
+          "votes": 1
+        },
+        {
+          "rank": 24,
+          "id": "post_1iymoep",
+          "title": "Which method to choose?",
+          "votes": 1
+        },
+        {
+          "rank": 25,
+          "id": "post_yd8scv",
+          "title": "How might I use time series data to solve for unknown coefficients in a linear model (physics based system of 1st order ODEs)?",
+          "votes": 1
+        },
+        {
+          "rank": 26,
+          "id": "post_1al5ye3",
+          "title": "MLR Influential Points?",
+          "votes": 1
+        },
+        {
+          "rank": 27,
+          "id": "post_1czh9xr",
+          "title": "What are the use cases of SQL at your work? SQL to Data viz(Tableau or Power BI)?",
+          "votes": 2
+        },
+        {
+          "rank": 28,
+          "id": "post_10y5iuk",
+          "title": "Regression prediction of heterogenous data (commercial real estate) with time series: how to approach?",
+          "votes": 2
+        },
+        {
+          "rank": 29,
+          "id": "post_12fs1ce",
+          "title": "How do I fix this?",
+          "votes": 2
+        },
+        {
+          "rank": 30,
+          "id": "post_p5bzfk",
+          "title": "What is 6 month plan becoming beginner level Data Scientist?",
+          "votes": 2
+        },
+        {
+          "rank": 31,
+          "id": "post_slq2hm",
+          "title": "Using regression analysis to forecast sales in a SAaS firm?",
+          "votes": 3
+        },
+        {
+          "rank": 32,
+          "id": "post_13xoqdo",
+          "title": "What level should a data analyst be at re: stats?",
+          "votes": 3
+        },
+        {
+          "rank": 33,
+          "id": "post_emp6wm",
+          "title": "can non-random samples be analysed using the general statistical tests?",
+          "votes": 3
+        },
+        {
+          "rank": 34,
+          "id": "post_e0mac2",
+          "title": "What is regression weight and how to calculate it through SPSS?",
+          "votes": 3
+        },
+        {
+          "rank": 35,
+          "id": "post_i99ztz",
+          "title": "Basic Data Analysis - How should I predict Quantitative Variable?",
+          "votes": 3
+        },
+        {
+          "rank": 36,
+          "id": "post_18jvjyc",
+          "title": "Stats resources on R?",
+          "votes": 3
+        },
+        {
+          "rank": 37,
+          "id": "post_of3r8n",
+          "title": "What's next? Little help needed.",
+          "votes": 4
+        },
+        {
+          "rank": 38,
+          "id": "post_cmt3ph",
+          "title": "Any link to video(s) that teaches how to implement ARIMA (or at least ARMA) from scratch onto Excel?",
+          "votes": 4
+        },
+        {
+          "rank": 39,
+          "id": "post_tyyyx3",
+          "title": "How make linear regression with interaction ?",
+          "votes": 4
+        },
+        {
+          "rank": 40,
+          "id": "post_1afleb4",
+          "title": "EDA - How thorough are you typically?",
+          "votes": 5
+        },
+        {
+          "rank": 41,
+          "id": "post_13h1dr4",
+          "title": "What is Exploratory Data Analysis (EDA) ?",
+          "votes": 6
+        },
+        {
+          "rank": 42,
+          "id": "post_r946fu",
+          "title": "Sql vs python?",
+          "votes": 7
+        },
+        {
+          "rank": 43,
+          "id": "post_hg3gvq",
+          "title": "Tips for a starting data analyst?",
+          "votes": 7
+        },
+        {
+          "rank": 44,
+          "id": "post_ymbf4w",
+          "title": "How do I analyze the change in the relationship between two variables?",
+          "votes": 7
+        },
+        {
+          "rank": 45,
+          "id": "post_19f85sb",
+          "title": "Best resources for advanced analytics?",
+          "votes": 12
+        },
+        {
+          "rank": 46,
+          "id": "post_1mro5b7",
+          "title": "ChatGPT Agent Mode for Data Analysis - Game Changer or Just a Helper?",
+          "votes": 20
+        },
+        {
+          "rank": 47,
+          "id": "post_1hjnau5",
+          "title": "Data Analysts: Do you use Linear Regressions/other regressions in your work much?",
+          "votes": 20
+        },
+        {
+          "rank": 48,
+          "id": "post_zw64vm",
+          "title": "how data analysis tasks can be automated using python?",
+          "votes": 25
+        },
+        {
+          "rank": 49,
+          "id": "post_106mrgc",
+          "title": "tips for a quality DA portfolio?",
+          "votes": 31
+        },
+        {
+          "rank": 50,
+          "id": "post_11e7s0y",
+          "title": "Is data analysis considered a \"tech\" job?",
+          "votes": 33
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "## Question Groups Identified\n- Total of posts found: 50\n\n### Group 1: Regression Analysis - Concepts, Implementation & Interpretation\n\n- Shared idea: These questions focus on various aspects of regression analysis, including understanding different types (logistic, linear, stepwise, multiple), how to set up and train models, interpreting results like variance explained or p-values, and using regression for prediction.\n- Post IDs: post_1byv29v - post_16qp1oj - post_k5jvwn - post_15lwjf3 - post_1gyvq3b - post_onyzqb - post_v5z98w - post_vowz1m - post_10y5iuk - post_slq2hm - post_e0mac2 - post_i99ztz - post_yd8scv - post_1al5ye3 - post_tyyyx3 - post_1hjnau5\n- Example titles:\n- \"[Question] Why does the essentialist slope in this bivariate plot look steeper than the constructivist, but my regression analysis indicates the opposite?\"\n- \"any good tutorial for Logistic Regression?\"\n- \"Stepwise Regression - Dependent Variable?\"\n- \"Self-selecting independent variables for linear regression?\"\n- \"How to train a multiple regression on SPSS with different data?\"\n- \"Variance explained by a mono/multivariate linear regression model?\"\n- \"Are regression models the best way to predict pricing precision?\"\n- \"Can \\\"Age\\\" be independent variable? Meaning of p-value of intercept = 0?\"\n- \"Regression prediction of heterogenous data (commercial real estate) with time series: how to approach?\"\n- \"Using regression analysis to forecast sales in a SAaS firm?\"\n- \"What is regression weight and how to calculate it through SPSS?\"\n- \"Basic Data Analysis - How should I predict Quantitative Variable?\"\n- \"How might I use time series data to solve for unknown coefficients in a linear model (physics based system of 1st order ODEs)?\"\n- \"MLR Influential Points?\"\n- \"How make linear regression with interaction ?\"\n- \"Data Analysts: Do you use Linear Regressions/other regressions in your work much?\"\n\n### Group 2: Exploratory Data Analysis (EDA)\n\n- Shared idea: These questions are directly about the process, purpose, or seeking feedback on Exploratory Data Analysis (EDA).\n- Post IDs: post_167nsus - post_1afleb4 - post_13h1dr4\n- Example titles:\n- \"Requesting Feedback on my Spaceship Titanic Competition EDA - How Did I Do?\"\n- \"EDA - How thorough are you typically?\"\n- \"What is Exploratory Data Analysis (EDA) ?\"\n\n### Group 3: Career Path & Learning Resources for Data Analysts\n\n- Shared idea: These questions revolve around career progression, necessary skills, learning paths, interview preparation, and resources for aspiring or current data analysts.\n- Post IDs: post_wdigzl - post_p5bzfk - post_13xoqdo - post_hg3gvq - post_106mrgc - post_11e7s0y - post_x8uurf - post_of3r8n - post_19f85sb\n- Example titles:\n- \"Is these the right module to learn to start my journey as a data analyst ?\"\n- \"What is 6 month plan becoming beginner level Data Scientist?\"\n- \"What level should a data analyst be at re: stats?\"\n- \"Tips for a starting data analyst?\"\n- \"tips for a quality DA portfolio?\"\n- \"Is data analysis considered a \\\"tech\\\" job?\"\n- \"Do i need to know Python Data Structures for interviews ?\"\n- \"What's next? Little help needed.\"\n- \"Best resources for advanced analytics?\"\n\n### Group 4: Data Analysis Tools & Languages Comparison/Usage\n\n- Shared idea: This group includes questions comparing different tools or programming languages used in data analysis, or asking about their specific use cases and automation capabilities.\n- Post IDs: post_vwerqb - post_1czh9xr - post_r946fu - post_zw64vm - post_18jvjyc - post_cmt3ph\n- Example titles:\n- \"which is better ? Jupyter vs Google Collab\"\n- \"What are the use cases of SQL at your work? SQL to Data viz(Tableau or Power BI)?\"\n- \"Sql vs python?\"\n- \"how data analysis tasks can be automated using python?\"\n- \"Stats resources on R?\"\n- \"Any link to video(s) that teaches how to implement ARIMA (or at least ARMA) from scratch onto Excel?\"\n\n### Group 5: Specific Analytical Techniques & Data Types\n\n- Shared idea: These questions are about applying specific statistical or analytical methods, dealing with particular types of data (e.g., Likert scale, numerical only), or understanding specific concepts like data profiling vs. validation.\n- Post IDs: post_1aoc6rr - post_w8zum9 - post_1c3cx3y - post_125maf7 - post_1cbc64n - post_1m5jdt4 - post_12zqi4z - post_1egjti9 - post_1iymoep - post_emp6wm - post_ymbf4w\n- Example titles:\n- \"What’s the difference between data profiling and data validation?\"\n- \"How to predict future date releases based on past release dates?\"\n- \"Understanding how to analyze this set of customer data?\"\n- \"Where can I find a dataset with numerical features only?\"\n- \"Ordinal or multinomial analysis?\"\n- \"How does one report non estimable data in their univariate analysis tables?\"\n- \"How can I best analyse my data?\"\n- \"Data analysis for Likert scale - What analyses would you perform?\"\n- \"Which method to choose?\"\n- \"can non-random samples be analysed using the general statistical tests?\"\n- \"How do I analyze the change in the relationship between two variables?\"\n\n### Unclear / Standalone Questions\n- post_w94258 | is there anyone in here that can help me with a data analysis assignment? i'm studying hr and need to pass this course but i'm hopeless and need help!!\n- post_15nwete | Help! How can I estimate this?\n- post_1bt8ek5 | Data exploration tools?\n- post_12fs1ce | How do I fix this?\n- post_1mro5b7 | ChatGPT Agent Mode for Data Analysis - Game Changer or Just a Helper?",
+  "error_flag": false
+}

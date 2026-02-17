@@ -1,0 +1,10 @@
+{
+  "report_id": "topic_20260210_015748543479",
+  "source": {
+    "subreddit": "datascience",
+    "top_n": 10,
+    "model": "gemini"
+  },
+  "generated_at": "2026-02-10T01:57:48.543479",
+  "report_content": "## Question Groups Identified\n- Total of posts found: 10\n\n### Group 1: Jupyter Notebook & Workflow\n\n- Shared idea: These questions relate to the practical aspects of data science workflows, specifically focusing on the use of Jupyter notebooks and overall efficient processes with various tools.\n- Post IDs: post_dbwuqu - post_hs2cbj\n- Example titles:\n- \"Jupyter notebook or EDA examples with lat/long data?\"\n- \"What is an efficient workflow using pyspark, AWS and Jupyter notebooks?\"\n\n### Group 2: Model Selection & Data Splitting\n\n- Shared idea: This group focuses on fundamental considerations in machine learning, covering topics such as model choice, data preprocessing for classification, and the application of data splitting techniques in different learning scenarios.\n- Post IDs: post_zoaan4 - post_xrdleu\n- Example titles:\n- \"Do I also use a train/test/holdout split in unsupervised learning?\"\n- \"Which model to use or how to preprocess the multi-dimensional data to classify?\"\n\n### Unclear / Standalone Questions\n- post_zougy0 | As a newbie to SQL, how do I decide whether to use SQL for the actual data analysis in a project, or just for wrangling the data?\n- post_j9d9jb | How often do you make dashboards just for you?\n- post_16ue1kp | What all visualization and insights could be part of Twitter Sentiment Analysis?\n- post_14zjuf4 | Finally time: Book recommendation for data science in CRM or lead management systems?\n- post_xwgyd3 | What's my title?\n- post_14hseck | Are Data Cleaning projects worth the time?"
+}

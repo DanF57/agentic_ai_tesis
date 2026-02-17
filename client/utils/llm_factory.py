@@ -29,7 +29,9 @@ def create_llm(provider: str, model: str, tools: list = None, streaming_callback
                 model=model,
                 api_key=Secret.from_env_var("OPENAI_API_KEY"),
                 tools=tools,
-                streaming_callback=streaming_callback
+                streaming_callback=streaming_callback,
+                timeout=300.0,
+                max_retries=3
             )
 
         # Gemini (Google)
@@ -40,7 +42,7 @@ def create_llm(provider: str, model: str, tools: list = None, streaming_callback
                 model=model,
                 api_key=Secret.from_env_var("GOOGLE_API_KEY"),
                 tools=tools,
-                streaming_callback=streaming_callback
+                streaming_callback=streaming_callback,
             )
     
     except ImportError as e:

@@ -1,0 +1,72 @@
+{
+  "user_rol": "student",
+  "timestamp": "2026-02-08T23:48:04.406621",
+  "provider": "openai",
+  "user_question": "Qué se entiende por 'leverage' e 'influencia' en regresión?",
+  "conversation_history": [
+    {
+      "role": "user",
+      "content": "Qué se entiende por 'leverage' e 'influencia' en regresión?"
+    }
+  ],
+  "start_time": 1770612484.4066212,
+  "end_time": 1770612517.3931928,
+  "execution_time_seconds": 32.98657155036926,
+  "tool_calls": [
+    {
+      "tool": "RAG",
+      "query": "leverage and influence regression definitions leverage influence regression diagnostics",
+      "execution_time_seconds": 0.6215827000050922,
+      "results": [
+        {
+          "result": "0",
+          "id": "comment_mikukls",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.4262",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Sometimes the distinction is drawn between \"influential\" points and \"high leverage\" points for this exact reason - they are not technically synonyms here. \n\nI would also add that there exists a kind of metric that can help you assess the leverage of various points in a more systematic numerical way - look up Cook's Distance (others exist too)"
+        },
+        {
+          "result": "0",
+          "id": "comment_h6ewtcm",
+          "source_type": "Comment",
+          "title": "I build a predictive model but the prediction is very off on the test dataset...most of the predictions are way lower than the actual value. Do I need to select a new modelling technique? I am using linear regression.",
+          "score": "0.4478",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/oqvxil/i_build_a_predictive_model_but_the_prediction_is/",
+          "content": "Context (Post Title): I build a predictive model but the prediction is very off on the test dataset...most of the predictions are way lower than the actual value. Do I need to select a new modelling technique? I am using linear regression.\nComment: In the 'influential observations' plot, I see two observations with much higher leverage than the rest but with disproportionately small residual (some more high leverage observations at around 0.2 but not as extreme as 0.5). This indicates that there are some far-away points that the regression line fits quite closely. What could you deduce from this?"
+        },
+        {
+          "result": "0",
+          "id": "comment_mijiwwf",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.4486",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: Same as a lever system in physics. To turn a nut, a short wrench needs more effort than a long wrench.\n\nAnd in regression, the mean of the variables is the fulcrum (the nut), distance between the fulcrum and a data point is the length of the wrench, and error term is the effort.\n\nGiven the same amount the error, a data point can assert more torque if it's further and further away from the fulcrum. --> tilting the line --> more likely influential."
+        },
+        {
+          "result": "0",
+          "id": "comment_l8bfyu9",
+          "source_type": "Comment",
+          "title": "Regression assumptions are overlooked in my grad program. Why?",
+          "score": "0.4764",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1de7t28/regression_assumptions_are_overlooked_in_my_grad/",
+          "content": "Context (Post Title): Regression assumptions are overlooked in my grad program. Why?\nComment: transforming variables to fit a particular analytic model's assumptions is done to fit a particular model's assumptions.\n\nI assume regressions in the business world are done to figure out what predicts to what, such a drivers of customer choice, or business cycles, like inflation.\n\nOnce you do a square-root transformation of a couple predictors, your model fit is better but nobody knows how to interpret the results.\n\nIn a consultant role, I have been able to do analyses and resent results to some pretty impressive groups. And, have been told: \"just explain what you found, and don't give any statistics.\"\n\nThat is how things go in the real world.\n\n \n-Also: coliinearity. With real world variables, you ought to be able to see colinnear variables. If you predict sales across time as a function of both week and month, you have colinnearity."
+        },
+        {
+          "result": "0",
+          "id": "comment_miqotsd",
+          "source_type": "Comment",
+          "title": "Do points on either end of a linear regression have more leverage?",
+          "score": "0.4833",
+          "source_url": "https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+          "content": "Context (Post Title): Do points on either end of a linear regression have more leverage?\nComment: It is not a matter of conflation, just a simple conversational assumption since 99% of regression model discussions revolve around linear regression. Anything deviating from such a ubiquitous standard would be clearly specified, and in cases like OP, it's pretty obviously reasonable to assume they are discussing OLS."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "[EXPLANATION]\nExplico brevemente los conceptos y las fórmulas clave usadas en regresión lineal ordinaria (OLS): qué es leverage (apertura en el espacio de predictores), por qué importa (puede amplificar el efecto de un residuo) y cómo se combina con el tamaño del residuo para medir influencia. Menciono medidas prácticas (hat values, Cook’s distance, DFBETAS), umbrales orientativos y supuestos (validez de fórmulas en OLS).",
+  "final_answer": "Definiciones y fórmulas principales\n- Leverage (apalancamiento)\n  - Definición: mide cuánto “peso” tiene una observación por su posición en el espacio de predictores X (independiente de su residuo). En OLS se obtiene como la diagonal de la matriz de proyección (hat matrix) H:\n    - H = X (X'X)^{-1} X'  y el leverage del i-ésimo punto es h_ii (0 ≤ h_ii ≤ 1).\n  - Propiedades útiles: la media de los h_ii es p/n (p = número de parámetros incluyendo intercepto). Valores grandes indican observaciones “lejanas” en X (posibles outliers en predictores).\n\n- Influencia\n  - Definición: cuánto cambia el ajuste del modelo (por ejemplo, los coeficientes o las predicciones) si se elimina una observación. Depende tanto del leverage (h_ii) como del residuo (e_i).\n  - Si una observación tiene leverage alto pero residuo pequeño, puede no ser influyente; si tiene residuo grande y leverage alto, suele ser muy influyente.\n\nMedidas prácticas para diagnosticar\n- Residuo estudiado (externally/studentized residual): r_i* = e_i / (s_{(i)} sqrt(1 - h_ii)), donde s_{(i)} es la desviación estándar estimada sin la i-ésima observación. Permite ver si el error de i es atípico.\n- Cook’s distance (D_i): combina residuo y leverage para cuantificar cambio en los coeficientes al eliminar i.\n  - Fórmula común: D_i = (e_i^2 / (p * MSE)) * (h_ii / (1 - h_ii)^2)\n  - Interpretación: valores grandes indican observaciones que, al quitarse, cambian notablemente el ajuste. Umbrales orientativos: D_i > 4/n o comparar con percentiles; interpretar con precaución.\n- DFBETAS: cambio en cada coeficiente j al eliminar i, normalizado por su error estándar; regla empírica |DFBETAS| > 2/√n indica cambio relevante en ese coeficiente.\n- Leverage “alto” (regla práctica): h_ii > 2p/n o h_ii > 3p/n (dependiendo de la literatura y tamaño muestral).\n\nCómo usarlos en conjunto (flujo diagnóstico sencillo)\n1. Calcular h_ii para todos los i (vector de leverages).\n2. Calcular residuos studentizados y Cook’s distance.\n3. Visualizar: scatter de leverage vs. residuos studentizados; marcar observaciones con Cook’s D grandes y DFBETAS fuera del umbral.\n4. Investigar observaciones identificadas: revisar errores de entrada, validez de medición, y considerar análisis con/ sin esos puntos (reportando ambos).\n\nSupuestos y limitaciones\n- Fórmulas anteriores asumen OLS (linealidad en parámetros, homocedasticidad y errores no correlacionados para interpretaciones de varianzas). En regresión robusta o modelos no lineales las definiciones de influencia cambian.\n- No todo punto influyente es “malo”: puede ser un dato legítimo que aporte información; la decisión debe basarse en contexto y justificación.\n\nEjemplo conceptual / pseudocódigo\n- X: matriz de diseño; y: vector respuesta.\n  1. H = X %*% solve(t(X) %*% X) %*% t(X)\n  2. leverages = diag(H)\n  3. resid = y - X %*% beta_hat\n  4. cook = (resid^2 / (p * MSE)) * (leverages / (1 - leverages)^2)\n  5. dfbetas = (beta_hat - beta_hat_without_i) / (s_(i) * sqrt(diag(solve(t(X) %*% X))))\n\nLecturas / ejemplos prácticos\n- Un hilo con explicaciones y discusión sobre la diferencia entre leverage e influencia y uso de Cook’s distance como medida práctica.\nSource URLs: https://reddit.com/r/AskStatistics/comments/1jea7l1/do_points_on_either_end_of_a_linear_regression/",
+  "error_flag": false
+}

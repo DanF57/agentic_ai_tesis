@@ -1,0 +1,10 @@
+{
+  "report_id": "topic_20260210_012850511449",
+  "source": {
+    "subreddit": "datascience",
+    "top_n": 10,
+    "model": "openai"
+  },
+  "generated_at": "2026-02-10T01:28:50.511449",
+  "report_content": "## Question Groups Identified\n- Total of posts found: 10\n\n### Group 1: Tools, workflows and the role/value of data wrangling\n- Shared idea: Questions about which tools or workflows to use for preparing and processing data, and whether data cleaning/wrangling work is worthwhile.\n- Post IDs: post_zougy0 - post_hs2cbj - post_14hseck\n- Example titles:\n- \"As a newbie to SQL, how do I decide whether to use SQL for the actual data analysis in a project, or just for wrangling the data?\"\n- \"What is an efficient workflow using pyspark, AWS and Jupyter notebooks?\"\n- \"Are Data Cleaning projects worth the time?\"\n\n### Group 2: Visualization, EDA and dashboards\n- Shared idea: Requests for examples, ideas, or practices around exploratory data analysis, visualizations, and creating dashboards (including personal-use dashboards).\n- Post IDs: post_dbwuqu - post_j9d9jb - post_16ue1kp\n- Example titles:\n- \"Jupyter notebook or EDA examples with lat/long data?\"\n- \"How often do you make dashboards just for you?\"\n- \"What all visualization and insights could be part of Twitter Sentiment Analysis?\"\n\n### Group 3: Model selection, preprocessing and evaluation splits\n- Shared idea: Questions about choosing models, preprocessing multidimensional data for classification, and evaluation practices such as train/test/holdout splitting (including in unsupervised learning).\n- Post IDs: post_zoaan4 - post_xrdleu\n- Example titles:\n- \"Do I also use a train/test/holdout split in unsupervised learning?\"\n- \"Which model to use or how to preprocess the multi-dimensional data to classify?\"\n\n### Unclear / Standalone Questions\n- post_14zjuf4 | \"Finally time: Book recommendation for data science in CRM or lead management systems?\"\n- post_xwgyd3 | \"What's my title?\""
+}

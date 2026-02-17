@@ -88,7 +88,7 @@ def create_student_agent(provider: str, streaming_callback=None):
         - pedagógica,
         - bien estructurada,
         - usando terminología correcta de Ciencias de Datos.
-        - Incluye enlaces (Source URLs) de las fuentes utilizadas.
+        - Incluye enlaces (URLs) de las fuentes utilizadas.
         Puedes usar listas, ejemplos conceptuales o fragmentos breves de pseudocódigo
         si aportan claridad.
 
@@ -99,7 +99,8 @@ def create_student_agent(provider: str, streaming_callback=None):
         - Mantén un tono académico, claro y didáctico.
         - Al final de tu respuesta no incluyas sugerencias de como debe seguir la conversación.
         - Siempre agrega al final el URL de la fuente utilizada, sea de los resultados de RAG o de la búsqueda web.
-        - Al estudiante no le digas si la fuente proviene de RAG o web, con aclarar que es un ejemplo y proporcionar el url de la fuente es suficiente.
+        - Al estudiante no le digas si la fuente proviene de RAG o web, con aclarar que es un ejemplo 
+        y proporcionar el url de la fuente es suficiente.
         """,
 
         tools=toolset_student,
@@ -142,8 +143,6 @@ def create_analizer_agent(provider: str):
         system_prompt="""
         You are an analyst whose only task is to group similar student questions.
         You will receive a list of question titles collected from a subreddit using the tool `collect_posts`.
-
-        Your goal is NOT to design lessons or interpret pedagogy.
         Your goal is ONLY to group questions that are about the same or very similar topic.
 
         RULES
@@ -151,6 +150,7 @@ def create_analizer_agent(provider: str):
         - Do not infer motivations, industry trends, or hidden intentions
         - Prefer literal wording and keywords
         - If a question does not clearly belong to any group, mark it as "Unclear / Standalone"
+        - Do not propose more steps or recommendations on how to follow
 
         GROUPING GUIDELINES
         - A group must contain at least 2 questions
@@ -161,14 +161,14 @@ def create_analizer_agent(provider: str):
 
         ## Question Groups Identified
         - Total of posts found: 
-
-        For each group:
-
+        
+        (For each group:)
         ### Group X: <short descriptive label>
 
-        - Shared idea: brief description in 1 sentence
+        - Shared idea: brief description in 1-2 sentences
         - Post IDs: post_xxx - post_yyy - post_zzz
         - Example titles:
+        - "..."
         - "..."
         - "..."
 
@@ -192,15 +192,23 @@ def create_planification_agent(provider: str):
         provider_config = config['providers'][provider]
         model_name = provider_config['model']
 
+    server_info = StreamableHttpServerInfo(url="http://localhost:8000/mcp")
+    plan_toolset = MCPToolset(
+        server_info=server_info,
+        tool_names=["search_web"]
+    )
+    
+    tools_pl = plan_toolset.tools if hasattr(plan_toolset, 'tools') else None
+
     
     chat_generator = create_llm(
         provider=provider,
         model=model_name,
-        tools=None)
+        tools=tools_pl)
 
     agent = Agent(
         chat_generator=chat_generator,
-       tools=None,
+       tools=plan_toolset,
        system_prompt=
        """
         Eres un asistente académico especializado exclusivamente en el diseño instruccional
@@ -213,6 +221,7 @@ def create_planification_agent(provider: str):
         Dispondrás de:
         1) Un reporte de análisis temático ya validado.
         2) Un único tema seleccionado explícitamente por el docente.
+        3) Puedes usar la herramienta web (search_web) para búscar recursos web 
 
         ALCANCE Y REGLAS DE FOCO (OBLIGATORIAS)
 
@@ -221,14 +230,6 @@ def create_planification_agent(provider: str):
         - No debes reinterpretar, redefinir ni cuestionar el análisis temático.
         - No debes realizar un nuevo análisis de preguntas.
         - Asume que el análisis previo es correcto y definitivo.
-
-        TEMA SELECCIONADO (usa exactamente esta etiqueta como referencia):
-        <<SELECTED_TOPIC>>
-
-        REPORTE COMPLETO DE ANÁLISIS TEMÁTICO:
-        <<REPORT_CONTENT>>
-
-        ---
 
         ### ESTRUCTURA DE RESPUESTA (OBLIGATORIA)
         Devuelve SIEMPRE tu respuesta llenando EXACTAMENTE el siguiente formato.
@@ -257,6 +258,7 @@ def create_planification_agent(provider: str):
         Lista los recursos que deben desarrollarse.  
         - Plataforma / Herramientas:  
         Indica las herramientas o plataformas de implementación.
+        Para esto puedes usar la herramienta de búsqueda web.
 
         **4. FASE DE IMPLEMENTACIÓN**  
         - Instrucciones de Acceso:  

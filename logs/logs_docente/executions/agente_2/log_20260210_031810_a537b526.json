@@ -1,0 +1,69 @@
+{
+  "user_rol": "teacher",
+  "timestamp": "2026-02-10T03:17:34.860190",
+  "provider": "openai",
+  "user_question": "ADDIE plan for Group 1: Tools, workflows and the role/value of data wrangling",
+  "conversation_history": [],
+  "start_time": 1770711454.8601904,
+  "end_time": 1770711490.962229,
+  "execution_time_seconds": 36.102038621902466,
+  "tool_calls": [
+    {
+      "tool": "WEB",
+      "query": "common tools for data wrangling PySpark pandas Jupyter Databricks Airflow AWS Glue 2024",
+      "execution_time_seconds": 1.4837759000001824,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://vodworks.com/blogs/data-pipeline-tools/"
+          ],
+          "content": "Title: The Ultimate List of Data Pipeline Tools for 2025 - Vodworks\nContent:Airflow is ideal for data engineering teams who need highly customizable, Python-native pipeline orchestration across varied systems. If you're ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://medium.com/@nikj029/top-data-engineering-tools-in-2024-a-comprehensive-comparison-ade9eae30d35"
+          ],
+          "content": "Title: Top Data Engineering Tools in 2024: A Comprehensive Comparison\nContent:1. Apache Spark · 2. Airflow (Apache Airflow) · 3. Snowflake · 4. dbt (Data Build Tool) · 5. Kafka (Apache Kafka) · 6. Databricks · 7. Talend · 8. AWS ..."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.thirstysprout.com/post/best-data-pipeline-tools"
+          ],
+          "content": "Title: 12 Best Data Pipeline Tools for Engineering Teams in 2026\nContent:A practical guide to the best data pipeline tools. Compare Fivetran, Airbyte, AWS Glue & more on cost, use case, and trade-offs to build ..."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://sunscrapers.com/blog/top-data-engineering-tools/"
+          ],
+          "content": "Title: Top Data Engineering tools - Sunscrapers\nContent:In this article, we will explore some of the top data engineering tools that are currently available, including their features, advantages, ..."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.refontelearning.com/blog/top-data-engineering-tools-you-need-to-learn-in-2025-kafka-spark-airflow-and-more"
+          ],
+          "content": "Title: Top Data Engineering Tools You Need to Learn in 2025 (Kafka ...\nContent:In summary, Apache Airflow is the orchestration glue that holds your data engineering efforts together – learning it in 2025 is essential if ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "### Plantilla de Diseño Instruccional (Modelo ADDIE)\n- Título de la Actividad:  \n  Taller práctico: Selección e implementación de herramientas y workflows para data wrangling\n\n**1. FASE DE ANÁLISIS**  \nProblema / Brecha Detectada:  \nEstudiantes confunden cuándo usar herramientas y workflows específicos (p. ej. pandas vs PySpark, notebooks vs pipelines orquestados), carecen de criterios para elegir la tecnología adecuada según volumen y objetivo, y subestiman o no saben demostrar el valor/retorno de inversión del trabajo de limpieza y preparación de datos.\n\n**2. FASE DE DISEÑO**  \n- Objetivo de Aprendizaje General:  \n  Seleccionar y aplicar un workflow y conjunto de herramientas apropiadas para un caso real de wrangling, documentar decisiones técnicas y demostrar el impacto en la calidad y factibilidad del análisis final.  \n- Estrategia Didáctica:  \n  Aprendizaje activo basado en un caso guiado: breve exposición conceptual seguida de laboratorio hands-on en parejas, comparación de alternativas (notebook vs pipeline), y presentación reflexiva de decisiones y resultados. Se usan rúbricas y retroalimentación formativa.  \n- Esquema de Contenidos:  \n  1. Definición y objetivos del data wrangling (propósito y valor).  \n  2. Criterios para elegir herramientas (volumen, latencia, skills, coste, reproducibilidad).  \n  3. Herramientas comunes: pandas, SQL, PySpark, Databricks, dbt, Airflow, AWS Glue, Jupyter/Notebooks.  \n  4. Patrones de workflow: ETL vs EL, notebook-prototype→production pipeline, orquestación y CI/CD.  \n  5. Calidad de datos y métricas (completitud, consistencia, duplicados, trazabilidad).  \n  6. Automatización, monitoreo y documentación de pipelines.  \n  7. Evaluación de valor: coste/beneficio y comunicación de resultados.  \n- Mecanismo de Evaluación:  \n  Evaluación sumativa mediante entrega de un pipeline funcional (repositorio con código), un informe técnico corto (1–2 páginas) justificando la selección de herramientas y un notebook o job que demuestre mejoras en calidad/eficiencia. Se aplicará una rúbrica que evalúa: corrección técnica, reproducibilidad, documentación, métricas de calidad y reflexión sobre valor.\n\n**3. FASE DE DESARROLLO**  \n- Materiales de Contenido:  \n  1. Presentación (slides) con criterios de selección y patrones de workflow.  \n  2. Guía de laboratorio paso a paso (README) con dataset de ejemplo.  \n  3. Notebook ejemplo en pandas (local) y notebook/job ejemplo en PySpark (cluster/Databricks).  \n  4. Plantilla de informe técnico y rúbrica de evaluación.  \n  5. Checklist de decisión para elegir herramienta (volumen, latencia, coste, skills).  \n  6. Scripts Docker / docker-compose y/o Terraform (opcional) para entorno reproducible.  \n  7. Video corto (15–20 min) demostrando despliegue de pipeline y orquestación con Airflow/dbt.  \n- Plataforma / Herramientas:  \n  Recomendadas para implementación del taller:  \n  - Entornos interactivos: JupyterLab / JupyterHub, Databricks Community / Workspace.  \n  - Procesamiento: pandas (Python), Apache Spark / PySpark, SQL (Postgres o Snowflake según disponibilidad).  \n  - Orquestación y transformaciones: Apache Airflow, dbt.  \n  - Cloud / almacenamiento: AWS S3 (o bucket equivalente), opcional AWS Glue / EMR para demos PySpark.  \n  - Control de versiones y CI: GitHub/GitLab, GitHub Actions (para pipelines de prueba).  \n  - Contenerización: Docker (imágenes para reproducibilidad).  \n  - Comunicación y soporte: Plataforma LMS (Moodle/Canvas) o repositorio GitHub Classroom.  \n  (Fuentes y comparativas prácticas: documentación oficial de pandas, PySpark, Airflow, dbt y proveedores cloud.)\n\n**4. FASE DE IMPLEMENTACIÓN**  \n- Instrucciones de Acceso:  \n  1. Clonar repositorio de la asignatura desde GitHub Classroom.  \n  2. Seguir README para levantar entorno: opción A (local con Docker): ejecutar docker-compose up; opción B (cloud): acceder a Databricks/JupyterHub con credenciales proporcionadas y montar el bucket de datos.  \n  3. Abrir el notebook guía (pandas) para la fase exploratoria; ejecutar el notebook PySpark o job provisto para la fase de producción.  \n  4. Subir entregables al repositorio: carpeta con código, notebook ejecutable, y informe técnico en formato PDF/MD.  \n- Cronograma / Tiempo Estimado:  \n  Actividad presencial/remota (3 horas total) + entrega práctica (una semana):  \n  - 0:00–0:20 Introducción y objetivos (20 min).  \n  - 0:20–1:20 Demo guiada: pandas vs PySpark, criterios de selección (60 min).  \n  - 1:20–2:50 Laboratorio práctico en parejas: implementar fragmento de pipeline (90 min).  \n  - 2:50–3:00 Cierre y asignación de entrega (10 min).  \n  Entrega final: una semana para completar pipeline, documentación y rúbrica.  \n- Plan de Soporte:  \n  - Soporte síncrono: 2 horas de oficina/TAs en vivo (videoconferencia) durante la semana de entrega.  \n  - Soporte asíncrono: foro en LMS o GitHub Issues para preguntas técnicas; TAs responden en <48 horas.  \n  - Recursos adicionales: links a documentación oficial y videos tutoriales; plantillas y ejemplos disponibles en el repositorio.\n\n**5. FASE DE EVALUACIÓN**  \n- Indicadores de Éxito (KPIs):  \n  1. Entregas completadas (porcentaje de estudiantes que entregan el pipeline y el informe).  \n  2. Rúbrica promedio ≥ 80% en: funcionamiento reproducible (ejecución sin errores), documentación clara y justificación de la elección de herramientas.  \n  3. Mejora medible en calidad de datos: reducción porcentual de valores faltantes o duplicados en el dataset entregado tras el wrangling.  \n  4. Tiempo/eficiencia: comparación básica de tiempo de ejecución entre alternativas (cuando aplique) reportado por el estudiante.  \n  5. Participación en soporte (respuestas en foro, asistencia a oficina).  \n- Feedback del Usuario:  \n  1. ¿Qué criterio fue decisivo para elegir la herramienta y cómo afectó eso al resultado final?  \n  2. ¿Qué beneficio cuantificable (en calidad, tiempo o coste) aportó el proceso de wrangling que implementaste?",
+  "error_flag": false,
+  "source_report_id": "topic_20260210_012850511449",
+  "selected_topic": "Group 1: Tools, workflows and the role/value of data wrangling"
+}

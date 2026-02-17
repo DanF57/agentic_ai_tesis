@@ -1,0 +1,11 @@
+{
+  "plan_id": "addie_20260210_033120042991",
+  "source_report_id": "topic_20260210_010724071606",
+  "selected_topic": "Group 1: SQL vs Python and value of data cleaning projects",
+  "generated_at": "2026-02-10T03:31:20.042991",
+  "model": {
+    "provider": "gemini",
+    "agent": "agente_2"
+  },
+  "plan_content": "    *   Entorno de desarrollo integrado (IDE) como Jupyter Notebook o VS Code para ejecutar código Python.\n    *   Sistemas de gestión de bases de datos (DBMS) como PostgreSQL o MySQL, o entornos basados en la nube como Google BigQuery o Amazon Redshift para la práctica con SQL.\n    *   Bibliotecas de Python: Pandas, NumPy.\n    *   Plataformas colaborativas para compartir código y resultados (ej. GitHub, Google Colab).\n\n**4. FASE DE IMPLEMENTACIÓN**\n- Instrucciones de Acceso: Los estudiantes accederán a los materiales del curso a través de la plataforma de e-learning institucional. El entorno de desarrollo (Jupyter Notebook/VS Code y el DBMS) deberá ser configurado previamente por el estudiante o proporcionado a través de un entorno virtual preconfigurado (ej. Docker, Google Colab).\n- Cronograma / Tiempo Estimado: 6 horas (distribuidas en sesiones teóricas, prácticas guiadas y desarrollo del caso práctico).\n- Plan de Soporte: Se establecerá un foro de discusión en la plataforma de e-learning para preguntas y respuestas. Adicionalmente, se programarán sesiones semanales de consulta en línea con el docente.\n\n**5. FASE DE EVALUACIÓN**\n- Indicadores de Éxito (KPIs):\n    *   80% de los estudiantes demuestran la capacidad de seleccionar la herramienta apropiada (SQL/Python) para al menos 4 de 5 escenarios de limpieza/análisis de datos presentados en el caso práctico.\n    *   70% de los estudiantes justifican convincentemente el valor de la limpieza de datos en sus análisis de caso.\n    *   La calificación promedio obtenida en el análisis de caso es superior a 7/10.\n- Feedback del Usuario:\n    *   \"¿Consideras que esta actividad te ha proporcionado una comprensión clara sobre cuándo utilizar SQL o Python para la limpieza y el análisis de datos?\"\n    *   \"¿Cómo calificarías la relevancia de los casos prácticos presentados para entender el valor de los proyectos de limpieza de datos en un contexto real?\""
+}

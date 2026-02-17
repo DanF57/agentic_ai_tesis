@@ -31,23 +31,24 @@ def calibrate_threshold():
     # Queries de prueba variadas
     test_queries = [
         #test con resultado perfecto
-        "Context (Post Title): Lack of Hold-Out Set Leads to State Wasting $365k\nComment: holdout set is the same as a test set, as in training set, validation set and testing set, right?" #test con resultado perfecto
+        "Do I clean/prepare data before I split into test/training, or treat only the training data?",
 
-        # Muy específicas (se esperan scores bajos)
+        # Alineadas directamente
         "overfitting in multiple linear regression",
-        "what is eda?",    
+        "adjust for confounders regression meaning",
+        "what is exploratory data analysis?",    
         
         # Moderadamente específicas
-        "how to evaluate machine learning models",
         "data cleaning best practices",
+        "how to evaluate machine learning models",
         
         # Generales 
         "machine learning tutorials",
         "statistics basics",
         
         # Fuera de tema
-        "how to cook pasta",
-        "causes of cancer"
+        # "how to cook pasta",
+        # "causes of cancer"
     ]
     
     all_scores = []

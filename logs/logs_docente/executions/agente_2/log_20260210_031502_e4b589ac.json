@@ -1,0 +1,69 @@
+{
+  "user_rol": "teacher",
+  "timestamp": "2026-02-10T03:14:24.354851",
+  "provider": "openai",
+  "user_question": "ADDIE plan for Group 2: Data cleaning / SQL vs Python / reshaping CSVs",
+  "conversation_history": [],
+  "start_time": 1770711264.3548517,
+  "end_time": 1770711302.6076458,
+  "execution_time_seconds": 38.25279402732849,
+  "tool_calls": [
+    {
+      "tool": "WEB",
+      "query": "best tools for data cleaning SQL vs Python pandas polars dask OpenRefine Trifacta comparison 2023",
+      "execution_time_seconds": 2.049379299998691,
+      "results": [
+        {
+          "result": "1",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://docs.pola.rs/user-guide/misc/comparison/"
+          ],
+          "content": "Title: Comparison with other tools - Polars user guide\nContent:The choice between Dask and Polars often comes down to familiarity with the Pandas API and the need for distributed processing for extremely large datasets ..."
+        },
+        {
+          "result": "2",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://python.plainenglish.io/which-is-better-i-put-8-python-data-tools-to-the-test-and-found-a-clear-winner-66d116bfe4c8"
+          ],
+          "content": "Title: Which Is Better? I Put 8 Python Data Tools to the Test and Found a ...\nContent:I Put 8 Python Data Tools to the Test and Found a Clear Winner. You'll never look at pandas, Polars, or Dask the same way again."
+        },
+        {
+          "result": "3",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://rowtidy.com/blog/what-is-best-tool-for-data-cleaning"
+          ],
+          "content": "Title: What is the Best Tool for Data Cleaning? Complete Comparison ...\nContent:Discover what is the best tool for data cleaning. Compare features, pricing, and performance of top data cleaning solutions for 2025."
+        },
+        {
+          "result": "4",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://www.astera.com/type/blog/data-cleansing-tools/"
+          ],
+          "content": "Title: Top 5 Data Cleansing Tools In 2025: How to Select The Right One\nContent:OpenRefine logo. OpenRefine, formerly Google Refine, is a powerful tool used for data cleaning, data transformation, and data preparation tasks."
+        },
+        {
+          "result": "5",
+          "source_type": "Web",
+          "score": "N/A",
+          "source_url": [
+            "https://dev.to/kenyansa/python-vs-sql-which-is-best-for-querying-and-cleaning-data-pcf"
+          ],
+          "content": "Title: Python vs SQL: Which is Best for Querying and Cleaning Data?\nContent:SQL is faster for querying large datasets (thanks to database optimizations like indexing). · Python (Pandas) can slow down with >1M rows unless ..."
+        }
+      ]
+    }
+  ],
+  "agent_reasoning": "",
+  "final_answer": "### Plantilla de Diseño Instruccional (Modelo ADDIE)\n- Título de la Actividad:  \n  Taller práctico: Flujo de limpieza y reestructuración de CSVs — decisión y ejecución con SQL vs Python\n\n**1. FASE DE ANÁLISIS**  \nProblema / Brecha Detectada:  \nEstudiantes confunden cuándo y por qué elegir SQL frente a herramientas en Python para tareas de limpieza y reshaping de CSVs; además presentan dificultades concretas para transformar columnas con múltiples valores (listas/cadenas delimitadas), normalizar estructuras a formato tabular y documentar un flujo reproducible que escale razonablemente según tamaño de datos.\n\n**2. FASE DE DISEÑO**  \n- Objetivo de Aprendizaje General:  \n  Al finalizar la actividad, el estudiante justificará la elección entre SQL y Python para un caso dado y ejecutará, de forma reproducible, una pipeline que limpie y reestructura un CSV (incluyendo split/explode, melt/pivot, manejo de valores faltantes y normalización de columnas multilabel) entregando dataset normalizado y scripts/notebook ejecutables.\n\n- Estrategia Didáctica:  \n  Aprendizaje basado en proyecto con ciclo iterativo: (1) breve exposición conceptual comparativa, (2) demostración guiada en SQL y Python sobre el mismo dataset, (3) ejercicio práctico individual en pares con datasets de distinta escala, (4) entrega y retroalimentación formativa. Uso de rubrica para evaluación.\n\n- Esquema de Contenidos:  \n  - Criterios para elegir SQL vs Python (tamaño de datos, complejidad de transformación, integración con DW)  \n  - Operaciones SQL relevantes para limpieza/reshaping (SELECT, UNNEST/STRING_SPLIT, CTEs, window functions, JOINs)  \n  - Operaciones Python para limpieza/reshaping (pandas: melt, pivot, explode, str.split, groupby; alternativas: polars, dask)  \n  - Técnicas para desanidar columnas multilabel y normalizar (split → explode / unnest)  \n  - Manejo de valores faltantes y tipos (imputación simple, casting, detección de outliers)  \n  - Reproducibilidad: notebooks, scripts, pruebas unitarias y registros de pasos (logs)  \n  - Consideraciones de rendimiento y escalabilidad (indexación, procesamiento por chunk, uso de motores en C/arrow)  \n  - Documentación mínima requerida: esquema antes/después, decisiones y trade-offs\n\n- Mecanismo de Evaluación:  \n  Demostración práctica: cada estudiante entregará (a) un notebook o script SQL y Python que ejecute la pipeline reproducible en un dataset de prueba, (b) dataset resultante normalizado, y (c) un informe corto (máx. 1 página) justificando la elección de herramienta y describiendo trade-offs de rendimiento y mantenibilidad. Evaluación con rubrica que mida: corrección funcional (transformaciones), reproducibilidad (ejecución desde cero), claridad del código/documentación, y justificación técnica.\n\n**3. FASE DE DESARROLLO**  \n- Materiales de Contenido:  \n  - Guion de clase (diapositivas) con comparativa SQL vs Python y criterios de decisión.  \n  - Notebook Jupyter/Colab con demo paso a paso (dataset de ejemplo) implementado en pandas y en SQL sobre SQLite/Postgres.  \n  - Scripts SQL y DDL de ejemplo (CREATE TABLE, índices, ejemplos de STRING_SPLIT/UNNEST).  \n  - Notebooks alternativos con Polars y con Dask para casos de escala.  \n  - Hoja de trucos (cheat-sheet) de comandos frecuentes: melt/pivot/explode, split, groupby-agg, CTEs.  \n  - Dataset(s) de práctica: 1) pequeño (10k rows) con columnas multilabel; 2) mediano (1M rows o simulado por chunk) para pruebas de rendimiento.  \n  - Rubrica de evaluación y plantilla de informe de justificación.  \n  - Repositorio con ejemplo resuelto (notebook final y scripts de referencia).  \n  - Video corto (10–15 min) mostrando la ejecución de la pipeline completa en ambos enfoques.\n\n- Plataforma / Herramientas:  \n  - Entorno de ejecución: JupyterLab / Google Colab (para Python), psql o DBeaver para SQL.  \n  - Bases de datos: PostgreSQL (recomendado para funciones avanzadas) y SQLite (para ejemplos locales).  \n  - Librerías Python: pandas (principal), polars (alternativa de alto rendimiento), dask (para paralelización), pyarrow (intercambio eficiente).  \n  - Herramientas GUI para limpieza rápida: OpenRefine (opcional para inspección manual).  \n  - Control de versiones y entrega: Git + GitHub classroom o repositorio compartido.  \n  - Repositorio con Dockerfile o environment.yml / requirements.txt para reproducibilidad.  \n  (Referencias y guías de uso incluidas en los materiales; fuentes públicas de comparación: documentación de Polars, guías de Pandas y artículos comparativos sobre SQL vs Python.)\n\n**4. FASE DE IMPLEMENTACIÓN**  \n- Instrucciones de Acceso:  \n  1. Clonar el repositorio del curso (o aceptar la invitación de GitHub Classroom).  \n  2. Instalar dependencias con conda/pip o usar el entorno en Google Colab (enlace proporcionado).  \n  3. Abrir el notebook “01_demo_sql_vs_python.ipynb” y ejecutar la celda de instalación/descarga de datasets.  \n  4. Seguir la secuencia: lectura del CSV → análisis exploratorio breve → aplicar transformaciones en SQL y en Python → validar resultados → documentar decisiones en la plantilla de informe.\n\n- Cronograma / Tiempo Estimado:  \n  - Sesión 1 (90 min): presentación teórica (30 min) + demo guiada en Python (30 min) + demo en SQL (30 min).  \n  - Trabajo práctico (2–3 horas fuera de clase): ejercicio individual/pair-programming con dataset pequeño.  \n  - Sesión 2 (60–90 min): resolución de dudas, revisión de entregas y retroalimentación en vivo.  \n  - Entrega final y corrección (1 semana para entrega; retroalimentación en 5 días hábiles).\n\n- Plan de Soporte:  \n  - Foro del curso (p. ej. GitHub Issues / Slack) para preguntas técnicas; moderado por ayudantes con SLA: respuesta dentro de 48 horas.  \n  - Office hours semanales (30 min) para consultas en vivo.  \n  - Notebooks con soluciones parciales y logs de errores frecuentes como guía de depuración.\n\n**5. FASE DE EVALUACIÓN**  \n- Indicadores de Éxito (KPIs):  \n  - % de estudiantes que entregan pipeline reproducible ejecutable (meta: ≥ 85%).  \n  - % de transformaciones correctas según tests automatizados (meta: ≥ 80%).  \n  - Tiempo medio de ejecución del pipeline en dataset mediano (referencia establecida por el instructor).  \n  - Calidad de la justificación de elección (puntaje promedio en rubrica ≥ 3/4).  \n  - Nivel de documentación: porcentaje de entregas con esquema antes/después y comandos clave comentados (meta: ≥ 90%).\n\n- Feedback del Usuario:  \n  - Pregunta 1: ¿Qué herramienta seleccionaste para la pipeline final y cuáles fueron las tres razones técnicas principales para esa elección?  \n  - Pregunta 2: ¿Qué transformación te costó más implementar y cómo validaste que el resultado era correcto?",
+  "error_flag": false,
+  "source_report_id": "topic_20260209_231229449802",
+  "selected_topic": "Group 2: Data cleaning / SQL vs Python / reshaping CSVs"
+}

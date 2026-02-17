@@ -176,7 +176,8 @@ class ExecutionLogger:
                 "subreddit": subreddit,
                 "top_n": top_n,
                 "generated_at": timestamp,
-                "file": report_info["file"]
+                "file": report_info["file"],
+                "model": self.log_data.get("provider")
             })
 
             print(f"📘 Topic report guardado: {report_info['file']}")

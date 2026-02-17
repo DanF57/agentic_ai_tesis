@@ -69,13 +69,23 @@ def parse_answer_blocks(text: str):
 
     return explanation.strip() if explanation else None, answer.strip()
 
-def extract_groups(report_content: str):
+# ─── CAMBIO 1: en la sección HELPERS ──────────────────────────────────────────
+
+def extract_groups(report_content: str) -> dict:
     """
-    Devuelve una lista de títulos de grupo, por ejemplo:
-    'Group 1: Train/Test splitting and holdouts'
+    Devuelve un dict:  { "Group X: Título" : "bloque completo del grupo" }
+    Captura desde el ### Group hasta el siguiente encabezado o fin de texto.
     """
-    pattern = r"### (Group\s+\d+:\s+.+)"
-    return re.findall(pattern, report_content)
+    pattern = r"(### Group\s+\d+:.+?)(?=\n### Group\s+\d+:|\n### Unclear|$)"
+    matches = re.findall(pattern, report_content, re.DOTALL)
+
+    groups = {}
+    for block in matches:
+        first_line = block.strip().split('\n')[0]
+        title = first_line.replace('### ', '').strip()
+        groups[title] = block.strip()
+
+    return groups
 
 # =========================
 # SESSION STATE
@@ -180,6 +190,9 @@ if st.session_state.user_role == "student":
             for m in st.session_state.messages
         ]
 
+        print(f"Consulta de usuario: {prompt}")
+        print("Pensando...")
+
         logger = ExecutionLogger()
         logger.start(
             user_question=prompt,
@@ -220,7 +233,7 @@ else:
     if index_data["topic_reports"]:
         for r in index_data["topic_reports"]:
             st.sidebar.markdown(
-                f"- **{r['subreddit']}** | top {r['top_n']}  \n{r['generated_at'][:10]} - {r['generated_at'][11:16]} - **{r['model']}** "
+                f"- **{r['subreddit']}** | top {r['top_n']}  \n{r['generated_at'][:10]} - {r['generated_at'][11:16]} - **{r.get('model', 'N/A')}** "
             )
     else:
         st.sidebar.markdown("_No hay reportes aún_")
@@ -286,7 +299,7 @@ else:
             )
 
     # =========================
-    # AGENTE 2 (placeholder)
+    # AGENTE 2 
     # =========================
     if action == "Crear planificación de clase (Agente 2)":
 
@@ -305,7 +318,7 @@ else:
             st.stop()
 
         report_map = {
-            f"{r['subreddit']} | top {r['top_n']} - {r['generated_at'][:10]} - {r['generated_at'][11:16]} - {r['model']} ": r
+            f"{r['subreddit']} | top {r['top_n']} - {r['generated_at'][:10]} - {r['generated_at'][11:16]} - {r.get('model', 'N/A')} ": r
             for r in index_data["topic_reports"]
         }
 
@@ -331,14 +344,12 @@ else:
 
         selected_topic = st.selectbox(
             "Selecciona el tema para la planificación:",
-            groups
+            list(groups.keys())           # las keys son los títulos (igual que antes)
         )
         if st.button("Generar planificación ADDIE"):
-
+            topic_block = groups[selected_topic]
                     # Construir prompt
             prompt = f"""
-                {st.session_state.agent.system_prompt}
-
                 TEMA SELECCIONADO:
                 {selected_topic}
 
@@ -365,10 +376,18 @@ else:
                 result = response["messages"][-1].text
 
             logger.end(result)
+            
+            _, clean_result = parse_answer_blocks(result)  # reutiliza el helper ya existente
 
             st.markdown("### 📘 Planificación generada")
-            st.text_area(
-                "Resultado (ADDIE)",
-                value=result,
-                height=600
+
+            with st.container(border=True):
+                st.markdown(clean_result)
+
+            # Botón de descarga como texto plano
+            st.download_button(
+                label="⬇️ Descargar planificación (.txt)",
+                data=clean_result,
+                file_name="planificacion_addie.txt",
+                mime="text/plain"
             )
