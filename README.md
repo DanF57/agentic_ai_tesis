@@ -182,11 +182,11 @@ python populate_db.py
 ## 💻 Uso del Sistema
 
 ### Iniciar el Servidor MCP
-
+- Considerando un venv activo
 En una terminal:
 ```bash
 cd server
-python my_server.py
+fastmcp run server\my_server.py:mcp --transport http --port 8000
 ```
 
 El servidor se iniciará en `http://localhost:8000`
