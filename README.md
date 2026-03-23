@@ -4,14 +4,101 @@ Repositorio del sistema de agentes inteligentes desarrollado para la tesis de gr
 
 ## 📋 Tabla de Contenidos
 
+- [Instalación y Configuración](#instalación-y-configuración)
 - [Descripción General](#descripción-general)
 - [Arquitectura del Sistema](#arquitectura-del-sistema)
 - [Componentes Principales](#componentes-principales)
-- [Instalación y Configuración](#instalación-y-configuración)
 - [Uso del Sistema](#uso-del-sistema)
 - [Sistema de Logging y Evaluación](#sistema-de-logging-y-evaluación)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Herramientas Disponibles](#herramientas-disponibles)
+
+## 🚀 Instalación y Configuración
+
+### Requisitos Previos
+
+- Python 3.8+
+- Cuenta de OpenAI o Google Gemini (API keys)
+- Cuenta de SerperDev (opcional, para búsqueda web)
+
+### Instalación
+
+1. **Clonar el repositorio**:
+```bash
+git clone <repository-url>
+cd agentic_ai_tesis
+```
+
+2. **Crear entorno virtual**:
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+```
+
+3. **Instalar dependencias**:
+```bash
+pip install -r requirements.txt
+```
+
+4. **Configurar variables de entorno**:
+
+Crear archivo `.env` en la raíz del proyecto:
+```env
+# OpenAI (requerido para embeddings y opcional para LLM)
+OPENAI_API_KEY=tu_api_key_openai
+
+# Google Gemini (opcional, para usar Gemini como LLM)
+GOOGLE_API_KEY=tu_api_key_gemini
+
+# SerperDev (opcional, para búsqueda web)
+SERPER_API_KEY=tu_api_key_serper
+```
+
+5. **Configurar modelos**:
+
+Editar `config/models.yaml` para seleccionar los modelos:
+```yaml
+providers:
+  openai:
+    name: "OpenAI"
+    model: "gpt-5-mini"  # o el modelo preferido
+  gemini:
+    name: "Gemini"
+    model: "gemini-2.5-flash" 
+```
+
+### Inicializar Base de Conocimiento
+
+Si la base de conocimiento no está poblada:
+
+```bash
+cd server/knowledge # ubicarse en la ruta del script
+python populate_db.py
+```
+
+## 💻 Uso del Sistema
+
+### Iniciar el Servidor MCP
+- Considerando un venv activo
+En una terminal:
+```bash
+cd server
+fastmcp run server\my_server.py:mcp --transport http --port 8000
+```
+
+El servidor se iniciará en `http://localhost:8000`
+
+### Iniciar la Interfaz Streamlit
+
+Es necesario otra terminal:
+```bash
+streamlit run client/ui_streamlit.py
+```
+
+La interfaz estará disponible en `http://localhost:8501`
 
 ## 🎯 Descripción General
 
@@ -26,10 +113,16 @@ Este sistema implementa tres agentes especializados que trabajan con una base de
 - ✅ **RAG (Retrieval-Augmented Generation)**: Base de conocimiento vectorial con ChromaDB
 - ✅ **Búsqueda Web en Tiempo Real**: Integración con SerperDev para búsquedas actualizadas
 - ✅ **Multi-Proveedor LLM**: Soporte para OpenAI (GPT) y Google Gemini
-- ✅ **Sistema de Logging Completo**: Registro detallado para evaluación de recuperación y generación
+- ✅ **Sistema de Logging**: Registro detallado para evaluación de recuperación y generación
 - ✅ **Interfaz Streamlit**: UI intuitiva para estudiantes y docentes
 - ✅ **Arquitectura MCP**: Comunicación mediante Model Context Protocol
 
+### Embeddings
+
+- **Modelo**: `text-embedding-3-small` de OpenAI
+- **Base de datos**: ChromaDB con distancia coseno
+- **Colección**: `reddit_datascience_openai`
+  
 ## 🏗️ Arquitectura del Sistema
 
 ```
@@ -112,93 +205,6 @@ Interfaz Streamlit con dos modos:
 - **ChromaDB**: Base de datos vectorial con embeddings OpenAI (`text-embedding-3-small`)
 - **Dataset**: Posts de Reddit procesados y vectorizados
 - Scripts de procesamiento y población de la base de datos
-
-## 🚀 Instalación y Configuración
-
-### Requisitos Previos
-
-- Python 3.8+
-- Cuenta de OpenAI o Google Gemini (API keys)
-- Cuenta de SerperDev (opcional, para búsqueda web)
-
-### Instalación
-
-1. **Clonar el repositorio**:
-```bash
-git clone <repository-url>
-cd agentic_ai_tesis
-```
-
-2. **Crear entorno virtual**:
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
-```
-
-3. **Instalar dependencias**:
-```bash
-pip install -r requirements.txt
-```
-
-4. **Configurar variables de entorno**:
-
-Crear archivo `.env` en la raíz del proyecto:
-```env
-# OpenAI (requerido para embeddings y opcional para LLM)
-OPENAI_API_KEY=tu_api_key_openai
-
-# Google Gemini (opcional, para usar Gemini como LLM)
-GOOGLE_API_KEY=tu_api_key_gemini
-
-# SerperDev (opcional, para búsqueda web)
-SERPER_API_KEY=tu_api_key_serper
-```
-
-5. **Configurar modelos**:
-
-Editar `config/models.yaml` para seleccionar los modelos:
-```yaml
-providers:
-  openai:
-    name: "OpenAI"
-    model: "gpt-4o-mini"  # o el modelo que prefieras
-  gemini:
-    name: "Gemini"
-    model: "gemini-2.0-flash-exp"  # o el modelo que prefieras
-```
-
-### Inicializar Base de Conocimiento
-
-Si la base de conocimiento no está poblada:
-
-```bash
-cd server/knowledge
-python populate_db.py
-```
-
-## 💻 Uso del Sistema
-
-### Iniciar el Servidor MCP
-- Considerando un venv activo
-En una terminal:
-```bash
-cd server
-fastmcp run server\my_server.py:mcp --transport http --port 8000
-```
-
-El servidor se iniciará en `http://localhost:8000`
-
-### Iniciar la Interfaz Streamlit
-
-En otra terminal:
-```bash
-streamlit run client/ui_streamlit.py
-```
-
-La interfaz estará disponible en `http://localhost:8501`
 
 ### Flujo de Uso
 
@@ -347,35 +353,6 @@ Recolecta y filtra posts de un subreddit específico.
 **Retorna**: Lista de posts filtrados (solo con `?` en título) ordenados por votos ascendentes.
 
 **Uso**: Herramienta del Agente Analizador para identificar temas recurrentes.
-
-## 🔍 Notas Técnicas
-
-### Distinción entre Tarea y Recurso
-
-El sistema mantiene coherencia en la nomenclatura:
-- **Tarea**: Operación que realiza un agente (ej: "responder pregunta", "analizar temas")
-- **Recurso**: Herramienta o fuente de datos (ej: "RAG", "Web Search", "Knowledge Base")
-
-### Model Context Protocol (MCP)
-
-El sistema utiliza MCP para comunicación entre cliente y servidor, permitiendo:
-- Desacoplamiento entre agentes y herramientas
-- Escalabilidad y extensibilidad
-- Protocolo estándar para integración de herramientas
-
-### Embeddings
-
-- **Modelo**: `text-embedding-3-small` de OpenAI
-- **Base de datos**: ChromaDB con distancia coseno
-- **Colección**: `reddit_datascience_openai`
-
-## 📝 Próximas Mejoras
-
-- [ ] Diagramas de arquitectura detallados
-- [ ] Implementación de métricas de perplejidad
-- [ ] Dashboard de evaluación de logs
-- [ ] Soporte para más proveedores LLM
-- [ ] Mejoras en el sistema de caching
 
 ## 📄 Licencia
 
