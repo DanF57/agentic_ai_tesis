@@ -17,7 +17,7 @@ Repositorio del sistema de agentes inteligentes desarrollado para la tesis de gr
 
 ### Requisitos Previos
 
-- Python 3.8+
+- Python 3.9+
 - Cuenta de OpenAI o Google Gemini (API keys)
 - Cuenta de SerperDev (opcional, para búsqueda web)
 
